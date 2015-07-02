@@ -7,8 +7,8 @@ from collections import defaultdict
 import codecs
 import json
 
-SAMPLE_FILE = "C:\\git\\nanodegree\\Mongo\\UdacityNanoDegreeP2\\FinalProject\\data_dublin\\sample.osm" #dublin_ireland.osm"
-JSON_FILE = "C:\\git\\nanodegree\\Mongo\\UdacityNanoDegreeP2\\FinalProject\\data_dublin\\sample.json"
+SAMPLE_FILE = "C:\\git\\\UdacityDataAnalystNanoDegree\\Mongo\\UdacityNanoDegreeP2\\FinalProject\\data_dublin\\sample.osm" #dublin_ireland.osm"
+JSON_FILE = "C:\\git\\\UdacityDataAnalystNanoDegree\\Mongo\\UdacityNanoDegreeP2\\FinalProject\\data_dublin\\sample.json"
 
 #################regular expressions used on check 2################
 lower = re.compile(r'^([a-z]|_)*$')
@@ -19,7 +19,6 @@ problemchars = re.compile(r'[=\+/&<>;\'"\?%#$@\,\. \t\r\n]')
 #################regular expression used on check 4################
 street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
 ####################################################################
-
 
 #######################check 1 - check XML tag count################################################################
 def checkTagCount(filename):
@@ -181,6 +180,13 @@ def shape_element(element, better_names):
                     if my_key.find('addr') == 0:
                         sub_attr = my_key.split(':', 1) #['addr', 'street']
                         address_key = sub_attr[1]
+
+                        if  my_key == 'addr:city':
+                            if re.search(r'\d+$', my_value):
+                                node['address']['postal code'] = my_value
+                                for i in range(10):
+                                    my_value=my_value.replace(str(i),'')
+
 
                         if  my_key == 'addr:street':
                             if my_value in better_names:
