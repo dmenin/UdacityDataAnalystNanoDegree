@@ -1,0 +1,53 @@
+
+Documents that have the field amenity
+db.dublin.find({"amenity" : {"$exists" : 1}}).count()
+
+
+
+#top 10 amenities:
+db.dublin.aggregate([
+	{ $match:{"amenity":{"$exists":1}}},	
+
+	{ $group:{"_id":"$amenity",total:{"$sum":1}}},
+	{ $sort: { total: -1 } }
+   ,{ $limit:10}])
+
+
+#most common cuisine: (improve nulls and map pizza to italian?
+db.dublin.aggregate([
+	 { $match : {amenity:{$exists:1}, amenity:"restaurant"}}
+	,{ $group : {_id:"$cuisine", total:{$sum:1}}}	
+	, { $sort: { total: -1 } }
+	,{ $limit:5}
+])
+
+
+
+
+db.dublin.distinct("amenity").length
+db.dublin.distinct({ $match : {amenity:{$exists:1}, amenity:"restaurant"}}).length
+
+db.dublin.aggregate([
+	 { $match : {amenity:{$exists:1}, amenity:"restaurant"}}
+])
+
+
+
+db.dublin.aggregate([
+	{ $match : {amenity:{$exists:1}, amenity:  { $nin: [ "pub", "restaurant", "fast_food", "cafe" ] } }},
+
+	{ $group:{"_id":"$amenity",total:{"$sum":1}}},
+	{ $sort: { total: -1 } } ,
+    { $limit:10}
+])
+
+
+types of leisure:
+db.dublin.distinct("leisure").limit(1)
+
+db.dublin.aggregate([
+	{ $match:{"leisure":{"$exists":1}}},	
+
+	{ $group:{"_id":"$leisure",total:{"$sum":1}}},
+	{ $sort: { total: -1 } }
+   ,{ $limit:10}])

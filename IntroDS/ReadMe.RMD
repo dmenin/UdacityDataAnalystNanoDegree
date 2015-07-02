@@ -1,0 +1,2 @@
+Files used on the Intro to Data Science Course
+Unfortunatly I wasnt using github during it so most of them were lost

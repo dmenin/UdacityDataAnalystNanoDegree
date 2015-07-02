@@ -1,0 +1,5 @@
+UdacityNanoDegreeP2 is a Python Project created on PyCharm
+On the Python file names "L" indicates the Lesson and "Ex" indicates the example during the lesson. "PS" Indicates the Problem Set
+So, "L2_PS1.py" referes to Problem Set 1 of Lesson 2
+
+Most of the data files are ignored due to size.
