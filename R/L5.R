@@ -40,5 +40,44 @@ ggplot(aes(x=age, y = female/male), data=pf.fc_by_age_gender.wide) +
 
 #Third Quantitative Variable
 pf$year_joined <- floor(2014 - (pf$tenure / 365))
-  
 
+summary(pf$year_joined)
+table(pf$year_joined)  
+
+pf$year_joined.bucket <- cut(pf$year_joined, c(2004, 2009, 2011,2012,2014))
+
+
+table (pf$year_joined.bucket)
+ggplot(aes(x=age, y = friend_count), data = subset(pf, !is.na(year_joined.bucket))) + 
+  geom_line( aes(color=year_joined.bucket) , stat='summary', fun.y = median)
+
+
+#Plot the Grand Mean
+ggplot(aes(x=age, y = friend_count), data = subset(pf, !is.na(year_joined.bucket))) + 
+  geom_line( aes(color=year_joined.bucket) , stat='summary', fun.y = mean) +
+  geom_line(stat = 'summary', fun.y=mean, linetype = 2)
+
+
+#Friending Rate
+#friends for each day since they started using fb
+(with (subset(pf, tenure>0), summary(friend_count / tenure)))
+
+
+
+#Friendships Initiated
+
+ggplot( aes(x=tenure, y=friendships_initiated/tenure), data = subset(pf, tenure>0)) + geom_line(aes(color = year_joined.bucket))
+
+
+
+
+#Bias Variance Trade off Revisited
+ggplot(aes(x = 7 * round(tenure / 7), y = friendships_initiated / tenure),
+       data = subset(pf, tenure > 0)) +
+  geom_line(aes(color = year_joined.bucket),
+            stat = "summary",
+            fun.y = mean)
+
+ggplot(aes(x = 7 * round(tenure / 7), y = friendships_initiated / tenure),
+       data = subset(pf, tenure > 0)) +
+  geom_smooth(aes(color = year_joined.bucket))
