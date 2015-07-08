@@ -81,3 +81,54 @@ ggplot(aes(x = 7 * round(tenure / 7), y = friendships_initiated / tenure),
 ggplot(aes(x = 7 * round(tenure / 7), y = friendships_initiated / tenure),
        data = subset(pf, tenure > 0)) +
   geom_smooth(aes(color = year_joined.bucket))
+
+
+
+
+
+
+#yogurt
+yo<-read.csv('yogurt.csv')
+str(yo)
+yo$id <-factor(yo$id)
+
+names(yo)
+qplot(data = yo, x=price, fill=I('#F79420'))
+#> Number of Purchases
+
+yo <- transform(yo, all.purchases =  strawberry + blueberry + pina.colada + plain +mixed.berry)
+
+qplot(data = yo, binwidth = 1, x=all.purchases, fill=I('#F79420'))
+
+
+#> Prices Over Time
+ggplot(aes(x=time, y=price), data=yo)+geom_jitter(alpha = 1/4, shape=21, fill=I('#F79420'))
+
+
+
+set.seed(4230)
+sample.ids <- sample(levels(yo$id), 16)
+
+ggplot(aes(x=time, y= price),
+       data=subset(yo, id %in% sample.ids)) +
+  facet_wrap(~id) + geom_line() + geom_point(aes(size = all.purchases), pch = 1)
+
+
+# Scatterplot Matrices
+install.packages("GGally")
+library(GGally)
+
+theme_set(theme_minimal(20))
+
+
+set.seed(1836)
+pf_subset <- pf[,c(2:15)]
+names(pf_subset)
+ggpairs(pf_subset[sample.int(nrow(pf_subset),1000),])
+
+set.seed(1836)
+foo<-pf_subset[sample.int(nrow(pf_subset),1000),]
+
+cor(foo$friendships_initiated, foo$friend_count)
+cor(foo$age, foo$mobile_likes)
+

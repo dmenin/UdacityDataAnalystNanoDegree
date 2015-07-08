@@ -14,6 +14,7 @@ pf.fc_by_age <- summarise(age_groups,
 pf.fc_by_age <- arrange (pf.fc_by_age, age)
 
 #Group by - option 2
+head(pf)
 pf.fc_by_age <- pf %>% 
                 group_by(age) %>% 
                 summarise(friend_count_mean = mean(friend_count),
@@ -63,6 +64,7 @@ with (pf, cor.test(www_likes_received, likes_received, method='pearson'))
 
 ## More Caution with Correlation
 #install.packages('alr3')
+library(alr3)
 
 ggplot( aes(x = Month, y = Temp), data=Mitchell) + geom_point()
 with (Mitchell, cor.test(Month, Temp, method='pearson'))
