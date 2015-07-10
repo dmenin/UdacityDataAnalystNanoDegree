@@ -22,9 +22,11 @@ def classifySVM(features_train, labels_train):
 def classifyDT(features_train, labels_train):
 
     from sklearn import tree
-    clf = tree.DecisionTreeClassifier()
-    clf = clf.fit(features_train, labels_train)
-    return clf
+    clf = tree.DecisionTreeClassifier(min_samples_split = 50)
+    return clf.fit(features_train, labels_train)
+#http://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
+#criterion : string, optional (default=”gini”)
+#The function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain.
 
 
 
@@ -46,5 +48,8 @@ prettyPicture(clf, features_test, labels_test)
 output_image("test.png", "png", open("test.png", "rb").read())
 
 
+pred = clf.predict(features_test)
 
-
+from sklearn.metrics import accuracy_score
+acc = accuracy_score(pred, labels_test)
+print acc

@@ -1,0 +1,699 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='win' version='8.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 8300.15.0219.2230                                -->
+  <preferences>
+  </preferences>
+  <datasources>
+    <datasource caption='wineQualityWhites' inline='true' name='textscan.42195.543575104166' version='8.3'>
+      <connection class='textscan' directory='C:/git/UdacityDataAnalystNanoDegree/4_R/FinalProject' filename='wineQualityWhites.csv'>
+        <relation name='wineQualityWhites#csv' table='[wineQualityWhites#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='real' name='fixed.acidity' ordinal='1' />
+            <column datatype='real' name='volatile.acidity' ordinal='2' />
+            <column datatype='real' name='citric.acid' ordinal='3' />
+            <column datatype='real' name='residual.sugar' ordinal='4' />
+            <column datatype='real' name='chlorides' ordinal='5' />
+            <column datatype='real' name='free.sulfur.dioxide' ordinal='6' />
+            <column datatype='real' name='total.sulfur.dioxide' ordinal='7' />
+            <column datatype='real' name='density' ordinal='8' />
+            <column datatype='real' name='pH' ordinal='9' />
+            <column datatype='real' name='sulphates' ordinal='10' />
+            <column datatype='real' name='alcohol' ordinal='11' />
+            <column datatype='integer' name='quality' ordinal='12' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fixed.acidity</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[fixed.acidity]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>fixed.acidity</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>volatile.acidity</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[volatile.acidity]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>volatile.acidity</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>citric.acid</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[citric.acid]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>citric.acid</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>residual.sugar</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[residual.sugar]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>residual.sugar</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>chlorides</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[chlorides]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>chlorides</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>free.sulfur.dioxide</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[free.sulfur.dioxide]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>free.sulfur.dioxide</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total.sulfur.dioxide</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total.sulfur.dioxide]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>total.sulfur.dioxide</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>density</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[density]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>density</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pH</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[pH]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>pH</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sulphates</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sulphates]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>sulphates</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>alcohol</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[alcohol]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>alcohol</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quality</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[quality]</local-name>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias>quality</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name></remote-name>
+            <remote-type>0</remote-type>
+            <parent-name>[wineQualityWhites#csv]</parent-name>
+            <remote-alias></remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' hidden='true' name='[F1]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Alcohol' datatype='real' name='[alcohol]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Chlorides' datatype='real' name='[chlorides]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Citric.Acid' datatype='real' name='[citric.acid]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Density' datatype='real' name='[density]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Fixed.Acidity' datatype='real' name='[fixed.acidity]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Free.Sulfur.Dioxide' datatype='real' name='[free.sulfur.dioxide]' role='measure' type='quantitative'>
+      </column>
+      <column caption='P H' datatype='real' name='[pH]' role='measure' type='quantitative'>
+      </column>
+      <column aggregation='Sum' caption='Quality' datatype='integer' name='[quality]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Residual.Sugar' datatype='real' name='[residual.sugar]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Sulphates' datatype='real' name='[sulphates]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Total.Sulfur.Dioxide' datatype='real' name='[total.sulfur.dioxide]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Volatile.Acidity' datatype='real' name='[volatile.acidity]' role='measure' type='quantitative'>
+      </column>
+      <column-instance column='[Number of Records]' derivation='Avg' name='[avg:Number of Records:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[alcohol]' derivation='Avg' name='[avg:alcohol:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[chlorides]' derivation='Avg' name='[avg:chlorides:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[citric.acid]' derivation='Avg' name='[avg:citric.acid:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[density]' derivation='Avg' name='[avg:density:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[fixed.acidity]' derivation='Avg' name='[avg:fixed.acidity:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[free.sulfur.dioxide]' derivation='Avg' name='[avg:free.sulfur.dioxide:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[pH]' derivation='Avg' name='[avg:pH:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[residual.sugar]' derivation='Avg' name='[avg:residual.sugar:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[sulphates]' derivation='Avg' name='[avg:sulphates:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[total.sulfur.dioxide]' derivation='Avg' name='[avg:total.sulfur.dioxide:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[volatile.acidity]' derivation='Avg' name='[avg:volatile.acidity:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[quality]' derivation='None' name='[none:quality:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[alcohol]' derivation='Sum' name='[sum:alcohol:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[chlorides]' derivation='Sum' name='[sum:chlorides:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[citric.acid]' derivation='Sum' name='[sum:citric.acid:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[density]' derivation='Sum' name='[sum:density:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:quality:ok]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>9</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>4</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:alcohol:qk]&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:chlorides:qk]&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:sulphates:qk]&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:free.sulfur.dioxide:qk]&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:residual.sugar:qk]&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:fixed.acidity:qk]&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:Number of Records:qk]&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:total.sulfur.dioxide:qk]&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot;[textscan.42195.543575104166].[sum:chlorides:qk]&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot;[textscan.42195.543575104166].[sum:alcohol:qk]&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:citric.acid:qk]&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;[textscan.42195.543575104166].[sum:density:qk]&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:pH:qk]&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:density:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:volatile.acidity:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot;[textscan.42195.543575104166].[sum:citric.acid:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Reino Unido&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='wineQualityWhites' name='textscan.42195.543575104166' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42195.543575104166'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[quality]' derivation='None' name='[none:quality:ok]' pivot='key' type='ordinal' />
+            <column aggregation='Sum' caption='Quality' datatype='integer' name='[quality]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[textscan.42195.543575104166].[sum:Number of Records:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.42195.543575104166].[sum:Number of Records:qk]</rows>
+        <cols>[textscan.42195.543575104166].[none:quality:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='wineQualityWhites' name='textscan.42195.543575104166' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42195.543575104166'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Alcohol' datatype='real' name='[alcohol]' role='measure' type='quantitative'>
+            </column>
+            <column-instance column='[alcohol]' derivation='Avg' name='[avg:alcohol:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[chlorides]' derivation='Avg' name='[avg:chlorides:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[citric.acid]' derivation='Avg' name='[avg:citric.acid:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[density]' derivation='Avg' name='[avg:density:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[fixed.acidity]' derivation='Avg' name='[avg:fixed.acidity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[free.sulfur.dioxide]' derivation='Avg' name='[avg:free.sulfur.dioxide:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[pH]' derivation='Avg' name='[avg:pH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[residual.sugar]' derivation='Avg' name='[avg:residual.sugar:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sulphates]' derivation='Avg' name='[avg:sulphates:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total.sulfur.dioxide]' derivation='Avg' name='[avg:total.sulfur.dioxide:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[volatile.acidity]' derivation='Avg' name='[avg:volatile.acidity:qk]' pivot='key' type='quantitative' />
+            <column caption='Chlorides' datatype='real' name='[chlorides]' role='measure' type='quantitative'>
+            </column>
+            <column caption='Citric.Acid' datatype='real' name='[citric.acid]' role='measure' type='quantitative'>
+            </column>
+            <column caption='Density' datatype='real' name='[density]' role='measure' type='quantitative'>
+            </column>
+            <column caption='Fixed.Acidity' datatype='real' name='[fixed.acidity]' role='measure' type='quantitative'>
+            </column>
+            <column caption='Free.Sulfur.Dioxide' datatype='real' name='[free.sulfur.dioxide]' role='measure' type='quantitative'>
+            </column>
+            <column-instance column='[quality]' derivation='None' name='[none:quality:ok]' pivot='key' type='ordinal' />
+            <column caption='P H' datatype='real' name='[pH]' role='measure' type='quantitative'>
+            </column>
+            <column aggregation='Sum' caption='Quality' datatype='integer' name='[quality]' role='dimension' type='ordinal'>
+            </column>
+            <column caption='Residual.Sugar' datatype='real' name='[residual.sugar]' role='measure' type='quantitative'>
+            </column>
+            <column caption='Sulphates' datatype='real' name='[sulphates]' role='measure' type='quantitative'>
+            </column>
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[alcohol]' derivation='Sum' name='[sum:alcohol:qk]' pivot='key' type='quantitative' />
+            <column caption='Total.Sulfur.Dioxide' datatype='real' name='[total.sulfur.dioxide]' role='measure' type='quantitative'>
+            </column>
+            <column caption='Volatile.Acidity' datatype='real' name='[volatile.acidity]' role='measure' type='quantitative'>
+            </column>
+          </datasource-dependencies>
+          <filter class='categorical' column='[textscan.42195.543575104166].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:alcohol:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:density:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:chlorides:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:citric.acid:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:fixed.acidity:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:volatile.acidity:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:residual.sugar:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:free.sulfur.dioxide:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:total.sulfur.dioxide:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:pH:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[textscan.42195.543575104166].[avg:sulphates:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <sort class='manual' column='[textscan.42195.543575104166].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:alcohol:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:density:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:chlorides:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:citric.acid:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:fixed.acidity:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:volatile.acidity:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:residual.sugar:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:free.sulfur.dioxide:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:total.sulfur.dioxide:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:pH:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[avg:sulphates:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[sum:alcohol:qk]&quot;</bucket>
+              <bucket>&quot;[textscan.42195.543575104166].[sum:Number of Records:qk]&quot;</bucket>
+            </dictionary>
+          </sort>
+          <sort class='natural' column='[textscan.42195.543575104166].[none:quality:ok]' direction='ASC' />
+          <slices>
+            <column>[textscan.42195.543575104166].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[textscan.42195.543575104166].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.42195.543575104166].[Multiple Values]</rows>
+        <cols>([textscan.42195.543575104166].[:Measure Names] / [textscan.42195.543575104166].[none:quality:ok])</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42195.543575104166].[none:quality:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+            <card pane-specification-id='0' param='[textscan.42195.543575104166].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42195.543575104166].[:Measure Names]</field>
+          <field>[textscan.42195.543575104166].[Multiple Values]</field>
+          <field>[textscan.42195.543575104166].[none:quality:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      ojHw9gRpzwAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 6' width='192'>
+      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
+      YII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
