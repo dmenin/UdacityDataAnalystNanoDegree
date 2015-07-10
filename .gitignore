@@ -4,8 +4,8 @@ ignorethistest.txt
 3_Mongo/UdacityNanoDegreeP2/data/cities.csv
 3_Mongo/UdacityNanoDegreeP2/data/twitter.json
 3_Mongo/UdacityNanoDegreeP2/FinalProject/data_dublin/
-R/data/BigDiamonds.Rda
-R/data/cacert.perm
-R/data/fb_oauth
-R/fb.R
-MachineLearning/PythonProject/data/
+4_R/data/BigDiamonds.Rda
+4_R/data/cacert.perm
+4_R/data/fb_oauth
+4_R/fb.R
+5_MachineLearning/PythonProject/data/
