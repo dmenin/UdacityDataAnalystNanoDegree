@@ -1,9 +1,9 @@
 ignorethistest.txt
 2_IntroDS/turnstile_data_master_with_weather.csv
-Mongo/UdacityNanoDegreeP2/data/chicago_illinois.osm.bz2
-Mongo/UdacityNanoDegreeP2/data/cities.csv
-Mongo/UdacityNanoDegreeP2/data/twitter.json
-Mongo/UdacityNanoDegreeP2/FinalProject/data_dublin/
+3_Mongo/UdacityNanoDegreeP2/data/chicago_illinois.osm.bz2
+3_Mongo/UdacityNanoDegreeP2/data/cities.csv
+3_Mongo/UdacityNanoDegreeP2/data/twitter.json
+3_Mongo/UdacityNanoDegreeP2/FinalProject/data_dublin/
 R/data/BigDiamonds.Rda
 R/data/cacert.perm
 R/data/fb_oauth
