@@ -1,4 +1,4 @@
-setwd('C:/git/nanodegree/R')
+setwd("C:/git/UdacityDataAnalystNanoDegree/4_R/")
 library(ggplot2)
 
 
