@@ -49,54 +49,231 @@ do.call(grid.arrange,c(plots,ncol=2))
 
 
 
-
-
 head(df)
 #remove index
 df[,c("X")] <- list(NULL)
 
 
 
+
+fit_model <- function(variable, data, name)
+{
+  model.lm <- lm(variable ~ quality, data = data) #run the regression
+  s<-summary(model.lm)
+  x<-as.data.frame(s$coefficients[,1]) #get the coeficients from the summary
+  names(x) <- name # name the column
+  rsq <- summary(model.lm)$r.squared #get r-squared
+  x<-rbind(x,rsq)  #and add it to the data frame
+  rownames(x)[8] <-"r-squared"  #name the row
+  x
+}
+
+a <- NULL
+i = 1
+for(n in names(df))
+{  
+  if (n != 'quality') {
+    if (is.null(a)){
+      a<-fit_model(df[,i], df, n)
+    } else {
+      a<-cbind(a,fit_model(df[,i], df, n) )
+    }
+    i = i+1  
+  }
+}
+
+a
+
+#fit_model(df$pH, df, 'pH')
+
+---
+
+
+
+#---------------------------------------------------------------
+
+
 #corrs?
 cor(select(df, -quality))
 pairs(select(df, -quality))
 
-cor(df$free.sulfur.dioxide, df$total.sulfur.dioxide)
+#plotting the 99th percentile to remove one big outlier
+
+lesscorrelated<- ggplot(aes(x = free.sulfur.dioxide, y = pH), data=df) + 
+                  geom_point()+
+                  geom_smooth(method = 'auto', color = 'red')+
+                  xlim(0, quantile(df$free.sulfur.dioxide,0.99)) 
+  
+
+morecorrelated<- ggplot(aes(x = residual.sugar, y = density), data=df) + 
+                geom_point()+ geom_smooth(, color = 'red') +
+                xlim(0, quantile(df$residual.sugar,0.99)) 
+
+grid.arrange(lesscorrelated, morecorrelated, ncol=2)
 
 
 
+#alcohol and residual.sugar: -0.4506312
+#alcohol and chlorides: -0.3601887
+#alcohol and total.sulfur.dioxide: -0.4488921
+#alcohol and density: -0.7801376
 
-ggplot(data= df) +  aes(x = factor(quality), y = fixed.acidity)+
-  stat_summary(aes(fill = factor(quality)), fun.y=mean, geom="bar")+
-  stat_summary(aes(label=round(..y..,2)), fun.y=mean, geom="text", size=6, vjust = -0.5)+
-  geom_smooth(method = "lm", se=FALSE, color="black", aes(group=1), size =2)
 
 
-#http://stats.stackexchange.com/questions/119835/correlation-between-a-nominal-iv-and-a-continuous-dv-variable/124618#124618
-data.df <- data.frame(
-  topic = c(rep(c("Gossip", "Sports", "Weather"), each = 4)),
-  duration  = c(6:9, 2:5, 4:7)
+p1<-ggplot(aes(x =  log10(alcohol), y =log10(residual.sugar) ), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'red')
+
+p2<-ggplot(aes(x =  log10(alcohol), y =log10(chlorides) ), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'blue')  
+
+p3<-ggplot(aes(x =  log10(alcohol), y =log10(density) ), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'orange')  
+
+p4<-ggplot(aes(x =  log10(alcohol), y =log10(total.sulfur.dioxide) ), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'violet')  
+
+grid.arrange(p1,p2,p3,p4, ncol=2)
+  
+  
+
+#total.sulfur.dioxide and residual.sugar: 0.4014393
+#total.sulfur.dioxide and free.sulfur.dioxide: 0.6155010
+#total.sulfur.dioxide and density: 0.5298813
+#total.sulfur.dioxide and alcohol: -0.4488921
+
+  
+p1<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(residual.sugar) ), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'red')
+
+p2<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(free.sulfur.dioxide) ), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'blue')  
+
+p3<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(density) ), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'violet')  
+
+p4<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(alcohol) ), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'orange')  
+
+grid.arrange(p1,p2,p3,p4, ncol=2)
+
+
+density and residual.sugar:  0.8389665
+ggplot(aes(x =  log10(residual.sugar), y = log10(density)), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'red')  
+
+
+
+pH and fixed.acidity:  -0.4258583
+ggplot(aes(x =  log10(pH), y = log10(fixed.acidity)), data=df) + 
+  geom_point() +
+  geom_smooth(method = 'auto', color = 'red')  
+
+
+#3 varialbe analisys
+
+df$rating <- ifelse(df$quality <= 4, 'Bad', 
+                    ifelse(df$quality <= 7, 'Average', 
+                           ifelse(df$quality<=8,'Good', 
+                                  'Excelent'
+                           )
+                    )
 )
-print(data.df)
-boxplot(duration ~ topic, data = data.df, ylab = "Duration of conversation")
 
-model.lm <- lm(duration ~ topic, data = data.df)
-summary(model.lm)
+df$rating <- ordered(df$rating,levels = c('Bad', 'Average', 'Good', 'Excelent'))
 
-
-model.aov <- aov(alcohol ~ quality, data = df)
-
-
-
-
-
-data <- data.frame(id=1:500, quality=sample(3:10,replace=TRUE,size=500))
-
-for(i in 1:9){
-  data[,paste0("outcome_",i)]<-rnorm(500)
-}
+summary(df$density)
+ggplot(data = df, aes(x = density , y = residual.sugar)) +
+  facet_wrap(~rating) +
+  xlim(0.9871, 1) +
+  geom_point( color = df$quality)
 
 
 
 
+ggplot(data = df,
+       aes(x = citric.acid, y = volatile.acidity)) +
+  geom_point(aes(color = factor(quality))) +
+  facet_wrap(~rating) 
 
+
+
+#Multivariate Plots Section
+#alcohol, total.sulfur.dioxide, residual.sugar , density
+
+
+
+#Lets combine all these 4 varialbes in 6 plots
+#we can see bins
+p1<-ggplot(data = subset(df, rating != 'Average'), aes(x = alcohol, y = total.sulfur.dioxide,color = rating)) +  geom_point()
+p2<-ggplot(data = subset(df, rating != 'Average'), aes(x = alcohol, y = residual.sugar,color = rating)) +  geom_point()
+p3<-ggplot(data = subset(df, rating != 'Average'), aes(x = alcohol, y = density,color = rating)) +  geom_point()
+p4<-ggplot(data = subset(df, rating != 'Average'), aes(x = total.sulfur.dioxide, y = residual.sugar,color = rating)) +  geom_point()
+p5<-ggplot(data = subset(df, rating != 'Average'), aes(x = total.sulfur.dioxide, y = density,color = rating)) +  geom_point()
+p6<-ggplot(data = subset(df, rating != 'Average'), aes(x = residual.sugar, y = density,color = rating)) +  geom_point()
+grid.arrange(p1,p2,p3,p4,p5,p6,ncol=3)
+
+
+#melhor esses buckets
+df$alcohol.bucket <- cut(df$alcohol, c(0, 9.5, 10.4, 10.51, 11.4, 15))
+df$total.sulfur.dioxide.bucket <- cut(df$total.sulfur.dioxide, c(0,108,134,138.4,167,440))
+
+
+
+ggplot(aes(y = residual.sugar, x = alcohol), data = df) +
+  geom_point(alpha = 1/2) +
+  facet_wrap(~total.sulfur.dioxide.bucket) +
+  geom_smooth(method = 'loess', formula = y ~ x, size = 0.5) 
+
+
+
+
+
+ggplot(aes(y = free.sulfur.dioxide, x = total.sulfur.dioxide, 
+           color = rating), data = df) +
+  geom_point(alpha = 1/2) +
+  scale_color_brewer(palette = "RdYlBu") +
+  geom_smooth(method = 'loess', formula = y ~ x, size = 0.5) +
+  coord_cartesian(xlim = c(0, 300), ylim = c(0, 100)) +
+  ggtitle("Fig. 35b")
+
+
+
+
+
+
+
+summary(df$total.sulfur.dioxide)
+
+ggplot(df,aes(x=quality,y=volatile.acidity,))+
+  geom_line(stat='summary',fun.y=mean,color="#990000",size=1.2)+
+  geom_line(stat='summary',fun.y=quantile,prob=0.25,linetype=2,color="#990000",size=1)+
+  geom_line(stat='summary',fun.y=quantile,prob=0.75,linetype=2,color="#990000",size=1)+
+  geom_line(stat='summary',fun.y=quantile,prob=0.1,linetype=3,color="#990000")+
+  geom_line(stat='summary',fun.y=quantile,prob=0.9,linetype=3,color="#990000")
+
+
+
+ggplot(aes(y = free.sulfur.dioxide, x = total.sulfur.dioxide, color = quality), data = df) +
+  geom_point(alpha = 1/2) +
+  coord_cartesian(xlim = c(0,300), ylim = c(0,150)) 
+  #scale_colour_gradientn(colours=c("white", "dodgerblue")) +
+  #theme(panel.background = element_rect(fill = '#FFB606', colour = 'black')) +
+  #ggtitle("Fig. 28a")
+
+
+ggplot(aes(y = free.sulfur.dioxide, x = total.sulfur.dioxide, 
+           color = pH.bucket), data = df) +
+  geom_point(alpha = 1/2) +
+  coord_cartesian(xlim = c(0,300), ylim = c(0,150)) +
+  scale_color_brewer(palette = "Blues", "Binned pH") +
+  theme(panel.background = element_rect(fill = '#FFB606', colour = 'black')) +
+  ggtitle("Fig. 28b")

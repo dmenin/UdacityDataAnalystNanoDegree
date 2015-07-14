@@ -1,6 +1,7 @@
+library(plyr)
 library(dplyr)
 library(ggplot2)
-setwd('C:/git/UdacityDataAnalystNanoDegree/R/data')
+setwd('C:/git/UdacityDataAnalystNanoDegree/4_R/data')
 pf <- read.csv('pseudo_facebook.tsv', sep='\t')
 
 
