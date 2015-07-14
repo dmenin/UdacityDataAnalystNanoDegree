@@ -1,1 +1,12 @@
-test
+ReadMe
+===================
+
+* Folders:
+  * _FinalProjects
+	* Completed Final Project Reports
+		* P2: Analysing the NYC Subway Dataset
+		* P3: Data Wrangle OpenStreetMapsData (Dublin)
+  * 2_IntroDS: Introduction to Data Science
+  * 3_Mongo: Data Wrangling with MongoDB and Python
+  * 4_R: Explore and Summarize Data
+  * 5_MachineLearning: Introduction to Machine Learning
