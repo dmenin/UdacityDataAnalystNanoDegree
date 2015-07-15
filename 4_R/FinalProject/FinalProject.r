@@ -1,11 +1,20 @@
-install.packages("sfsmisc")
-library(sfsmisc)
+#install.packages("sfsmisc")
+
 
 setwd("C:/git/UdacityDataAnalystNanoDegree/4_R/FinalProject/")
 df<-read.csv("wineQualityWhites.csv")
 
+df$rating <- ifelse(df$quality <= 5, 'Bad', 
+                    ifelse(df$quality <= 7, 'Average', 
+                           ifelse(df$quality<=8,'Good', 
+                                  'Excelent'
+                           )
+                    )
+)
+
+df$rating <- ordered(df$rating,levels = c('Bad', 'Average', 'Good', 'Excelent'))
+
 df$quality <- as.factor(df$quality)
-head(df)
 
 ###########################################histogram
 ggplot(data=df,aes(x=quality))+
@@ -16,12 +25,16 @@ ggplot(data=df,aes(x=quality))+
 
 
 ##########################################multiple box plots
+
 #head(df)
-library(reshape2 )
+library(plyr)
 library(dplyr)
+library(sfsmisc)
+library(reshape2 )
 library(ggplot2)
 library(gridExtra)
-library(plyr)
+library(sfsmisc)
+
 melt_data <- melt(df,id.vars=c("X","quality"))
 head(melt_data)
 
@@ -31,7 +44,9 @@ plots <- dlply(melt_data,.(variable),function(chunk)
   ggplot(data=chunk, aes(x=factor(quality), y = value)) + geom_boxplot()+  stat_summary(fun.y=mean,geom = 'point', shape = 4) +  labs(y=unique(chunk$variable))
 })
 
-do.call(grid.arrange,c(plots,ncol=3))
+do.call(grid.arrange,c(plots,ncol=2))
+
+df<- df[!df$X == 2782, ]
 
 
 ##########################################multiple GRIDS
@@ -41,11 +56,16 @@ plots <- dlply(melt_data,.(variable),function(chunk)
     stat_summary(aes(fill = factor(quality)), fun.y=mean, geom="bar")+
     stat_summary(aes(label=round(..y..,4)), fun.y=mean, geom="text", size=6, vjust = 1)  +  
     labs(y=unique(chunk$variable)) + theme(legend.position="none") +
-    geom_smooth(method = "lm", se=FALSE, color="black", type='dotted', aes(group=1), size =1)
+    geom_smooth(method = "lm", se=FALSE, color="black", type='dotted', aes(group=1), size =1,lty = 2)
     
 })
 do.call(grid.arrange,c(plots,ncol=2))
 
+# ggplot(data= subset(df, X != 775)) +  aes(x = factor(quality), y = fixed.acidity)+
+#   stat_summary(aes(fill = factor(quality)), fun.y=mean, geom="bar")+
+#   stat_summary(aes(label=round(..y..,4)), fun.y=mean, geom="text", size=6, vjust = 1)  +  
+#   labs(y=unique(df$variable)) + theme(legend.position="none") +
+#   geom_smooth(method = "lm", se=F,aes(group=1), color="black", size =1,lty = 2)
 
 
 
@@ -60,31 +80,31 @@ fit_model <- function(variable, data, name)
 {
   model.lm <- lm(variable ~ quality, data = data) #run the regression
   s<-summary(model.lm)
-  x<-as.data.frame(s$coefficients[,1]) #get the coeficients from the summary
+  x<-as.data.frame(round(s$coefficients[,1],4)) #get the coeficients from the summary
   names(x) <- name # name the column
-  rsq <- summary(model.lm)$r.squared #get r-squared
+  rsq <- round(summary(model.lm)$r.squared,4) #get r-squared
   x<-rbind(x,rsq)  #and add it to the data frame
   rownames(x)[8] <-"r-squared"  #name the row
   x
 }
 
-a <- NULL
+grid <- NULL
 i = 1
 for(n in names(df))
 {  
   if (n != 'quality') {
-    if (is.null(a)){
-      a<-fit_model(df[,i], df, n)
+    if (is.null(grid)){
+      grid<-fit_model(df[,i], df, n)
     } else {
-      a<-cbind(a,fit_model(df[,i], df, n) )
+      grid<-cbind(grid,fit_model(df[,i], df, n) )
     }
     i = i+1  
   }
 }
 
-a
+grid
 
-#fit_model(df$pH, df, 'pH')
+
 
 ---
 
@@ -94,7 +114,8 @@ a
 
 
 #corrs?
-cor(select(df, -quality))
+a<-cor(select(df, -quality))
+write.csv(a, "a.csv")
 pairs(select(df, -quality))
 
 #plotting the 99th percentile to remove one big outlier
@@ -113,12 +134,13 @@ grid.arrange(lesscorrelated, morecorrelated, ncol=2)
 
 
 
+
+--------------------
+
 #alcohol and residual.sugar: -0.4506312
 #alcohol and chlorides: -0.3601887
 #alcohol and total.sulfur.dioxide: -0.4488921
 #alcohol and density: -0.7801376
-
-
 
 p1<-ggplot(aes(x =  log10(alcohol), y =log10(residual.sugar) ), data=df) + 
   geom_point() +
@@ -178,17 +200,16 @@ ggplot(aes(x =  log10(pH), y = log10(fixed.acidity)), data=df) +
   geom_smooth(method = 'auto', color = 'red')  
 
 
+
+
+
+
+
+
+
 #3 varialbe analisys
 
-df$rating <- ifelse(df$quality <= 4, 'Bad', 
-                    ifelse(df$quality <= 7, 'Average', 
-                           ifelse(df$quality<=8,'Good', 
-                                  'Excelent'
-                           )
-                    )
-)
 
-df$rating <- ordered(df$rating,levels = c('Bad', 'Average', 'Good', 'Excelent'))
 
 summary(df$density)
 ggplot(data = df, aes(x = density , y = residual.sugar)) +
@@ -214,12 +235,19 @@ ggplot(data = df,
 #Lets combine all these 4 varialbes in 6 plots
 #we can see bins
 p1<-ggplot(data = subset(df, rating != 'Average'), aes(x = alcohol, y = total.sulfur.dioxide,color = rating)) +  geom_point()
-p2<-ggplot(data = subset(df, rating != 'Average'), aes(x = alcohol, y = residual.sugar,color = rating)) +  geom_point()
+p2<-ggplot(data = subset(df, rating != 'Average'), aes(x = alcohol, y = residual.sugar,color = rating)) +  geom_point() + ylim (0,40)
 p3<-ggplot(data = subset(df, rating != 'Average'), aes(x = alcohol, y = density,color = rating)) +  geom_point()
 p4<-ggplot(data = subset(df, rating != 'Average'), aes(x = total.sulfur.dioxide, y = residual.sugar,color = rating)) +  geom_point()
 p5<-ggplot(data = subset(df, rating != 'Average'), aes(x = total.sulfur.dioxide, y = density,color = rating)) +  geom_point()
 p6<-ggplot(data = subset(df, rating != 'Average'), aes(x = residual.sugar, y = density,color = rating)) +  geom_point()
 grid.arrange(p1,p2,p3,p4,p5,p6,ncol=3)
+
+
+cor.test(df$alcohol, df$quality)
+
+
+
+
 
 
 #melhor esses buckets
@@ -237,13 +265,15 @@ ggplot(aes(y = residual.sugar, x = alcohol), data = df) +
 
 
 
-ggplot(aes(y = free.sulfur.dioxide, x = total.sulfur.dioxide, 
-           color = rating), data = df) +
-  geom_point(alpha = 1/2) +
-  scale_color_brewer(palette = "RdYlBu") +
-  geom_smooth(method = 'loess', formula = y ~ x, size = 0.5) +
-  coord_cartesian(xlim = c(0, 300), ylim = c(0, 100)) +
-  ggtitle("Fig. 35b")
+
+
+
+ggplot(aes(x = alcohol, y = total.sulfur.dioxide , color = rating), data = df)        + geom_point() 
+ggplot(aes(x = alcohol, y = residual.sugar , color = rating), data =  df)             + geom_point()   + ylim (0,40) 
+ggplot(aes(x = alcohol, y = density , color = rating), data = df)                     + geom_point() 
+ggplot(aes(x = total.sulfur.dioxide, y = residual.sugar , color = rating), data = df) + geom_point() 
+ggplot(aes(x = total.sulfur.dioxide, y = density , color = rating), data = df)        + geom_point() 
+ggplot(aes(x = residual.sugar, y = density , color = rating), data = df)              + geom_point() 
 
 
 
@@ -277,3 +307,14 @@ ggplot(aes(y = free.sulfur.dioxide, x = total.sulfur.dioxide,
   scale_color_brewer(palette = "Blues", "Binned pH") +
   theme(panel.background = element_rect(fill = '#FFB606', colour = 'black')) +
   ggtitle("Fig. 28b")
+
+
+
+
+
+
+
+
+
+
+
