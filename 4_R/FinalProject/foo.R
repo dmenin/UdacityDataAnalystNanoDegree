@@ -18,12 +18,17 @@ library(caret)
 # i <- varImp(m, scale=FALSE)
 # print(i)
 # plot(i)
-
+head(df)
 
 2)
+df[,c("quality")] <- list(NULL)
+df[,c("rating")] <- list(NULL)
+df[,c("X")] <- list(NULL)
 control <- trainControl(method="repeatedcv", number=10, repeats=3)
 # train the model
-model <- train(quality~., data=df, method="lvq", preProcess="scale", trControl=control)
+model <- train(quality2 ~ fixed.acidity + volatile.acidity + citric.acid + residual.sugar + chlorides + free.sulfur.dioxide + total.sulfur.dioxide + density + pH  + sulphates  + alcohol 
+               , data=df, method="lvq", preProcess="scale", trControl=control)
+
 # estimate variable importance
 importance <- varImp(model, scale=FALSE)
 # summarize importance
@@ -33,6 +38,24 @@ plot(importance)
 
 # as.data.frame(importance)
 # i <- as.data.frame(importance$importance)
+df$quality2 <- as.factor(df$quality2)
+df$quality2 <-df$quality
+
+df$quality2 <- ifelse(df$quality2 == 6, 7,df$quality2)
+                      
+table(df$quality)
+table(df$quality2)
+table(df$rating)
+
+df$rating <- ifelse(df$quality <= 5, 'Bad', 
+                    ifelse(df$quality <= 7, 'Average', 
+                           ifelse(df$quality<=8,'Good', 
+                                  'Excelent'
+                           )
+                    )
+)
+
+
 
 
 ------------------------

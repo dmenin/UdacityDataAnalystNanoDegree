@@ -137,10 +137,10 @@ grid.arrange(lesscorrelated, morecorrelated, ncol=2)
 
 --------------------
 
-#alcohol and residual.sugar: -0.4506312
-#alcohol and chlorides: -0.3601887
-#alcohol and total.sulfur.dioxide: -0.4488921
-#alcohol and density: -0.7801376
+#alcohol and residual.sugar: -0.459462363
+#alcohol and chlorides: -0.360538622
+#alcohol and total.sulfur.dioxide: -0.449046773
+#alcohol and density: -0.801887063
 
 p1<-ggplot(aes(x =  log10(alcohol), y =log10(residual.sugar) ), data=df) + 
   geom_point() +
@@ -162,10 +162,10 @@ grid.arrange(p1,p2,p3,p4, ncol=2)
   
   
 
-#total.sulfur.dioxide and residual.sugar: 0.4014393
-#total.sulfur.dioxide and free.sulfur.dioxide: 0.6155010
-#total.sulfur.dioxide and density: 0.5298813
-#total.sulfur.dioxide and alcohol: -0.4488921
+#total.sulfur.dioxide and residual.sugar: 0.405959945
+#total.sulfur.dioxide and free.sulfur.dioxide: 0.615846431
+#total.sulfur.dioxide and density: 0.540959086
+#total.sulfur.dioxide and alcohol: -0.449046773
 
   
 p1<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(residual.sugar) ), data=df) + 
@@ -187,17 +187,19 @@ p4<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(alcohol) ), data=df) +
 grid.arrange(p1,p2,p3,p4, ncol=2)
 
 
-density and residual.sugar:  0.8389665
+density and residual.sugar: 0.833969102
 ggplot(aes(x =  log10(residual.sugar), y = log10(density)), data=df) + 
   geom_point() +
   geom_smooth(method = 'auto', color = 'red')  
 
 
 
-pH and fixed.acidity:  -0.4258583
+pH and fixed.acidity:  -0.426296256
 ggplot(aes(x =  log10(pH), y = log10(fixed.acidity)), data=df) + 
   geom_point() +
   geom_smooth(method = 'auto', color = 'red')  
+
+
 
 
 
