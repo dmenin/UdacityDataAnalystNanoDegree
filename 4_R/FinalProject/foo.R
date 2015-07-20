@@ -72,8 +72,9 @@ print(results)
 plot(results, type=c("g", "o"))
 
 
+head(df[,1:11])
+
+names(df)
 
 
-
-
-
+residual.sugar

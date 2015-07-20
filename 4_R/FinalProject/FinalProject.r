@@ -1,5 +1,6 @@
 #install.packages("sfsmisc")
-
+#install.packages ("corrplot")
+library (corrplot)
 
 setwd("C:/git/UdacityDataAnalystNanoDegree/4_R/FinalProject/")
 df<-read.csv("wineQualityWhites.csv")
@@ -25,7 +26,7 @@ ggplot(data=df,aes(x=quality))+
 
 
 ##########################################multiple box plots
-
+?findCorrelation
 #head(df)
 library(plyr)
 library(dplyr)
@@ -34,6 +35,7 @@ library(reshape2 )
 library(ggplot2)
 library(gridExtra)
 library(sfsmisc)
+library (corrplot)
 
 melt_data <- melt(df,id.vars=c("X","quality"))
 head(melt_data)
@@ -114,7 +116,23 @@ grid
 
 
 #corrs?
+
+w.matrix <- head(df)[2:13])
+
+mcor <- cor(w.matrix)
+
+mcor <-round(mcor, digits=2)
+
+?corrplot
+corrplot(a, method="shade",
+         shade.col=NA, 
+         tl.col="black", 
+         tl.srt=45)
+
+
+
 a<-cor(select(df, -quality))
+a2 <-round(a, digits=2)
 write.csv(a, "a.csv")
 pairs(select(df, -quality))
 
