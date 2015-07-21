@@ -9,90 +9,102 @@ library(ggplot2)
 library(gridExtra)
 library (corrplot)
 library(caret)
-
-df$quality <- as.factor(df$quality)
-
+library(tree)
 
 df<- df[!df$X == 2782, ]
 df[,c("X")] <- list(NULL)
 
+df$rating <- ifelse(df$quality <= 5, 'Bad', 
+                    ifelse(df$quality <= 7, 'Average', 
+                           ifelse(df$quality<=8,'Good', 
+                                  'Excellent'
+                           )
+                    )
+)
+
+df$rating <- ordered(df$rating,levels = c('Bad', 'Average', 'Good', 'Excellent'))
+
+df$quality <- as.factor(df$quality)
+
 ```
 
 
-####Feature Selection:
-<br>
-
 <p style='text-align: justify;'>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now that we've looked at how the variables are correlated with one another, let's try to find out how we can select a few of them to infer the quality of the Wine. To do that, I will run 3 different analysis.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let's start the multivariable plotting by combining together all of the 5 variables we selected on the previous step. In order to make visualization more clear, and since our main question is what makes a wine "Good" (or bad), I will removed the "average" wines from the plots. Since we only have 5 Excellent wines, for the same aesthetic reason, I will consider all the Excellent wines as Good.
 </p>
 
-<p style='text-align: justify;'>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First I'll use the findCorrelation function from the caret package to point out redundant features. That works from the principle that data can contain attributes that are highly correlated with each other and many methods perform better if highly correlated attributes are removed.
-</p>
+```{r, warning=FALSE, fig.width = 10, fig.height= 10, message=FALSE}
+df2 <- subset(df, rating != 'Average')
+df2[df2$rating == 'Excellent',]$rating <- 'Good'
+
+p1<-ggplot(data = df2, aes(x = alcohol, y = volatile.acidity,color = rating)) +  geom_point() 
+p2<-ggplot(data = df2, aes(x = alcohol, y = free.sulfur.dioxide,color = rating)) +  geom_point()  
+p3<-ggplot(data = df2, aes(x = alcohol, y = chlorides,color = rating)) +  geom_point()  
+p4<-ggplot(data = df2, aes(x = alcohol, y = pH,color = rating)) +  geom_point()  
+
+p5<-ggplot(data = df2, aes(x = volatile.acidity, y = free.sulfur.dioxide, color = rating)) +  geom_point() 
+p6<-ggplot(data = df2, aes(x = volatile.acidity, y = chlorides, color = rating)) +  geom_point()
+p7<-ggplot(data = df2, aes(x = volatile.acidity, y = pH, color = rating)) +  geom_point()
+
+p8<-ggplot(data = df2, aes(x = free.sulfur.dioxide, y = chlorides, color = rating)) +  geom_point()
+p9<-ggplot(data = df2, aes(x = free.sulfur.dioxide, y = pH, color = rating)) +  geom_point()
+
+p10<-ggplot(data = df2, aes(x = chlorides, y = pH, color = rating)) +  geom_point()
+
+grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,ncol=2)
+```
+
 
 <p style='text-align: justify;'>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The function searches through a correlation matrix and returns a vector of integers corresponding to columns to remove to reduce pair-wise correlations. If two variables have a high correlation, the function looks at the mean absolute correlation of each variable and removes the variable with the largest mean absolute correlation.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Looking at the 4 plots where alcohol appears we can clearly see that good wines are clustered together, for example, the majority of good wines seem to be on the 12-14 alcohol \ 0 to 100 free sulphur dioxide.  Can't seem to find such a strong clustering relationship on any of the other variable combination.
 </p>
 
-<br>
+
+##Final Plots and Summary
+
+###PLot 1 
+
+**Relashionship between Density and Residual Sugar Colored By amount of alcohol**
 ```{r}
-correlationMatrix <- cor(df[,1:11])
-highlyCorrelated <- findCorrelation(correlationMatrix, cutoff=0.8, verbose = FALSE)
-print (highlyCorrelated) 
+df$alcoholbucket <- cut(df$alcohol, c(8, 10, 12, 14.2))
+
+ggplot(aes(x = density, y = residual.sugar, color = alcoholbucket), data = df) +
+  geom_point() +
+  geom_smooth(aes(group = 1), method = 'loess', formula = y ~ x, size = 0.5) +
+  ggtitle("Relashionship between Density and Residual Sugar Colored By amount of alcohol") +
+  theme(plot.title = element_text(face = "bold")) +
+  xlim(c(0.9871, 1.001)) +
+  xlab("density (g / cm^3)") +  
+  ylim(c(0.6, 25)) +  
+  ylab("Residual Sugar (g / dm^3)") +
+  scale_color_brewer(palette = "Set2", name = "Alcohol Bucket (% by volume)")
 ```
-
-
 <br>
-<p style='text-align: justify;'>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; So what this function is telling is that column 8 (density) is highly correlated with others and should not be consider as a feature. It actually makes sense, if you look at the correlation graph above, you'll see that density is highly correlated with residual sugar and total sulphur dioxide, so as log as we keepo these last two in the model, we should get a similar result.
-</p>
-
-<p style='text-align: justify;'>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Second, lets rank the feature by importance. 
-The importance of features can be estimated from data by building a [Learning Vector Quantization (LVQ) model] (https://en.wikipedia.org/wiki/Learning_vector_quantization).
-**Important: This code is not being evaluated because it takes around 5 minutes to run. I will instead print an image with the output: **
-</p>
 <br>
 
-
-```{r, eval=FALSE}
-control <- trainControl(method="repeatedcv", number=10, repeats=3)
-# train the model
-model <- train(quality~., data=df, method="lvq", preProcess="scale", trControl=control)
-# estimate variable importance
-importance <- varImp(model, scale=FALSE)
-# plot importance
-plot(importance)
+###PLot 2
+**Quality Trend Lines over volatile.acidity and alcohol for Good and Bad Wines**
+```{r}
+ggplot(df2, aes(alcohol,volatile.acidity)) +
+  geom_point(aes(color=factor(rating))) + 
+  stat_smooth(method = "lm", se=F, aes(color=factor(rating),group=rating), alpha=1) +
+  ggtitle("Quality Trend Lines over volatile.acidity and alcohol for Good and Bad Wines")+
+  theme(plot.title = element_text(face = "bold")) +
+  xlab("Alcohol (% by volume)") +  
+  ylab("Density (g / cm^3)") 
 ```
+  
+  
+  
+<!--
+```{r}
+fit <- tree(rating ~ alcohol + volatile.acidity + free.sulfur.dioxide + chlorides +  pH, data=df, method="class")
+plot(fit)
+text(fit, pretty=0, cex=0.6)
 
-<p style='text-align: justify;'>
-The varImp is then used to estimate the variable importance, which is printed and plotted.
-</p>
-
-
-![Feature Importance](importance.png).
-
-
-<p style='text-align: justify;'>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To finalize, I used a technique called Automatic feature selection. This method can be used to  identify those attributes that are and are not required to build an accurate model.A popular automatic method for feature selection provided by the caret R package is called Recursive Feature Elimination or RFE.
-More details on this function can be found [here] (http://topepo.github.io/caret/featureselection.html).
-</P>
-
-<p style='text-align: justify;'>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Random Forest algorithm is used on each iteration to evaluate the model. The algorithm is configured to explore all possible subsets of the attributes. 
-**Important: This is also a very expensive code to run so I will again print an image with the output: **
-
-```{r, eval=FALSE}
-# define the control using a random forest selection function
-control <- rfeControl(functions=rfFuncs, method="cv", number=10)
-# run the RFE algorithm
-results <- rfe(df[,1:11], df[,12], rfeControl=control)
-# summarize the results
-print(results)
 ```
+?tree
 
-?rfe
-![Feature Importance](rfe.png).
+table(df$rating)
 
-
-**Conclusion:**
+-->
