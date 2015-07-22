@@ -9,7 +9,8 @@ library(ggplot2)
 library(gridExtra)
 library (corrplot)
 library(caret)
-library(tree)
+library(rpart)
+library(rpart.plot)
 
 df<- df[!df$X == 2782, ]
 df[,c("X")] <- list(NULL)
@@ -62,28 +63,85 @@ grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,ncol=2)
 
 ##Final Plots and Summary
 
+<br/>
+<br/>
+
+<p style='text-align: justify;'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this section, 3 plots were selected and polished to help answer the main question. In case someone is not interested in the Exploratory phase, this is the section the person should be focused on.
+</p>
+
+<br/>
+
 ###PLot 1 
 
-**Relashionship between Density and Residual Sugar Colored By amount of alcohol**
-```{r}
+<br/>
+
+<p style='text-align: justify;'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the first plot, I chose to analyse the  relationship between Density and Sugar and how it relates with amount of Alcohol and quality.  
+</p>
+<p style='text-align: justify;'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The plot was dived in two, on the left hand side I coloured the point based on the amount of alcohol and on the right hand side on wine quality (I'm also not plotting "Average" Wines to really see the gap between "Good" and "Bad" and marked all 5 "Excellent" as "good" because it's hard to spot 5 isolated points on this graph).
+</p>
+
+<br/>
+
+
+```{r, warning=FALSE, fig.width = 12, fig.height= 5, message=FALSE}
 df$alcoholbucket <- cut(df$alcohol, c(8, 10, 12, 14.2))
 
-ggplot(aes(x = density, y = residual.sugar, color = alcoholbucket), data = df) +
+p1 <- ggplot(aes(x = density, y = residual.sugar, color = alcoholbucket), data = df) +
   geom_point() +
   geom_smooth(aes(group = 1), method = 'loess', formula = y ~ x, size = 0.5) +
-  ggtitle("Relashionship between Density and Residual Sugar Colored By amount of alcohol") +
+  ggtitle("Density and Residual Sugar \n Colored by Alcohol") +
   theme(plot.title = element_text(face = "bold")) +
   xlim(c(0.9871, 1.001)) +
-  xlab("density (g / cm^3)") +  
+  xlab("Density (g / cm^3)") +  
   ylim(c(0.6, 25)) +  
   ylab("Residual Sugar (g / dm^3)") +
+  theme(legend.position = "bottom")  +
   scale_color_brewer(palette = "Set2", name = "Alcohol Bucket (% by volume)")
+
+df3 <- subset(df, rating != 'Average')
+#df3 <- df
+df3[df3$rating == 'Excellent',]$rating <- 'Good'
+
+p2 <- ggplot(aes(x = density, y = residual.sugar, color = rating), data = df3) +
+  geom_point() +
+  geom_smooth(aes(group = 1), method = 'loess', formula = y ~ x, size = 0.5) +
+  ggtitle("Density and Residual Sugar \n Colored by Quality") +
+  theme(plot.title = element_text(face = "bold")) +
+  xlim(c(0.9871, 1.001)) +
+  xlab("Density (g / cm^3)") +  
+  ylim(c(0.6, 25)) +  
+  ylab("Residual Sugar (g / dm^3)") +
+  theme(legend.position = "bottom")  +
+  scale_color_brewer(palette = "Set1", name = "Quality")
+
+grid.arrange(p1,p2,ncol=2)
 ```
+
 <br>
+
+
+<p style='text-align: justify;'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a very interesting plot because you can really see:
+
+1. How density and sugar are positively correlated (with a regression line);
+2. How percentage of alcohol buckets well with the above two variables; We can clearly see that wines with less alcohol tend to be more dense (located on the right side of the graph). And if we look at the graph on the right, we can see that they tend to be worst wines.
+3. The better wine seem to have less sugar, be less dense and have 12% to 14% of alcohol by volume.
+</p>
+
+
+
 <br>
 
 ###PLot 2
-**Quality Trend Lines over volatile.acidity and alcohol for Good and Bad Wines**
+
+<p style='text-align: justify;'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On this second plot I am analysing the impact of the relationship between Alcohol and Density on the Wine's quality. Again, to avoid over plotting I am ignoring "Average Wines". 
+</p>
+<br>
+
 ```{r}
 ggplot(df2, aes(alcohol,volatile.acidity)) +
   geom_point(aes(color=factor(rating))) + 
@@ -91,20 +149,54 @@ ggplot(df2, aes(alcohol,volatile.acidity)) +
   ggtitle("Quality Trend Lines over volatile.acidity and alcohol for Good and Bad Wines")+
   theme(plot.title = element_text(face = "bold")) +
   xlab("Alcohol (% by volume)") +  
-  ylab("Density (g / cm^3)") 
+  ylab("Density (g / cm^3)") +
+  geom_hline(yintercept = 0.12, color="black", alpha = 1) +
+  geom_hline(yintercept = 0.66, color="black", alpha = 1) +
+  geom_vline(xintercept = 10, color="black", alpha = 1) +
+  geom_vline(xintercept = 14.2, color="black", alpha = 1)
 ```
   
   
-  
-<!--
+<p style='text-align: justify;'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On this report we can see that:
+
+1. It's clear that good Wines are clustered together on the bottom right part of the graph (with very few exceptions)  confirming what we saw on the previous graph that better wines tend to have between 12% and 14% of alcohol, but also seeing that their density stays on the 0.12 to 0.66 range. Four vertical line were added to indicate this grouping. 
+2. The trend lines added indicate that Wine quality tends to increase based on alcohol with a bigger slope than bad wines tend to decrease. Of course, we don't expect this to hold true for ever, otherwise we'd acquire the perfect wine just by adding more and more alcohol. 
+3. In fat 12% of alcohol seem to be a limiting factor on Wine quality meaning that anything below 10% is hardly going to be a good Wine.
+</p>
+
+<br>
+
+###PLot 3
+
 ```{r}
-fit <- tree(rating ~ alcohol + volatile.acidity + free.sulfur.dioxide + chlorides +  pH, data=df, method="class")
-plot(fit)
-text(fit, pretty=0, cex=0.6)
+c<-rpart.control(minsplit = 20, minbucket = 7, cp = 0.01, 
+                 maxcompete = 4, maxsurrogate = 5, usesurrogate = 2, xval = 10,
+                 surrogatestyle = 0, maxdepth = 30)
+
+fit  <- rpart(rating ~ alcohol + volatile.acidity + free.sulfur.dioxide + chlorides +  pH, data=df2, control=c)
+
+cols <- ifelse(fit$frame$yval == 1, "darkred", "green4")
+
+prp(fit, main="Decision Tree on Wine Quality",
+    extra=8,             #  the probability of the fitted class.
+    branch=.5,           # change angle of branch lines
+    faclen=0,            # do not abbreviate factor levels
+    shadow.col="gray",   # shadows under the leaves
+    branch.lty=3,        # draw branches using dotted lines    
+    split.cex=1.2,       # make the split text larger than the node text
+    split.prefix="is ",  # put "is " before split text
+    split.suffix="?",    # put "?" after split text
+    
+    col=cols, border.col=cols,   # green if Good
+    split.box.col="lightgray",   # lightgray split boxes (default is white)
+    split.border.col="darkgray", # darkgray border on split boxes
+    split.round=.5)   
 
 ```
-?tree
 
-table(df$rating)
-
--->
+nrow(
+summary(
+subset(df2, alcohol<12  & !alcohol<11 & !residual.sugar<7   )$density
+)
+)
