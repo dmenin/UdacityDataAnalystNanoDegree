@@ -1,3 +1,4 @@
+
 describe(df)
 install.packages("truehist")
 library(truehist)
@@ -16,6 +17,13 @@ mtext("Citric Acid", side=1, outer=F, line=2, cex=0.8)
 
 par(mfrow=c(1,5), oma = c(1,1,0,0) + 0.1,  mar = c(3,3,1,1) + 0.1)
 boxplot(fixed.acidity, col="slategray2", pch=19)
+
+
+melt_data <- melt(df[ ,!(colnames(df) == "rating")],id.vars=c("X","quality"))
+
+
+
+
 
 mtext("Fixed Acidity", cex=0.8, side=1, line=2)
 boxplot(volatile.acidity, col="slategray2", pch=19)

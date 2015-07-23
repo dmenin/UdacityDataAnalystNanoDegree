@@ -35,8 +35,12 @@ library(rpart.plot)
 
 
 
-# plot(fit)
-# text(fit)
+plot(fit)
+text(fit)
+
+prp(fit)
+
+
 # plot(fit, main="Conditional Inference Tree for Kyphosis")
 # prp(fit)  				# Will plot the tree
 # prp(fit,varlen=3)				# Shorten variable names
@@ -57,11 +61,15 @@ c<-rpart.control(minsplit = 20, minbucket = 7, cp = 0.01,
 table(df2$rating)
 df2$rating <- ordered(df2$rating,levels = c('Bad', 'Good'))
 
+?rpart
+
 fit  <- rpart(rating ~ ., data=df2, control=c)
 
 cols <- ifelse(fit$frame$yval == 1, "darkred", "green4")
 
-prp(fit, main="Decision Tree on Wine Quality",
+prp(fit, 
+    #main="Decision Tree on Wine Quality",
+    digits=6,
     extra=1,             #  the probability of the fitted class.
     branch=.5,           # change angle of branch lines
     faclen=0,            # do not abbreviate factor levels
@@ -73,5 +81,10 @@ prp(fit, main="Decision Tree on Wine Quality",
     
     col=cols, border.col=cols,   # green if Good
     split.box.col="lightgray",   # lightgray split boxes (default is white)
-    split.border.col="darkgray", # darkgray border on split boxes
-    split.round=.5)  
+    split.border.col="darkgray" # darkgray border on split boxes
+    )  
+
+
+table(
+  subset(df2, !alcohol<11.75  & !free.sulfur.dioxide<20.5 & alcohol<12.05 & !pH<3.22)$rating
+)
