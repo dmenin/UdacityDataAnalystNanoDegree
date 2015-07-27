@@ -89,7 +89,8 @@ df$rating <- ifelse(df$quality <= 5, 'Bad',
                     )
 )
 
-df$rating <- ordered(df$rating,levels = c('Bad', 'Average', 'Good', 'Excellent'))
+df$rating <- ordered(df$rating,levels = 
+                       c('Bad', 'Average', 'Good', 'Excellent'))
 df$quality <- as.factor(df$quality)
 ```
 
@@ -103,11 +104,15 @@ My second step was to see how many observation of each wine quality do we have b
 ```{r, echo=FALSE}
 p1 <- ggplot(data=df,aes(x=quality))+
   geom_bar(aes(y = (..count..)),fill="orange")+
-  geom_text(aes(y = (..count..),label =   ifelse((..count..)==0,"",scales::percent((..count..)/sum(..count..)))), stat="bin",colour="darkgreen")
+  geom_text(aes(y = (..count..),label =   ifelse((..count..)==0,"",
+        scales::percent((..count..)/sum(..count..)))), 
+        stat="bin",colour="darkgreen")
 
 p2 <- ggplot(data=df,aes(x=rating))+
   geom_bar(aes(y = (..count..)),fill="orange")+
-  geom_text(aes(y = (..count..),label =   ifelse((..count..)==0,"",scales::percent((..count..)/sum(..count..)))), stat="bin",colour="darkgreen")
+  geom_text(aes(y = (..count..),label =   ifelse((..count..)==0,"",
+        scales::percent((..count..)/sum(..count..)))), 
+        stat="bin",colour="darkgreen")
 
 grid.arrange (p1,p2, ncol=2)
 ```
@@ -140,7 +145,9 @@ melt_data <- melt(df[ ,!(colnames(df) == "rating")],id.vars=c("X","quality"))
 
 plots <- dlply(melt_data,.(variable),function(chunk)
 {
-  ggplot(data=chunk, aes(x=factor(quality), y = value)) + geom_boxplot()+  stat_summary(fun.y=mean,geom = 'point', shape = 4) +  labs(y=unique(chunk$variable))
+  ggplot(data=chunk, aes(x=factor(quality), y = value)) + geom_boxplot() + 
+    stat_summary(fun.y=mean,geom = 'point', shape = 4) + 
+    labs(y=unique(chunk$variable))
 })
 
 do.call(grid.arrange,c(plots,ncol=2))
@@ -185,9 +192,11 @@ plots <- dlply(melt_data,.(variable),function(chunk)
 {
   ggplot(data= chunk) +  aes(x = factor(quality), y = value)+
     stat_summary(aes(fill = factor(quality)), fun.y=mean, geom="bar")+
-    stat_summary(aes(label=round(..y..,2)), fun.y=mean, geom="text", size=6, vjust = 1)  +  
+    stat_summary(aes(label=round(..y..,2)), fun.y=mean, 
+                 geom="text", size=6, vjust = 1)  +  
     labs(y=unique(chunk$variable)) + theme(legend.position="none") +
-    geom_smooth(method = "lm", se=FALSE, color="black", type='dotted', aes(group=1), size =1,lty = 2)
+    geom_smooth(method = "lm", se=FALSE, color="black", 
+                type='dotted', aes(group=1), size =1,lty = 2)
     
 })
 do.call(grid.arrange,c(plots,ncol=2))
@@ -259,7 +268,8 @@ mean((subset(df, quality == 3))$alcohol)
 mean((subset(df, quality == 4))$alcohol)
 
 #The coeficinet for Q4 is the mean differnece from Q3
-mean((subset(df, quality == 4))$alcohol)-mean((subset(df, quality == 3))$alcohol)
+mean((subset(df, quality == 4))$alcohol)-
+  mean((subset(df, quality == 3))$alcohol)
 ```
 
 
@@ -331,14 +341,16 @@ Actually, alcohol and density are the two variables that individually explain mo
 
 
 ```{r, fig.width = 8, fig.height = 8, warning=FALSE}
-col1 <- colorRampPalette(c("#00007F","blue","#007FFF","cyan","white", "cyan", "#007FFF", "blue","#00007F"))
+col1 <- colorRampPalette(c("#00007F","blue","#007FFF",
+            "cyan","white", "cyan", "#007FFF", "blue","#00007F"))
 c<-cor(select(df, -quality, -rating))
 c2 <-round(c, digits=2)
 
 
-corrplot(c2, method="color", col=col1(20), cl.length=21,order = "AOE", addCoef.col="grey", tl.srt=45,tl.col="black")
-corrplot(c,add=TRUE, type="lower", method="number",order="AOE", col="black",
-         diag=FALSE,tl.pos="n", cl.pos="n", tl.srt=45)
+corrplot(c2, method="color", col=col1(20), cl.length=21,order = "AOE", 
+         addCoef.col="grey", tl.srt=45,tl.col="black")
+corrplot(c,add=TRUE, type="lower", method="number",order="AOE",
+         col="black",         diag=FALSE,tl.pos="n", cl.pos="n", tl.srt=45)
 
 ```
 
@@ -409,8 +421,8 @@ p3<-ggplot(aes(x =  log10(alcohol), y =log10(density) ), data=df) +
   geom_point() +
   geom_smooth(method = 'auto', color = 'orange')  
 
-p4<-ggplot(aes(x =  log10(alcohol), y =log10(total.sulfur.dioxide) ), data=df) + 
-  geom_point() +
+p4<-ggplot(aes(x =  log10(alcohol), y =log10(total.sulfur.dioxide) ),
+           data=df) + geom_point() +
   geom_smooth(method = 'auto', color = 'violet')  
 
 grid.arrange(p1,p2,p3,p4, ncol=2)
@@ -419,20 +431,18 @@ grid.arrange(p1,p2,p3,p4, ncol=2)
 <br>
 **With Total Sulfur Dioxide:**
 ```{r, fig.width = 10, fig.height = 10, warning=FALSE, message=FALSE}
-p1<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(residual.sugar) ), data=df) + 
-  geom_point() +
-  geom_smooth(method = 'auto', color = 'red')
+p1<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(residual.sugar) ),
+      data=df) + geom_point() +geom_smooth(method = 'auto', color = 'red')
 
-p2<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(free.sulfur.dioxide) ), data=df) + 
-  geom_point() +
-  geom_smooth(method = 'auto', color = 'blue')  
+p2<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(free.sulfur.dioxide) ), 
+      data=df) +  geom_point() +geom_smooth(method = 'auto', color = 'blue')  
 
-p3<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(density) ), data=df) + 
-  geom_point() +
-  geom_smooth(method = 'auto', color = 'violet')  
+p3<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(density) ), 
+      data=df) +   geom_point() +  
+      geom_smooth(method = 'auto', color = 'violet')  
 
-p4<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(alcohol) ), data=df) + 
-  geom_point() +
+p4<-ggplot(aes(x =  log10(total.sulfur.dioxide), y =log10(alcohol) ), 
+      data=df) + geom_point() +
   geom_smooth(method = 'auto', color = 'orange')  
 
 grid.arrange(p1,p2,p3,p4, ncol=2)
@@ -488,7 +498,8 @@ ggplot(aes(x =  log10(pH), y = log10(fixed.acidity)), data=df) +
 <br>
 ```{r}
 correlationMatrix <- cor(df[,1:11])
-highlyCorrelated <- findCorrelation(correlationMatrix, cutoff=0.8, verbose = FALSE)
+highlyCorrelated <- findCorrelation(correlationMatrix, 
+                                    cutoff=0.8, verbose = FALSE)
 print (highlyCorrelated) 
 ```
 
@@ -509,7 +520,8 @@ print (highlyCorrelated)
 ```{r, eval=FALSE}
 control <- trainControl(method="repeatedcv", number=10, repeats=3)
 # train the model
-model <- train(quality~., data=df, method="lvq", preProcess="scale", trControl=control)
+model <- train(quality~., data=df, method="lvq", 
+               preProcess="scale", trControl=control)
 # estimate variable importance
 importance <- varImp(model, scale=FALSE)
 # plot importance
@@ -567,19 +579,29 @@ print(results)
 df2 <- subset(df, rating != 'Average')
 df2[df2$rating == 'Excellent',]$rating <- 'Good'
 
-p1<-ggplot(data = df2, aes(x = alcohol, y = volatile.acidity,color = rating)) +  geom_point() 
-p2<-ggplot(data = df2, aes(x = alcohol, y = free.sulfur.dioxide,color = rating)) +  geom_point()  
-p3<-ggplot(data = df2, aes(x = alcohol, y = chlorides,color = rating)) +  geom_point()  
-p4<-ggplot(data = df2, aes(x = alcohol, y = pH,color = rating)) +  geom_point()  
+p1<-ggplot(data = df2, aes(x = alcohol, y = volatile.acidity,
+                           color = rating)) +  geom_point() 
+p2<-ggplot(data = df2, aes(x = alcohol, y = free.sulfur.dioxide,
+                           color = rating)) +  geom_point()  
+p3<-ggplot(data = df2, aes(x = alcohol, y = chlorides,
+                           color = rating)) +  geom_point()  
+p4<-ggplot(data = df2, aes(x = alcohol, y = pH,
+                           color = rating)) +  geom_point()  
 
-p5<-ggplot(data = df2, aes(x = volatile.acidity, y = free.sulfur.dioxide, color = rating)) +  geom_point() 
-p6<-ggplot(data = df2, aes(x = volatile.acidity, y = chlorides, color = rating)) +  geom_point()
-p7<-ggplot(data = df2, aes(x = volatile.acidity, y = pH, color = rating)) +  geom_point()
+p5<-ggplot(data = df2, aes(x = volatile.acidity, y = free.sulfur.dioxide, 
+                           color = rating)) +  geom_point() 
+p6<-ggplot(data = df2, aes(x = volatile.acidity, y = chlorides, 
+                           color = rating)) +  geom_point()
+p7<-ggplot(data = df2, aes(x = volatile.acidity, y = pH, 
+                           color = rating)) +  geom_point()
 
-p8<-ggplot(data = df2, aes(x = free.sulfur.dioxide, y = chlorides, color = rating)) +  geom_point()
-p9<-ggplot(data = df2, aes(x = free.sulfur.dioxide, y = pH, color = rating)) +  geom_point()
+p8<-ggplot(data = df2, aes(x = free.sulfur.dioxide, y = chlorides,
+                           color = rating)) +  geom_point()
+p9<-ggplot(data = df2, aes(x = free.sulfur.dioxide, y = pH, 
+                           color = rating)) +  geom_point()
 
-p10<-ggplot(data = df2, aes(x = chlorides, y = pH, color = rating)) +  geom_point()
+p10<-ggplot(data = df2, aes(x = chlorides, y = pH, 
+                            color = rating)) +  geom_point()
 
 grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,ncol=2)
 ```
@@ -619,8 +641,8 @@ On this section, the R code wont be displayed.
 ```{r, echo=FALSE, warning=FALSE, fig.width = 12, fig.height= 5, message=FALSE}
 df$alcoholbucket <- cut(df$alcohol, c(8, 10, 12, 14.2))
 
-p1 <- ggplot(aes(x = density, y = residual.sugar, color = alcoholbucket), data = df) +
-  geom_point() +
+p1 <- ggplot(aes(x = density, y = residual.sugar, color = alcoholbucket),
+             data = df) +  geom_point() +
   geom_smooth(aes(group = 1), method = 'loess', formula = y ~ x, size = 0.5) +
   ggtitle("Density and Residual Sugar \n Colored by Alcohol") +
   theme(plot.title = element_text(face = "bold")) +
@@ -675,7 +697,8 @@ grid.arrange(p1,p2,ncol=2)
 ```{r, echo=FALSE}
 ggplot(df2, aes(alcohol,volatile.acidity)) +
   geom_point(aes(color=factor(rating))) + 
-  stat_smooth(method = "lm", se=F, aes(color=factor(rating),group=rating), alpha=1) +
+  stat_smooth(method = "lm", se=F, aes(color=factor(rating),
+            group=rating), alpha=1) +
   ggtitle("Quality Trend Lines over \n volatile.acidity and alcohol for Good and Bad Wines")+
   theme(plot.title = element_text(face = "bold")) +
   xlab("Alcohol (% by volume)") +  
@@ -708,10 +731,11 @@ The numbers you see on the leaves are how many observations fell under that leav
 df2$rating <- ordered(df2$rating,levels = c('Bad', 'Good'))
 
 c<-rpart.control(minsplit = 20, minbucket = 7, cp = 0.01, 
-                 maxcompete = 4, maxsurrogate = 5, usesurrogate = 2, xval = 10,
-                 surrogatestyle = 0, maxdepth = 30)
+                 maxcompete = 4, maxsurrogate = 5, usesurrogate = 2, 
+                 xval = 10, surrogatestyle = 0, maxdepth = 30)
 
-fit  <- rpart(rating ~ alcohol + volatile.acidity + free.sulfur.dioxide + chlorides +  pH, data=df2, control=c)
+fit  <- rpart(rating ~ alcohol + volatile.acidity + 
+                free.sulfur.dioxide + chlorides +  pH, data=df2, control=c)
 
 cols <- ifelse(fit$frame$yval == 1, "darkred", "green4")
 
@@ -737,7 +761,10 @@ prp(fit, main="Decision Tree on Wine Quality (plot 3a)",
 
 ```{r}
 table(
-  subset(df2, !alcohol<11.75  & !free.sulfur.dioxide<20.5 & alcohol<12.05 & !pH<3.22)$rating
+  subset(df2, !alcohol<11.75  & 
+           !free.sulfur.dioxide<20.5 & 
+           alcohol<12.05 & 
+           !pH<3.22)$rating
 )
 ```
 
