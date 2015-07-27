@@ -1,3 +1,6 @@
+---
+output: pdf_document
+---
 ![](Udacity.png)
 
 
@@ -101,7 +104,7 @@ My second step was to see how many observation of each wine quality do we have b
 </p>
 
 
-```{r, echo=FALSE}
+```{r}
 p1 <- ggplot(data=df,aes(x=quality))+
   geom_bar(aes(y = (..count..)),fill="orange")+
   geom_text(aes(y = (..count..),label =   ifelse((..count..)==0,"",
@@ -627,7 +630,7 @@ On this section, the R code wont be displayed.
 
 <br/>
 
-###PLot 1 
+###Plot 1 
 
 <br/>
 
@@ -687,7 +690,7 @@ grid.arrange(p1,p2,ncol=2)
 
 <br>
 
-###PLot 2
+###Plot 2
 
 <p style='text-align: justify;'>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On this second plot I am analysing the impact of the relationship between Alcohol and Density on the Wine's quality. Again, to avoid over plotting I am ignoring "Average Wines". 
@@ -720,7 +723,7 @@ ggplot(df2, aes(alcohol,volatile.acidity)) +
 
 <br>
 
-###PLot 3
+###Plot 3
 
 <p style='text-align: justify;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My last plot aims to visually explains what affects the quality of a wine. To do it, I built a tree using the rpart package (Recursive Partitioning and Regression Trees) and the 5 features I selected as more important (called plot 3a).
 The numbers you see on the leaves are how many observations fell under that leave on each classification (first Bad then Good).
