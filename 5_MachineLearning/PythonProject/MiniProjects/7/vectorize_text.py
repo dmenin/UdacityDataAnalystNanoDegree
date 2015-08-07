@@ -45,7 +45,16 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             email = open(path, "r")
 
             words = parseOutText(email)
-            replace= ["sara", "shackleton", "chris", "germani"]#, "sshacklensf", "cgermannsf", "houectect"]
+            #for mini project 7, this line:
+            #replace= ["sara", "shackleton", "chris", "germani"]
+
+            #for mini project 8, this line:
+            #first:
+            #replace= ["sara", "shackleton", "chris", "germani", "sshacklensf"]
+            #second:
+            replace= ["sara", "shackleton", "chris", "germani", "sshacklensf","cgermannsf"]
+
+
 
             for w in replace:
                 words = words.replace(w, "")

@@ -1,4 +1,5 @@
 #feature_selection
+#uses as inout, the ouptup from mini project 7 (vectorize_text.py
 #!/usr/bin/python
 
 import pickle
@@ -42,7 +43,8 @@ pred = clf.predict(features_test)
 
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(pred, labels_test)
-#print accuracy
+print "Accuracy:"
+print accuracy
 
 
 importances = clf.feature_importances_
@@ -55,4 +57,12 @@ for i in range(10):
     print "{} feature no.{} ({})".format(i+1,indices[i],importances[indices[i]])
 
 print clf.feature_importances_[33614]
+print vectorizer.get_feature_names()[33614]
 
+
+print clf.feature_importances_[14343]
+print vectorizer.get_feature_names()[14343]
+
+
+print clf.feature_importances_[21323]
+print vectorizer.get_feature_names()[21323]
