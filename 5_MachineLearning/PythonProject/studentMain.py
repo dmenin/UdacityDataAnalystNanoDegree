@@ -20,13 +20,11 @@ def classifySVM(features_train, labels_train):
     return clf.fit(features_train, labels_train)
 
 def classifyDT(features_train, labels_train):
-
     from sklearn import tree
     clf = tree.DecisionTreeClassifier(min_samples_split = 50)
     return clf.fit(features_train, labels_train)
+
 #http://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
-#criterion : string, optional (default=”gini”)
-#The function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain.
 
 
 
