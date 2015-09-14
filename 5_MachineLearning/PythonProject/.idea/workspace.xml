@@ -23,14 +23,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="poi_id.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="poi_id.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FinalProject/poi_id.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.81778425" vertical-offset="1071" max-vertical-offset="2227">
-              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="775" max-vertical-offset="2312">
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
                 <element signature="e#19#29#0" expanded="true" />
+                <marker date="1442235060731" expanded="true" signature="2333:2459" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tabulate.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Anaconda/Lib/site-packages/tabulate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="9666" max-vertical-offset="18513">
+              <caret line="595" column="0" selection-start-line="595" selection-start-column="0" selection-end-line="595" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tester.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FinalProject/tester.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3309038" vertical-offset="181" max-vertical-offset="1632">
+              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -38,7 +59,7 @@
       <file leaf-file-name="studentMain.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studentMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="412" max-vertical-offset="986">
+            <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="986">
               <caret line="42" column="16" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="16" />
               <folding />
             </state>
@@ -195,25 +216,7 @@
       <recent name="C:\git\UdacityDataAnalystNanoDegree\MachineLearning\PythonProject\MiniProjects\tools" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.poi_id">
-    <configuration default="false" name="eigenfaces" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MiniProjects/9" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="PythonProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MiniProjects/9/eigenfaces.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.tester">
     <configuration default="false" name="validate_poi" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -281,6 +284,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PythonProject" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/studentMain.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="tester" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FinalProject" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PythonProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FinalProject/tester.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
@@ -408,19 +429,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.eigenfaces" />
-      <item index="1" class="java.lang.String" itemvalue="Python.validate_poi" />
-      <item index="2" class="java.lang.String" itemvalue="Python.evaluate_poi_identifier" />
-      <item index="3" class="java.lang.String" itemvalue="Python.poi_id" />
-      <item index="4" class="java.lang.String" itemvalue="Python.studentMain" />
+      <item index="0" class="java.lang.String" itemvalue="Python.validate_poi" />
+      <item index="1" class="java.lang.String" itemvalue="Python.evaluate_poi_identifier" />
+      <item index="2" class="java.lang.String" itemvalue="Python.poi_id" />
+      <item index="3" class="java.lang.String" itemvalue="Python.studentMain" />
+      <item index="4" class="java.lang.String" itemvalue="Python.tester" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.poi_id" />
-        <item index="1" class="java.lang.String" itemvalue="Python.studentMain" />
-        <item index="2" class="java.lang.String" itemvalue="Python.evaluate_poi_identifier" />
-        <item index="3" class="java.lang.String" itemvalue="Python.validate_poi" />
-        <item index="4" class="java.lang.String" itemvalue="Python.eigenfaces" />
+        <item index="0" class="java.lang.String" itemvalue="Python.tester" />
+        <item index="1" class="java.lang.String" itemvalue="Python.poi_id" />
+        <item index="2" class="java.lang.String" itemvalue="Python.studentMain" />
+        <item index="3" class="java.lang.String" itemvalue="Python.evaluate_poi_identifier" />
+        <item index="4" class="java.lang.String" itemvalue="Python.validate_poi" />
       </list>
     </recent_temporary>
   </component>
@@ -437,7 +458,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -481,13 +502,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/numpy/core/_methods.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="2193">
-          <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjects/tools/email_preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1173">
@@ -670,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/cross_validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2" vertical-offset="29611" max-vertical-offset="30651">
-          <caret line="1809" column="53" selection-start-line="1809" selection-start-column="53" selection-end-line="1809" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjects/11/evaluate_poi_identifier.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.049038462" vertical-offset="0" max-vertical-offset="1040">
@@ -734,22 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/tester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42983565" vertical-offset="0" max-vertical-offset="1632">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjects/tools/feature_format.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.556797" vertical-offset="1741" max-vertical-offset="2278">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -787,26 +778,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Anaconda/Lib/site-packages/tabulate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3326316" vertical-offset="9736" max-vertical-offset="18513">
-          <caret line="586" column="0" selection-start-line="586" selection-start-column="0" selection-end-line="586" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjects/tools/email_preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21473685" vertical-offset="0" max-vertical-offset="1071">
           <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/tree/tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3326316" vertical-offset="3242" max-vertical-offset="14297">
-          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -843,13 +818,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/tree/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5801749" vertical-offset="5382" max-vertical-offset="14297">
+          <caret line="360" column="68" selection-start-line="360" selection-start-column="68" selection-end-line="360" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda/Lib/site-packages/pandas/core/indexing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33236152" vertical-offset="18506" max-vertical-offset="30124">
+          <caret line="1111" column="0" selection-start-line="1111" selection-start-column="0" selection-end-line="1111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda/Lib/site-packages/tabulate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9666" max-vertical-offset="18513">
+          <caret line="595" column="0" selection-start-line="595" selection-start-column="0" selection-end-line="595" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FinalProject/poi_id.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81778425" vertical-offset="1071" max-vertical-offset="2227">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="775" max-vertical-offset="2312">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="e#19#29#0" expanded="true" />
+            <marker date="1442235060731" expanded="true" signature="2333:2459" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjects/tools/feature_format.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33236152" vertical-offset="1540" max-vertical-offset="2278">
+          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/cross_validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33236152" vertical-offset="16398" max-vertical-offset="30651">
+          <caret line="1000" column="8" selection-start-line="1000" selection-start-column="8" selection-end-line="1000" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/tester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3309038" vertical-offset="181" max-vertical-offset="1632">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

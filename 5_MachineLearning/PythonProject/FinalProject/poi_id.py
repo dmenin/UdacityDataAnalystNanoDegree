@@ -18,10 +18,11 @@ from tester import test_classifier, dump_classifier_and_data
 #features_list = ['poi','salary'] # You will need to use more features
 
 features_list = ['poi', 'bonus','deferral_payments','deferred_income','director_fees','exercised_stock_options',
-                 'expenses', 'from_messages','from_poi_to_this_person','from_this_person_to_poi','loan_advances',
+                 'expenses', 'from_messages','loan_advances',
                  'long_term_incentive','other','restricted_stock','restricted_stock_deferred','salary',
-                 'shared_receipt_with_poi','to_messages','total_payments', 'total_stock_value']
+                 'to_messages','total_payments', 'total_stock_value']
 #removed 'email_address' feature
+#removed: from_poi_to_this_person, from_this_person_to_poi, shared_receipt_with_poi
 
 def pprint_df(df, n):
     print tabulate(df.head(n), headers='keys', tablefmt='psql', floatfmt=".1f")
@@ -51,15 +52,16 @@ print ""
 pprint_df(df,16)
 
 labels = df['poi']
-#features = df[features_list[1:]] # all expect for poi
+print type(labels)
+features = df[features_list[1:]] # all expect for poi
 
 
-collist = ['from_poi_to_this_person', 'from_this_person_to_poi']
-features = df[collist]
+#collist = ['from_poi_to_this_person', 'from_this_person_to_poi']
+#features = df[collist]
 #features = df[1:]
 #print tabulate(features, headers='keys', tablefmt='psql', floatfmt=".1f")
 
-pprint_df(features,16)
+
 
 
 
@@ -68,25 +70,28 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn import svm
 from sklearn.metrics import accuracy_score
 
-clf = tree.DecisionTreeClassifier(min_samples_split = 3)
+clf = tree.DecisionTreeClassifier(min_samples_split = 4)
 clf.fit(features, labels)
 pred = clf.predict(features)
 acc = accuracy_score(pred, labels)
-print acc
-prettyPicture(clf, features, labels)
+print type(pred)
 
-clf = GaussianNB()
-clf.fit(features, labels)
-pred = clf.predict(features)
-acc = accuracy_score(pred, labels)
-print acc
+df['result'] = pred
+#prettyPicture(clf, features, labels)
+pprint_df(df[['poi', 'result']],999)
+
+# clf = GaussianNB()
+# clf.fit(features, labels)
+# pred = clf.predict(features)
+# acc = accuracy_score(pred, labels)
+# print acc
 
 
-clf = svm.SVC(kernel='rbf', C=10000)
-clf.fit(features, labels)
-pred = clf.predict(features)
-acc = accuracy_score(pred, labels)
-print acc
+# clf = svm.SVC(kernel='rbf', C=10000)
+# clf.fit(features, labels)
+# pred = clf.predict(features)
+# acc = accuracy_score(pred, labels)
+# print acc
 
 
 #output_image("test.png", "png", open("test.png", "rb").read())
@@ -122,4 +127,4 @@ print acc
 ### Dump your classifier, dataset, and features_list so
 ### anyone can run/check your results.
 
-#dump_classifier_and_data(clf, my_dataset, features_list)
+dump_classifier_and_data(clf, my_dataset, features_list)
