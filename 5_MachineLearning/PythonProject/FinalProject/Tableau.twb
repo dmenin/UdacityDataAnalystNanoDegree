@@ -1,0 +1,1472 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='win' version='9.0' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 9000.15.0720.1008                                -->
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='9.0'>
+      <aliases enabled='yes' />
+      <column caption='Measure' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;director_fees&quot;'>
+        <calculation class='tableau' formula='&quot;director_fees&quot;' />
+        <members>
+          <member value='&quot;bonus&quot;' />
+          <member value='&quot;deferral_payments&quot;' />
+          <member value='&quot;deferred_income&quot;' />
+          <member value='&quot;director_fees&quot;' />
+          <member value='&quot;exercised_stock_options&quot;' />
+          <member value='&quot;expenses&quot;' />
+          <member value='&quot;from_messages&quot;' />
+          <member value='&quot;loan_advances&quot;' />
+          <member value='&quot;long_term_incentive&quot;' />
+          <member value='&quot;other&quot;' />
+          <member value='&quot;restricted_stock&quot;' />
+          <member value='&quot;restricted_stock_deferred&quot;' />
+          <member value='&quot;salary&quot;' />
+          <member value='&quot;to_messages&quot;' />
+          <member value='&quot;total_payments&quot;' />
+          <member value='&quot;total_stock_value&quot;' />
+          <member value='&quot;bonusNorm&quot;' />
+          <member value='&quot;deferral_paymentsNorm&quot;' />
+          <member value='&quot;deferred_incomeNorm&quot;' />
+          <member value='&quot;director_feesNorm&quot;' />
+          <member value='&quot;exercised_stock_optionsNorm&quot;' />
+          <member value='&quot;expensesNorm&quot;' />
+          <member value='&quot;from_messagesNorm&quot;' />
+          <member value='&quot;loan_advancesNorm&quot;' />
+          <member value='&quot;long_term_incentiveNorm&quot;' />
+          <member value='&quot;otherNorm&quot;' />
+          <member value='&quot;restricted_stockNorm&quot;' />
+          <member value='&quot;restricted_stock_deferredNorm&quot;' />
+          <member value='&quot;salaryNorm&quot;' />
+          <member value='&quot;to_messagesNorm&quot;' />
+          <member value='&quot;total_paymentsNorm&quot;' />
+          <member value='&quot;total_stock_valueNorm&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='poi' inline='true' name='textscan.42262.415948182868' version='9.0'>
+      <connection class='textscan' directory='C:/git/UdacityDataAnalystNanoDegree/5_MachineLearning/PythonProject/FinalProject' filename='poi.csv' password='' server=''>
+        <relation name='poi#csv' table='[poi#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='integer' name='Index' ordinal='0' />
+            <column datatype='integer' name='poi' ordinal='1' />
+            <column datatype='integer' name='bonus' ordinal='2' />
+            <column datatype='integer' name='deferral_payments' ordinal='3' />
+            <column datatype='integer' name='deferred_income' ordinal='4' />
+            <column datatype='integer' name='director_fees' ordinal='5' />
+            <column datatype='integer' name='exercised_stock_options' ordinal='6' />
+            <column datatype='integer' name='expenses' ordinal='7' />
+            <column datatype='integer' name='from_messages' ordinal='8' />
+            <column datatype='integer' name='loan_advances' ordinal='9' />
+            <column datatype='integer' name='long_term_incentive' ordinal='10' />
+            <column datatype='integer' name='other' ordinal='11' />
+            <column datatype='integer' name='restricted_stock' ordinal='12' />
+            <column datatype='integer' name='restricted_stock_deferred' ordinal='13' />
+            <column datatype='integer' name='salary' ordinal='14' />
+            <column datatype='integer' name='to_messages' ordinal='15' />
+            <column datatype='integer' name='total_payments' ordinal='16' />
+            <column datatype='integer' name='total_stock_value' ordinal='17' />
+            <column datatype='real' name='bonusNorm' ordinal='18' />
+            <column datatype='real' name='deferral_paymentsNorm' ordinal='19' />
+            <column datatype='real' name='deferred_incomeNorm' ordinal='20' />
+            <column datatype='real' name='director_feesNorm' ordinal='21' />
+            <column datatype='real' name='exercised_stock_optionsNorm' ordinal='22' />
+            <column datatype='real' name='expensesNorm' ordinal='23' />
+            <column datatype='real' name='from_messagesNorm' ordinal='24' />
+            <column datatype='real' name='loan_advancesNorm' ordinal='25' />
+            <column datatype='real' name='long_term_incentiveNorm' ordinal='26' />
+            <column datatype='real' name='otherNorm' ordinal='27' />
+            <column datatype='real' name='restricted_stockNorm' ordinal='28' />
+            <column datatype='real' name='restricted_stock_deferredNorm' ordinal='29' />
+            <column datatype='real' name='salaryNorm' ordinal='30' />
+            <column datatype='real' name='to_messagesNorm' ordinal='31' />
+            <column datatype='real' name='total_paymentsNorm' ordinal='32' />
+            <column datatype='real' name='total_stock_valueNorm' ordinal='33' />
+            <column datatype='string' name='F35' ordinal='34' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Index</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Index]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>Index</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>poi</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[poi]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>poi</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bonus</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[bonus]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>bonus</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deferral_payments</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[deferral_payments]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>deferral_payments</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deferred_income</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[deferred_income]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>deferred_income</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>director_fees</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[director_fees]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>director_fees</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>exercised_stock_options</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[exercised_stock_options]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>exercised_stock_options</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expenses</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[expenses]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>expenses</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>from_messages</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[from_messages]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>from_messages</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>loan_advances</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[loan_advances]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>loan_advances</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>long_term_incentive</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[long_term_incentive]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>long_term_incentive</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>other</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[other]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>other</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>restricted_stock</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[restricted_stock]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>restricted_stock</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>restricted_stock_deferred</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[restricted_stock_deferred]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>restricted_stock_deferred</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>salary</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[salary]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>salary</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>to_messages</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[to_messages]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>to_messages</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_payments</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_payments]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>total_payments</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_stock_value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_stock_value]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>total_stock_value</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bonusNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[bonusNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>bonusNorm</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deferral_paymentsNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[deferral_paymentsNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>deferral_paymentsNorm</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deferred_incomeNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[deferred_incomeNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>deferred_incomeNorm</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>director_feesNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[director_feesNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>director_feesNorm</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>exercised_stock_optionsNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[exercised_stock_optionsNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>exercised_stock_optionsNorm</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expensesNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[expensesNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>expensesNorm</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>from_messagesNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[from_messagesNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>from_messagesNorm</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>loan_advancesNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[loan_advancesNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>loan_advancesNorm</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>long_term_incentiveNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[long_term_incentiveNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>long_term_incentiveNorm</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>otherNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[otherNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>otherNorm</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>restricted_stockNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[restricted_stockNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>restricted_stockNorm</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>restricted_stock_deferredNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[restricted_stock_deferredNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>restricted_stock_deferredNorm</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>salaryNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[salaryNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>salaryNorm</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>to_messagesNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[to_messagesNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>to_messagesNorm</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_paymentsNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_paymentsNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>total_paymentsNorm</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_stock_valueNorm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_stock_valueNorm]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>total_stock_valueNorm</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F35</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F35]</local-name>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias>F35</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name></remote-name>
+            <remote-type>0</remote-type>
+            <parent-name>[poi#csv]</parent-name>
+            <remote-alias></remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='_ReportValue' datatype='real' name='[Calculation_1520915131516118]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if [Parameters].[Parameter 1] = &apos;bonus&apos; then [bonus]  &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_payments&apos; then [deferral_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_income&apos; then [deferred_income] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_fees&apos; then [director_fees] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_options&apos; then [exercised_stock_options] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expenses&apos; then [expenses] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messages&apos; then [from_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advances&apos; then [loan_advances] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentive&apos; then [long_term_incentive] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;other&apos; then [other] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock&apos; then [restricted_stock] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferred&apos; then [restricted_stock_deferred] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salary&apos; then [salary] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messages&apos; then [to_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_payments&apos; then [total_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_value&apos; then [total_stock_value] &#13;&#10;&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
+      </column>
+      <column aggregation='Sum' caption='Show' datatype='integer' name='[Calculation_9370915182806399]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='if [Calculation_1520915131516118] != 0 Then 1 else 0 end' />
+      </column>
+      <column datatype='string' hidden='true' name='[F35]' role='dimension' type='nominal'>
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[Index]' role='dimension' type='ordinal'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Bonus' datatype='integer' name='[bonus]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Deferral Payments' datatype='integer' name='[deferral_payments]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Deferred Income' datatype='integer' name='[deferred_income]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Director Fees' datatype='integer' name='[director_fees]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Exercised Stock Options' datatype='integer' name='[exercised_stock_options]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Expenses' datatype='integer' name='[expenses]' role='measure' type='quantitative'>
+      </column>
+      <column caption='From Messages' datatype='integer' name='[from_messages]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Loan Advances' datatype='integer' name='[loan_advances]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Long Term Incentive' datatype='integer' name='[long_term_incentive]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Other' datatype='integer' name='[other]' role='measure' type='quantitative'>
+      </column>
+      <column aggregation='Sum' caption='Poi' datatype='integer' name='[poi]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Restricted Stock' datatype='integer' name='[restricted_stock]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Restricted Stock Deferred' datatype='integer' name='[restricted_stock_deferred]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Salary' datatype='integer' name='[salary]' role='measure' type='quantitative'>
+      </column>
+      <column caption='To Messages' datatype='integer' name='[to_messages]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Total Payments' datatype='integer' name='[total_payments]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Total Stock Value' datatype='integer' name='[total_stock_value]' role='measure' type='quantitative'>
+      </column>
+      <column-instance column='[Index]' derivation='None' name='[none:Index:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[poi]' derivation='None' name='[none:poi:ok]' pivot='key' type='ordinal' />
+      <group hidden='true' name='[Exclusions (Index,Poi)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Index:ok]' />
+          <groupfilter function='level-members' level='[none:poi:ok]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.20197' measure-ordering='alphabetic' measure-percentage='0.770443' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:poi:ok]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>0</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>1</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Reino Unido&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Measure' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;director_fees&quot;'>
+          <calculation class='tableau' formula='&quot;director_fees&quot;' />
+          <members>
+            <member value='&quot;bonus&quot;' />
+            <member value='&quot;deferral_payments&quot;' />
+            <member value='&quot;deferred_income&quot;' />
+            <member value='&quot;director_fees&quot;' />
+            <member value='&quot;exercised_stock_options&quot;' />
+            <member value='&quot;expenses&quot;' />
+            <member value='&quot;from_messages&quot;' />
+            <member value='&quot;loan_advances&quot;' />
+            <member value='&quot;long_term_incentive&quot;' />
+            <member value='&quot;other&quot;' />
+            <member value='&quot;restricted_stock&quot;' />
+            <member value='&quot;restricted_stock_deferred&quot;' />
+            <member value='&quot;salary&quot;' />
+            <member value='&quot;to_messages&quot;' />
+            <member value='&quot;total_payments&quot;' />
+            <member value='&quot;total_stock_value&quot;' />
+            <member value='&quot;bonusNorm&quot;' />
+            <member value='&quot;deferral_paymentsNorm&quot;' />
+            <member value='&quot;deferred_incomeNorm&quot;' />
+            <member value='&quot;director_feesNorm&quot;' />
+            <member value='&quot;exercised_stock_optionsNorm&quot;' />
+            <member value='&quot;expensesNorm&quot;' />
+            <member value='&quot;from_messagesNorm&quot;' />
+            <member value='&quot;loan_advancesNorm&quot;' />
+            <member value='&quot;long_term_incentiveNorm&quot;' />
+            <member value='&quot;otherNorm&quot;' />
+            <member value='&quot;restricted_stockNorm&quot;' />
+            <member value='&quot;restricted_stock_deferredNorm&quot;' />
+            <member value='&quot;salaryNorm&quot;' />
+            <member value='&quot;to_messagesNorm&quot;' />
+            <member value='&quot;total_paymentsNorm&quot;' />
+            <member value='&quot;total_stock_valueNorm&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='poi' name='textscan.42262.415948182868' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42262.415948182868'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[poi]' derivation='None' name='[none:poi:ok]' pivot='key' type='ordinal' />
+            <column aggregation='Sum' caption='Poi' datatype='integer' name='[poi]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='236' />
+            <format attr='height' value='215' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[textscan.42262.415948182868].[none:poi:ok]' />
+              <size column='[textscan.42262.415948182868].[sum:Number of Records:qk]' />
+              <text column='[textscan.42262.415948182868].[sum:Number of Records:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='poi' name='textscan.42262.415948182868' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42262.415948182868'>
+            <column caption='_ReportValue' datatype='real' name='[Calculation_1520915131516118]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Parameters].[Parameter 1] = &apos;bonus&apos; then [bonus]  &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_payments&apos; then [deferral_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_income&apos; then [deferred_income] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_fees&apos; then [director_fees] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_options&apos; then [exercised_stock_options] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expenses&apos; then [expenses] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messages&apos; then [from_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advances&apos; then [loan_advances] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentive&apos; then [long_term_incentive] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;other&apos; then [other] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock&apos; then [restricted_stock] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferred&apos; then [restricted_stock_deferred] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salary&apos; then [salary] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messages&apos; then [to_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_payments&apos; then [total_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_value&apos; then [total_stock_value] &#13;&#10;&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
+            </column>
+            <column aggregation='Sum' caption='Show' datatype='integer' name='[Calculation_9370915182806399]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='if [Calculation_1520915131516118] != 0 Then 1 else 0 end' />
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Index]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[Calculation_9370915182806399]' derivation='None' name='[none:Calculation_9370915182806399:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Index]' derivation='None' name='[none:Index:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[poi]' derivation='None' name='[none:poi:ok]' pivot='key' type='ordinal' />
+            <column aggregation='Sum' caption='Poi' datatype='integer' name='[poi]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[Calculation_1520915131516118]' derivation='Sum' name='[sum:Calculation_1520915131516118:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]'>
+            <groupfilter function='member' level='[none:Calculation_9370915182806399:ok]' member='1' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[textscan.42262.415948182868].[none:Index:ok]' filter-group='3'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Index:ok]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:Index:ok]' member='126' />
+                <groupfilter function='member' level='[none:Index:ok]' member='129' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <sort class='computed' column='[textscan.42262.415948182868].[none:Index:ok]' direction='DESC' using='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]'>
+          </sort>
+          <slices>
+            <column>[textscan.42262.415948182868].[none:Index:ok]</column>
+            <column>[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' scope='rows' value='' />
+            <format attr='subtitle' class='0' field='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' scope='rows' value='true' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='text-align' id='refline0' value='right' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='reverse-palette' id='refline0' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[textscan.42262.415948182868].[none:poi:ok]' />
+            </encodings>
+            <reference-line axis-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' enable-instant-analytics='true' fill-above='false' fill-below='false' formula='quantiles' id='refline0' label-type='value' scope='per-pane' symmetric='true' tile-count='4' value-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' z-order='1' />
+            <reference-line axis-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' enable-instant-analytics='true' formula='median' id='refline1' label-type='automatic' scope='per-pane' value-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' z-order='2' />
+          </pane>
+        </panes>
+        <rows>[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]</rows>
+        <cols>[textscan.42262.415948182868].[none:Index:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='poi' name='textscan.42262.415948182868' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42262.415948182868'>
+            <column caption='_ReportValue' datatype='real' name='[Calculation_1520915131516118]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Parameters].[Parameter 1] = &apos;bonus&apos; then [bonus]  &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_payments&apos; then [deferral_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_income&apos; then [deferred_income] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_fees&apos; then [director_fees] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_options&apos; then [exercised_stock_options] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expenses&apos; then [expenses] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messages&apos; then [from_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advances&apos; then [loan_advances] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentive&apos; then [long_term_incentive] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;other&apos; then [other] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock&apos; then [restricted_stock] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferred&apos; then [restricted_stock_deferred] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salary&apos; then [salary] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messages&apos; then [to_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_payments&apos; then [total_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_value&apos; then [total_stock_value] &#13;&#10;&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Index]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[Index]' derivation='Attribute' name='[attr:Index:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1520915131516118]' derivation='Sum' name='[sum:Calculation_1520915131516118:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <tooltip column='[textscan.42262.415948182868].[attr:Index:qk]' />
+            </encodings>
+            <reference-line axis-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' scope='per-cell' symmetric='false' value-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]</rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='poi' name='textscan.42262.415948182868' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42262.415948182868'>
+            <column aggregation='Sum' datatype='integer' name='[Index]' role='dimension' type='ordinal'>
+            </column>
+            <column caption='Exercised Stock Options' datatype='integer' name='[exercised_stock_options]' role='measure' type='quantitative'>
+            </column>
+            <column-instance column='[Index]' derivation='None' name='[none:Index:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[poi]' derivation='None' name='[none:poi:ok]' pivot='key' type='ordinal' />
+            <column aggregation='Sum' caption='Poi' datatype='integer' name='[poi]' role='dimension' type='ordinal'>
+            </column>
+            <column caption='Restricted Stock' datatype='integer' name='[restricted_stock]' role='measure' type='quantitative'>
+            </column>
+            <column-instance column='[exercised_stock_options]' derivation='Sum' name='[sum:exercised_stock_options:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[restricted_stock]' derivation='Sum' name='[sum:restricted_stock:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[textscan.42262.415948182868].[none:Index:ok]' filter-group='3'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Index:ok]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:Index:ok]' member='126' />
+                <groupfilter function='member' level='[none:Index:ok]' member='129' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[textscan.42262.415948182868].[none:Index:ok]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[textscan.42262.415948182868].[none:poi:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/circle' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.42262.415948182868].[sum:exercised_stock_options:qk]</rows>
+        <cols>[textscan.42262.415948182868].[sum:restricted_stock:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style>
+      </style>
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='6' param='horz' type='layout-flow' w='100000' x='0' y='0'>
+            <zone h='100000' id='1' param='horz' type='layout-flow' w='79800' x='0' y='0'>
+              <zone h='100000' id='3' param='vert' type='layout-flow' w='79800' x='0' y='0'>
+                <zone fixed-size='626' h='79750' id='4' is-fixed='true' name='Sheet 2' show-title='true' w='79800' x='0' y='0'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                </zone>
+              </zone>
+            </zone>
+            <zone fixed-size='202' h='100000' id='5' is-fixed='true' param='vert' type='layout-flow' w='20200' x='79800' y='0'>
+              <zone h='8375' id='7' name='Sheet 2' pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' w='20200' x='79800' y='0'>
+              </zone>
+              <zone h='6375' id='8' param='[Parameters].[Parameter 1]' type='paramctrl' w='20200' x='79800' y='8375'>
+              </zone>
+            </zone>
+          </zone>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' />
+            <card pane-specification-id='0' param='[textscan.42262.415948182868].[sum:Number of Records:qk]' type='size' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42262.415948182868].[none:poi:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='270'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]</field>
+          <field>[textscan.42262.415948182868].[none:Index:ok]</field>
+          <field>[textscan.42262.415948182868].[none:poi:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42262.415948182868].[none:Index:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42262.415948182868].[none:poi:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='dashboard' maximized='0' name='Dashboard 1'>
+      <zones>
+        <zone name='Sheet 2'>
+          <viewpoint>
+            <zoom type='entire-view' />
+          </viewpoint>
+          <highlight>
+            <color-one-way>
+              <field>[textscan.42262.415948182868].[none:poi:ok]</field>
+            </color-one-way>
+          </highlight>
+        </zone>
+        <zone name='Sheet 2' pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' />
+        <zone mode='compact' name='' param='[Parameters].[Parameter 1]' type='paramctrl' />
+      </zones>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 3' width='116'>
+      iVBORw0KGgoAAAANSUhEUgAAAHQAAADACAIAAABao9ATAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAFcElEQVR4nO3cf0jcdRzH8fepnOmIuU1d7ZQWOLOGU+9mbpxaNvCPFsSmXGgJVxu12mbR
+      WBb9kUJQeJDm7Mcg3Q0GNw62kaF/bMlIzZuZQv6oc25onrf09DjC9Ez67vrDX2WOanxf51mv
+      x3/f7/fuw8enX798//GtCQQCQhhha72B/zLGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgVi
+      XCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYF
+      YlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlygiLXewN1wOp1rvYV/ZF3GFZGUlJS1
+      3sLf42MBiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGB
+      GBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGBGBdovf4fmrpu
+      BwIXukZbBydzdsQWGBLCNBpVlmVcuR0IHLJ+e3XAIyIN391q6h2rM+9WpS/osTA3cPZ4TefC
+      wVSPtcxcbDKVHKu87FJERBRXQ7m52GQylRx+u6bVLSLuxsoKa4vLv7SC4rlmrTh2unOVxVV2
+      oWt0vuy8qwOei91uVVYGxJ0b+/rjNyoaxxcOlR5bVb++3Gq31RZpbfXNPhG/4/wXMS/UnrPb
+      ag9v7W3sGhORuYnxb87Xt/oWvuV3nK37atjzq/rb+4vWwckVZ1quT6iysvpx3VfsfWlvHs1e
+      PA7f9eIZyzPbtaIoikRER98j4v5xaOce42athG/ck50xMuwSEZENRmNkq8MrIiL+Loc3NSNW
+      9c0Fl/pxdftLXzLep11x1n3p5HNHPhvP258WJeLzToaFh89f2Hq/zjU6/1cYna6PcHR4RcTf
+      2ebJ2puo+t5WlbNj5S8xNzlOlZWD9SqmO2Cx20495amqbvbd8UMxhkxxdHjF39k+kp66bfmC
+      88/U3VqBISHvofilwydS4g/qdaqsHMy3hfCNRmPqR51Dkr8ldsbvF4kSkfGf3ImZiz/LljT9
+      bHVLf0TPiPHZJOld+uaKAQDq9g3TaOrMuy92u1uuT+Qmxx3U69R6FcPfuf42S8n7LVMiosz2
+      9g1m7HpYHkxOudnd/bMiyuz3vT/oEpfvUV1q+nS79cqwIT0JvrE/CNNoCg0JNUUZheq95Eow
+      7tyo7CMnb7x7vLh2RqIfefqtE9lRIvp9j52zvFz04W8SGb+v9D2dyOK7T1KWcfrzL7PNO5dP
+      rV+aQCCw1nv415xOJyeF/N8xLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEu
+      EOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIx
+      LhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuUBAGZSquy5WvmotNpmJz2elr
+      HkVCbFAmDn5Qpq+53qYt+MBqt1vLM4dqPmn2hdigTBz8oMxN+e+ceS13s1ZEu31vlu6X6RkO
+      yrxrqw/KFBGRqZs3InMe1YXYoEyc4M1yVFyXTvU9XvaKTuTWHT4SY8iU6g7vk3n97SPphduk
+      ffGC6sMxgyNIceeGmz5t2FByNPNeEZFNITUoEycIr2JTPdYTrzfEPV+an7jwKAi5QZkg+Du3
+      317V5JoWy6E2ERF5oKjKcoCDMkMXB2US4yIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q
+      4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS7Q77KwzuK7fgkB
+      AAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 4' width='192'>
+      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
+      A8f/A0D5+hmEelDVAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
