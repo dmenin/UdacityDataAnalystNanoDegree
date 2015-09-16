@@ -9,8 +9,45 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='9.0'>
       <aliases enabled='yes' />
-      <column caption='Measure' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;director_fees&quot;'>
-        <calculation class='tableau' formula='&quot;director_fees&quot;' />
+      <column caption='Measure2' datatype='string' name='[MeasureMain (copy)]' param-domain-type='list' role='measure' type='nominal' value='&quot;restricted_stock&quot;'>
+        <calculation class='tableau' formula='&quot;restricted_stock&quot;' />
+        <members>
+          <member value='&quot;bonus&quot;' />
+          <member value='&quot;deferral_payments&quot;' />
+          <member value='&quot;deferred_income&quot;' />
+          <member value='&quot;director_fees&quot;' />
+          <member value='&quot;exercised_stock_options&quot;' />
+          <member value='&quot;expenses&quot;' />
+          <member value='&quot;from_messages&quot;' />
+          <member value='&quot;loan_advances&quot;' />
+          <member value='&quot;long_term_incentive&quot;' />
+          <member value='&quot;other&quot;' />
+          <member value='&quot;restricted_stock&quot;' />
+          <member value='&quot;restricted_stock_deferred&quot;' />
+          <member value='&quot;salary&quot;' />
+          <member value='&quot;to_messages&quot;' />
+          <member value='&quot;total_payments&quot;' />
+          <member value='&quot;total_stock_value&quot;' />
+          <member value='&quot;bonusNorm&quot;' />
+          <member value='&quot;deferral_paymentsNorm&quot;' />
+          <member value='&quot;deferred_incomeNorm&quot;' />
+          <member value='&quot;director_feesNorm&quot;' />
+          <member value='&quot;exercised_stock_optionsNorm&quot;' />
+          <member value='&quot;expensesNorm&quot;' />
+          <member value='&quot;from_messagesNorm&quot;' />
+          <member value='&quot;loan_advancesNorm&quot;' />
+          <member value='&quot;long_term_incentiveNorm&quot;' />
+          <member value='&quot;otherNorm&quot;' />
+          <member value='&quot;restricted_stockNorm&quot;' />
+          <member value='&quot;restricted_stock_deferredNorm&quot;' />
+          <member value='&quot;salaryNorm&quot;' />
+          <member value='&quot;to_messagesNorm&quot;' />
+          <member value='&quot;total_paymentsNorm&quot;' />
+          <member value='&quot;total_stock_valueNorm&quot;' />
+        </members>
+      </column>
+      <column caption='MeasureMain' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;loan_advances&quot;'>
+        <calculation class='tableau' formula='&quot;loan_advances&quot;' />
         <members>
           <member value='&quot;bonus&quot;' />
           <member value='&quot;deferral_payments&quot;' />
@@ -655,6 +692,12 @@
       <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
         <calculation class='tableau' formula='1' />
       </column>
+      <column caption='_ReportValue2' datatype='real' name='[_ReportValue (copy 2)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if [Parameters].[MeasureMain (copy)] = &apos;bonus&apos; then [bonus]  &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;deferral_payments&apos; then [deferral_payments] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;deferred_income&apos; then [deferred_income] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;director_fees&apos; then [director_fees] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;exercised_stock_options&apos; then [exercised_stock_options] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;expenses&apos; then [expenses] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;from_messages&apos; then [from_messages] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;loan_advances&apos; then [loan_advances] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;long_term_incentive&apos; then [long_term_incentive] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;other&apos; then [other] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;restricted_stock&apos; then [restricted_stock] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;restricted_stock_deferred&apos; then [restricted_stock_deferred] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;salary&apos; then [salary] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;to_messages&apos; then [to_messages] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;total_payments&apos; then [total_payments] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;total_stock_value&apos; then [total_stock_value] &#13;&#10;&#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
+      </column>
+      <column caption='_ReportValueNorm' datatype='real' name='[_ReportValue (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if [Parameters].[Parameter 1] = &apos;bonus&apos; then [bonusNorm]  &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_payments&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_income&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_fees&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_options&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expenses&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messages&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advances&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentive&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;other&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferred&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salary&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messages&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_payments&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_value&apos; then total_stock_valueNorm &#13;&#10;&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
+      </column>
       <column caption='Bonus' datatype='integer' name='[bonus]' role='measure' type='quantitative'>
       </column>
       <column caption='Deferral Payments' datatype='integer' name='[deferral_payments]' role='measure' type='quantitative'>
@@ -697,7 +740,7 @@
           <groupfilter function='level-members' level='[none:poi:ok]' />
         </groupfilter>
       </group>
-      <layout dim-ordering='alphabetic' dim-percentage='0.20197' measure-ordering='alphabetic' measure-percentage='0.770443' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.193103' measure-ordering='alphabetic' measure-percentage='0.655172' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[none:poi:ok]' type='palette'>
@@ -715,8 +758,45 @@
       </semantic-values>
       <date-options start-of-week='monday' />
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Measure' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;director_fees&quot;'>
-          <calculation class='tableau' formula='&quot;director_fees&quot;' />
+        <column caption='Measure2' datatype='string' name='[MeasureMain (copy)]' param-domain-type='list' role='measure' type='nominal' value='&quot;restricted_stock&quot;'>
+          <calculation class='tableau' formula='&quot;restricted_stock&quot;' />
+          <members>
+            <member value='&quot;bonus&quot;' />
+            <member value='&quot;deferral_payments&quot;' />
+            <member value='&quot;deferred_income&quot;' />
+            <member value='&quot;director_fees&quot;' />
+            <member value='&quot;exercised_stock_options&quot;' />
+            <member value='&quot;expenses&quot;' />
+            <member value='&quot;from_messages&quot;' />
+            <member value='&quot;loan_advances&quot;' />
+            <member value='&quot;long_term_incentive&quot;' />
+            <member value='&quot;other&quot;' />
+            <member value='&quot;restricted_stock&quot;' />
+            <member value='&quot;restricted_stock_deferred&quot;' />
+            <member value='&quot;salary&quot;' />
+            <member value='&quot;to_messages&quot;' />
+            <member value='&quot;total_payments&quot;' />
+            <member value='&quot;total_stock_value&quot;' />
+            <member value='&quot;bonusNorm&quot;' />
+            <member value='&quot;deferral_paymentsNorm&quot;' />
+            <member value='&quot;deferred_incomeNorm&quot;' />
+            <member value='&quot;director_feesNorm&quot;' />
+            <member value='&quot;exercised_stock_optionsNorm&quot;' />
+            <member value='&quot;expensesNorm&quot;' />
+            <member value='&quot;from_messagesNorm&quot;' />
+            <member value='&quot;loan_advancesNorm&quot;' />
+            <member value='&quot;long_term_incentiveNorm&quot;' />
+            <member value='&quot;otherNorm&quot;' />
+            <member value='&quot;restricted_stockNorm&quot;' />
+            <member value='&quot;restricted_stock_deferredNorm&quot;' />
+            <member value='&quot;salaryNorm&quot;' />
+            <member value='&quot;to_messagesNorm&quot;' />
+            <member value='&quot;total_paymentsNorm&quot;' />
+            <member value='&quot;total_stock_valueNorm&quot;' />
+          </members>
+        </column>
+        <column caption='MeasureMain' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;loan_advances&quot;'>
+          <calculation class='tableau' formula='&quot;loan_advances&quot;' />
           <members>
             <member value='&quot;bonus&quot;' />
             <member value='&quot;deferral_payments&quot;' />
@@ -756,6 +836,163 @@
     </datasource>
   </datasources>
   <worksheets>
+    <worksheet name='BarPLotNorm'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='poi' name='textscan.42262.415948182868' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42262.415948182868'>
+            <column caption='_ReportValue' datatype='real' name='[Calculation_1520915131516118]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Parameters].[Parameter 1] = &apos;bonus&apos; then [bonus]  &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_payments&apos; then [deferral_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_income&apos; then [deferred_income] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_fees&apos; then [director_fees] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_options&apos; then [exercised_stock_options] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expenses&apos; then [expenses] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messages&apos; then [from_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advances&apos; then [loan_advances] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentive&apos; then [long_term_incentive] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;other&apos; then [other] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock&apos; then [restricted_stock] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferred&apos; then [restricted_stock_deferred] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salary&apos; then [salary] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messages&apos; then [to_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_payments&apos; then [total_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_value&apos; then [total_stock_value] &#13;&#10;&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
+            </column>
+            <column aggregation='Sum' caption='Show' datatype='integer' name='[Calculation_9370915182806399]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='if [Calculation_1520915131516118] != 0 Then 1 else 0 end' />
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Index]' role='dimension' type='ordinal'>
+            </column>
+            <column caption='_ReportValueNorm' datatype='real' name='[_ReportValue (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Parameters].[Parameter 1] = &apos;bonus&apos; then [bonusNorm]  &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_payments&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_income&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_fees&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_options&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expenses&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messages&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advances&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentive&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;other&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferred&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salary&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messages&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_payments&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_value&apos; then total_stock_valueNorm &#13;&#10;&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
+            </column>
+            <column-instance column='[Calculation_9370915182806399]' derivation='None' name='[none:Calculation_9370915182806399:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Index]' derivation='None' name='[none:Index:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[poi]' derivation='None' name='[none:poi:ok]' pivot='key' type='ordinal' />
+            <column aggregation='Sum' caption='Poi' datatype='integer' name='[poi]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[Calculation_1520915131516118]' derivation='Sum' name='[sum:Calculation_1520915131516118:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[_ReportValue (copy)]' derivation='Sum' name='[sum:_ReportValue (copy):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]'>
+            <groupfilter function='member' level='[none:Calculation_9370915182806399:ok]' member='1' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[textscan.42262.415948182868].[none:Index:ok]' filter-group='3'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Index:ok]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:Index:ok]' member='126' />
+                <groupfilter function='member' level='[none:Index:ok]' member='129' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <sort class='computed' column='[textscan.42262.415948182868].[none:Index:ok]' direction='DESC' using='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]'>
+          </sort>
+          <slices>
+            <column>[textscan.42262.415948182868].[none:Index:ok]</column>
+            <column>[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[textscan.42262.415948182868].[sum:_ReportValue (copy):qk]' scope='cols' value='Z score' />
+            <format attr='subtitle' class='0' field='[textscan.42262.415948182868].[sum:_ReportValue (copy):qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[textscan.42262.415948182868].[sum:_ReportValue (copy):qk]' scope='cols' value='true' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[textscan.42262.415948182868].[none:Index:ok]' value='12' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[textscan.42262.415948182868].[none:Index:ok]' value='false' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='text-align' id='refline0' value='right' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='reverse-palette' id='refline0' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[textscan.42262.415948182868].[none:poi:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[textscan.42262.415948182868].[none:Index:ok]</rows>
+        <cols>[textscan.42262.415948182868].[sum:_ReportValue (copy):qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='BarPlot'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='poi' name='textscan.42262.415948182868' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42262.415948182868'>
+            <column caption='_ReportValue' datatype='real' name='[Calculation_1520915131516118]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Parameters].[Parameter 1] = &apos;bonus&apos; then [bonus]  &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_payments&apos; then [deferral_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_income&apos; then [deferred_income] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_fees&apos; then [director_fees] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_options&apos; then [exercised_stock_options] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expenses&apos; then [expenses] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messages&apos; then [from_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advances&apos; then [loan_advances] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentive&apos; then [long_term_incentive] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;other&apos; then [other] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock&apos; then [restricted_stock] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferred&apos; then [restricted_stock_deferred] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salary&apos; then [salary] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messages&apos; then [to_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_payments&apos; then [total_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_value&apos; then [total_stock_value] &#13;&#10;&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
+            </column>
+            <column aggregation='Sum' caption='Show' datatype='integer' name='[Calculation_9370915182806399]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='if [Calculation_1520915131516118] != 0 Then 1 else 0 end' />
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Index]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[Calculation_9370915182806399]' derivation='None' name='[none:Calculation_9370915182806399:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Index]' derivation='None' name='[none:Index:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[poi]' derivation='None' name='[none:poi:ok]' pivot='key' type='ordinal' />
+            <column aggregation='Sum' caption='Poi' datatype='integer' name='[poi]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[Calculation_1520915131516118]' derivation='Sum' name='[sum:Calculation_1520915131516118:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]'>
+            <groupfilter function='member' level='[none:Calculation_9370915182806399:ok]' member='1' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[textscan.42262.415948182868].[none:Index:ok]' filter-group='3'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Index:ok]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:Index:ok]' member='126' />
+                <groupfilter function='member' level='[none:Index:ok]' member='129' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <sort class='computed' column='[textscan.42262.415948182868].[none:Index:ok]' direction='DESC' using='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]'>
+          </sort>
+          <slices>
+            <column>[textscan.42262.415948182868].[none:Index:ok]</column>
+            <column>[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' scope='rows' value='' />
+            <format attr='subtitle' class='0' field='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' scope='rows' value='true' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[textscan.42262.415948182868].[none:Index:ok]' value='false' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='text-align' id='refline0' value='right' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='reverse-palette' id='refline0' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[textscan.42262.415948182868].[none:poi:ok]' />
+            </encodings>
+            <reference-line axis-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' enable-instant-analytics='true' fill-above='false' fill-below='false' formula='quantiles' id='refline0' label-type='value' scope='per-pane' symmetric='true' tile-count='4' value-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' z-order='1' />
+            <reference-line axis-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' enable-instant-analytics='true' formula='median' id='refline1' label-type='automatic' scope='per-pane' value-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' z-order='2' />
+          </pane>
+        </panes>
+        <rows>[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]</rows>
+        <cols>[textscan.42262.415948182868].[none:Index:ok]</cols>
+      </table>
+    </worksheet>
     <worksheet name='Sheet 1'>
       <table>
         <view>
@@ -808,79 +1045,6 @@
         <cols></cols>
       </table>
     </worksheet>
-    <worksheet name='Sheet 2'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='poi' name='textscan.42262.415948182868' />
-            <datasource name='Parameters' />
-          </datasources>
-          <datasource-dependencies datasource='textscan.42262.415948182868'>
-            <column caption='_ReportValue' datatype='real' name='[Calculation_1520915131516118]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='if [Parameters].[Parameter 1] = &apos;bonus&apos; then [bonus]  &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_payments&apos; then [deferral_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_income&apos; then [deferred_income] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_fees&apos; then [director_fees] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_options&apos; then [exercised_stock_options] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expenses&apos; then [expenses] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messages&apos; then [from_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advances&apos; then [loan_advances] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentive&apos; then [long_term_incentive] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;other&apos; then [other] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock&apos; then [restricted_stock] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferred&apos; then [restricted_stock_deferred] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salary&apos; then [salary] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messages&apos; then [to_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_payments&apos; then [total_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_value&apos; then [total_stock_value] &#13;&#10;&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
-            </column>
-            <column aggregation='Sum' caption='Show' datatype='integer' name='[Calculation_9370915182806399]' role='dimension' type='ordinal'>
-              <calculation class='tableau' formula='if [Calculation_1520915131516118] != 0 Then 1 else 0 end' />
-            </column>
-            <column aggregation='Sum' datatype='integer' name='[Index]' role='dimension' type='ordinal'>
-            </column>
-            <column-instance column='[Calculation_9370915182806399]' derivation='None' name='[none:Calculation_9370915182806399:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[Index]' derivation='None' name='[none:Index:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[poi]' derivation='None' name='[none:poi:ok]' pivot='key' type='ordinal' />
-            <column aggregation='Sum' caption='Poi' datatype='integer' name='[poi]' role='dimension' type='ordinal'>
-            </column>
-            <column-instance column='[Calculation_1520915131516118]' derivation='Sum' name='[sum:Calculation_1520915131516118:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='categorical' column='[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]'>
-            <groupfilter function='member' level='[none:Calculation_9370915182806399:ok]' member='1' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
-          </filter>
-          <filter class='categorical' column='[textscan.42262.415948182868].[none:Index:ok]' filter-group='3'>
-            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
-              <groupfilter function='level-members' level='[none:Index:ok]' />
-              <groupfilter function='union'>
-                <groupfilter function='member' level='[none:Index:ok]' member='126' />
-                <groupfilter function='member' level='[none:Index:ok]' member='129' />
-              </groupfilter>
-            </groupfilter>
-          </filter>
-          <sort class='computed' column='[textscan.42262.415948182868].[none:Index:ok]' direction='DESC' using='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]'>
-          </sort>
-          <slices>
-            <column>[textscan.42262.415948182868].[none:Index:ok]</column>
-            <column>[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]</column>
-          </slices>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='axis'>
-            <format attr='title' class='0' field='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' scope='rows' value='' />
-            <format attr='subtitle' class='0' field='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' scope='rows' value='' />
-            <format attr='auto-subtitle' class='0' field='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' scope='rows' value='true' />
-          </style-rule>
-          <style-rule element='refline'>
-            <format attr='text-align' id='refline0' value='right' />
-          </style-rule>
-          <style-rule element='refband'>
-            <format attr='reverse-palette' id='refline0' value='false' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <encodings>
-              <color column='[textscan.42262.415948182868].[none:poi:ok]' />
-            </encodings>
-            <reference-line axis-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' enable-instant-analytics='true' fill-above='false' fill-below='false' formula='quantiles' id='refline0' label-type='value' scope='per-pane' symmetric='true' tile-count='4' value-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' z-order='1' />
-            <reference-line axis-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' enable-instant-analytics='true' formula='median' id='refline1' label-type='automatic' scope='per-pane' value-column='[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]' z-order='2' />
-          </pane>
-        </panes>
-        <rows>[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]</rows>
-        <cols>[textscan.42262.415948182868].[none:Index:ok]</cols>
-      </table>
-    </worksheet>
     <worksheet name='Sheet 3'>
       <table>
         <view>
@@ -927,20 +1091,24 @@
         <view>
           <datasources>
             <datasource caption='poi' name='textscan.42262.415948182868' />
+            <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='textscan.42262.415948182868'>
+            <column caption='_ReportValue' datatype='real' name='[Calculation_1520915131516118]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Parameters].[Parameter 1] = &apos;bonus&apos; then [bonus]  &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_payments&apos; then [deferral_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_income&apos; then [deferred_income] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_fees&apos; then [director_fees] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_options&apos; then [exercised_stock_options] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expenses&apos; then [expenses] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messages&apos; then [from_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advances&apos; then [loan_advances] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentive&apos; then [long_term_incentive] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;other&apos; then [other] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock&apos; then [restricted_stock] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferred&apos; then [restricted_stock_deferred] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salary&apos; then [salary] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messages&apos; then [to_messages] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_payments&apos; then [total_payments] &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_value&apos; then [total_stock_value] &#13;&#10;&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[Parameter 1] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
+            </column>
             <column aggregation='Sum' datatype='integer' name='[Index]' role='dimension' type='ordinal'>
             </column>
-            <column caption='Exercised Stock Options' datatype='integer' name='[exercised_stock_options]' role='measure' type='quantitative'>
+            <column caption='_ReportValue2' datatype='real' name='[_ReportValue (copy 2)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Parameters].[MeasureMain (copy)] = &apos;bonus&apos; then [bonus]  &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;deferral_payments&apos; then [deferral_payments] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;deferred_income&apos; then [deferred_income] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;director_fees&apos; then [director_fees] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;exercised_stock_options&apos; then [exercised_stock_options] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;expenses&apos; then [expenses] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;from_messages&apos; then [from_messages] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;loan_advances&apos; then [loan_advances] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;long_term_incentive&apos; then [long_term_incentive] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;other&apos; then [other] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;restricted_stock&apos; then [restricted_stock] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;restricted_stock_deferred&apos; then [restricted_stock_deferred] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;salary&apos; then [salary] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;to_messages&apos; then [to_messages] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;total_payments&apos; then [total_payments] &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;total_stock_value&apos; then [total_stock_value] &#13;&#10;&#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;bonusNorm&apos; then bonusNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;deferral_paymentsNorm&apos; then deferral_paymentsNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;deferred_incomeNorm&apos; then deferred_incomeNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;director_feesNorm&apos; then director_feesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;exercised_stock_optionsNorm&apos; then exercised_stock_optionsNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;expensesNorm&apos; then expensesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;from_messagesNorm&apos; then from_messagesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;loan_advancesNorm&apos; then loan_advancesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;long_term_incentiveNorm&apos; then long_term_incentiveNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;otherNorm&apos; then otherNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;restricted_stockNorm&apos; then restricted_stockNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;restricted_stock_deferredNorm&apos; then restricted_stock_deferredNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;salaryNorm&apos; then salaryNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;to_messagesNorm&apos; then to_messagesNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;total_paymentsNorm&apos; then total_paymentsNorm &#13;&#10;ELSEIF [Parameters].[MeasureMain (copy)] = &apos;total_stock_valueNorm&apos; then total_stock_valueNorm &#13;&#10;ELSE 0 END' />
             </column>
+            <column-instance column='[Index]' derivation='Attribute' name='[attr:Index:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Index]' derivation='None' name='[none:Index:ok]' pivot='key' type='ordinal' />
             <column-instance column='[poi]' derivation='None' name='[none:poi:ok]' pivot='key' type='ordinal' />
             <column aggregation='Sum' caption='Poi' datatype='integer' name='[poi]' role='dimension' type='ordinal'>
             </column>
-            <column caption='Restricted Stock' datatype='integer' name='[restricted_stock]' role='measure' type='quantitative'>
-            </column>
-            <column-instance column='[exercised_stock_options]' derivation='Sum' name='[sum:exercised_stock_options:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[restricted_stock]' derivation='Sum' name='[sum:restricted_stock:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1520915131516118]' derivation='Sum' name='[sum:Calculation_1520915131516118:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[_ReportValue (copy 2)]' derivation='Sum' name='[sum:_ReportValue (copy 2):qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[textscan.42262.415948182868].[none:Index:ok]' filter-group='3'>
             <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
@@ -966,6 +1134,7 @@
             <mark class='Automatic' />
             <encodings>
               <color column='[textscan.42262.415948182868].[none:poi:ok]' />
+              <tooltip column='[textscan.42262.415948182868].[attr:Index:qk]' />
             </encodings>
             <style>
               <style-rule element='mark'>
@@ -974,8 +1143,8 @@
             </style>
           </pane>
         </panes>
-        <rows>[textscan.42262.415948182868].[sum:exercised_stock_options:qk]</rows>
-        <cols>[textscan.42262.415948182868].[sum:restricted_stock:qk]</cols>
+        <rows>[textscan.42262.415948182868].[sum:_ReportValue (copy 2):qk]</rows>
+        <cols>[textscan.42262.415948182868].[sum:Calculation_1520915131516118:qk]</cols>
       </table>
     </worksheet>
   </worksheets>
@@ -983,24 +1152,27 @@
     <dashboard name='Dashboard 1'>
       <style>
       </style>
-      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <size maxheight='800' maxwidth='1600' minheight='800' minwidth='1600' />
       <zones>
         <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
           <zone h='100000' id='6' param='horz' type='layout-flow' w='100000' x='0' y='0'>
-            <zone h='100000' id='1' param='horz' type='layout-flow' w='79800' x='0' y='0'>
-              <zone h='100000' id='3' param='vert' type='layout-flow' w='79800' x='0' y='0'>
-                <zone fixed-size='626' h='79750' id='4' is-fixed='true' name='Sheet 2' show-title='true' w='79800' x='0' y='0'>
-                  <layout-cache type-h='fixed' type-w='cell' />
+            <zone fixed-size='202' h='100000' id='5' is-fixed='true' param='vert' type='layout-flow' w='100000' x='0' y='0'>
+              <zone h='6875' id='8' param='[Parameters].[Parameter 1]' type='paramctrl' w='100000' x='0' y='0'>
+              </zone>
+              <zone h='92625' id='9' param='horz' type='layout-flow' w='100000' x='0' y='6875'>
+                <zone h='92625' id='10' param='horz' type='layout-flow' w='99750' x='0' y='6875'>
+                  <zone fixed-size='709' h='92625' id='11' is-fixed='true' name='BarPlot' show-title='true' w='45063' x='0' y='6875'>
+                    <layout-cache minheight='127' type-h='scalable' type-w='cell' />
+                  </zone>
+                  <zone h='92625' id='13' name='BarPLotNorm' show-title='true' w='54687' x='45063' y='6875'>
+                    <layout-cache cell-count-h='3' minwidth='102' non-cell-size-h='64' type-h='cell' type-w='scalable' />
+                  </zone>
                 </zone>
               </zone>
             </zone>
-            <zone fixed-size='202' h='100000' id='5' is-fixed='true' param='vert' type='layout-flow' w='20200' x='79800' y='0'>
-              <zone h='8375' id='7' name='Sheet 2' pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' w='20200' x='79800' y='0'>
-              </zone>
-              <zone h='6375' id='8' param='[Parameters].[Parameter 1]' type='paramctrl' w='20200' x='79800' y='8375'>
-              </zone>
-            </zone>
           </zone>
+        </zone>
+        <zone h='6875' id='12' name='BarPlot' pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' w='8750' x='29375' y='23000'>
         </zone>
       </zones>
     </dashboard>
@@ -1033,7 +1205,42 @@
         </color-one-way>
       </highlight>
     </window>
-    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 2'>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='BarPlot'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='270'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42262.415948182868].[none:Calculation_9370915182806399:ok]</field>
+          <field>[textscan.42262.415948182868].[none:Index:ok]</field>
+          <field>[textscan.42262.415948182868].[none:poi:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='BarPLotNorm'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1115,16 +1322,25 @@
             <card type='rows' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card mode='compact' param='[Parameters].[MeasureMain (copy)]' type='parameter' />
+          </strip>
+        </edge>
       </cards>
       <highlight>
         <color-one-way>
+          <field>[textscan.42262.415948182868].[none:Index:ok]</field>
           <field>[textscan.42262.415948182868].[none:poi:ok]</field>
         </color-one-way>
       </highlight>
     </window>
-    <window auto-hidden='0' class='dashboard' maximized='0' name='Dashboard 1'>
+    <window auto-hidden='0' class='dashboard' maximized='1' name='Dashboard 1'>
+      <active id='8' />
       <zones>
-        <zone name='Sheet 2'>
+        <zone mode='compact' name='' param='[Parameters].[Parameter 1]' type='paramctrl' />
+        <zone name='BarPlot'>
           <viewpoint>
             <zoom type='entire-view' />
           </viewpoint>
@@ -1134,8 +1350,12 @@
             </color-one-way>
           </highlight>
         </zone>
-        <zone name='Sheet 2' pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' />
-        <zone mode='compact' name='' param='[Parameters].[Parameter 1]' type='paramctrl' />
+        <zone name='BarPLotNorm'>
+          <viewpoint>
+            <zoom type='entire-view' />
+          </viewpoint>
+        </zone>
+        <zone name='BarPlot' pane-specification-id='0' param='[textscan.42262.415948182868].[none:poi:ok]' type='color' />
       </zones>
     </window>
   </windows>
@@ -1212,261 +1432,266 @@
       AgIqCAioICCggoCACgICKggIqCAgoIKAgAoCAioICKggIKCCgIAKAgIqCAioICCggoCACgIC
       KggIqCAgoIKAgAoCAir/D6BZMC9QH1hJAAAAAElFTkSuQmCC
     </thumbnail>
-    <thumbnail height='192' name='Sheet 2' width='192'>
+    <thumbnail height='192' name='BarPlot' width='192'>
       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
-      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
+      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
+    </thumbnail>
+    <thumbnail height='192' name='BarPLotNorm' width='192'>
+      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
+      LjP/F3e/10/Iwn8RAAAAAElFTkSuQmCC
     </thumbnail>
     <thumbnail height='192' name='Sheet 3' width='116'>
       iVBORw0KGgoAAAANSUhEUgAAAHQAAADACAIAAABao9ATAAAACXBIWXMAAA7DAAAOwwHHb6hk
-      AAAFcElEQVR4nO3cf0jcdRzH8fepnOmIuU1d7ZQWOLOGU+9mbpxaNvCPFsSmXGgJVxu12mbR
-      WBb9kUJQeJDm7Mcg3Q0GNw62kaF/bMlIzZuZQv6oc25onrf09DjC9Ez67vrDX2WOanxf51mv
-      x3/f7/fuw8enX798//GtCQQCQhhha72B/zLGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgVi
-      XCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYF
-      YlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlygiLXewN1wOp1rvYV/ZF3GFZGUlJS1
-      3sLf42MBiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGB
-      GBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGBGBdovf4fmrpu
-      BwIXukZbBydzdsQWGBLCNBpVlmVcuR0IHLJ+e3XAIyIN391q6h2rM+9WpS/osTA3cPZ4TefC
-      wVSPtcxcbDKVHKu87FJERBRXQ7m52GQylRx+u6bVLSLuxsoKa4vLv7SC4rlmrTh2unOVxVV2
-      oWt0vuy8qwOei91uVVYGxJ0b+/rjNyoaxxcOlR5bVb++3Gq31RZpbfXNPhG/4/wXMS/UnrPb
-      ag9v7W3sGhORuYnxb87Xt/oWvuV3nK37atjzq/rb+4vWwckVZ1quT6iysvpx3VfsfWlvHs1e
-      PA7f9eIZyzPbtaIoikRER98j4v5xaOce42athG/ck50xMuwSEZENRmNkq8MrIiL+Loc3NSNW
-      9c0Fl/pxdftLXzLep11x1n3p5HNHPhvP258WJeLzToaFh89f2Hq/zjU6/1cYna6PcHR4RcTf
-      2ebJ2puo+t5WlbNj5S8xNzlOlZWD9SqmO2Cx20495amqbvbd8UMxhkxxdHjF39k+kp66bfmC
-      88/U3VqBISHvofilwydS4g/qdaqsHMy3hfCNRmPqR51Dkr8ldsbvF4kSkfGf3ImZiz/LljT9
-      bHVLf0TPiPHZJOld+uaKAQDq9g3TaOrMuy92u1uuT+Qmxx3U69R6FcPfuf42S8n7LVMiosz2
-      9g1m7HpYHkxOudnd/bMiyuz3vT/oEpfvUV1q+nS79cqwIT0JvrE/CNNoCg0JNUUZheq95Eow
-      7tyo7CMnb7x7vLh2RqIfefqtE9lRIvp9j52zvFz04W8SGb+v9D2dyOK7T1KWcfrzL7PNO5dP
-      rV+aQCCw1nv415xOJyeF/N8xLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEu
-      EOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIx
-      LhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuUBAGZSquy5WvmotNpmJz2elr
-      HkVCbFAmDn5Qpq+53qYt+MBqt1vLM4dqPmn2hdigTBz8oMxN+e+ceS13s1ZEu31vlu6X6RkO
-      yrxrqw/KFBGRqZs3InMe1YXYoEyc4M1yVFyXTvU9XvaKTuTWHT4SY8iU6g7vk3n97SPphduk
-      ffGC6sMxgyNIceeGmz5t2FByNPNeEZFNITUoEycIr2JTPdYTrzfEPV+an7jwKAi5QZkg+Du3
-      317V5JoWy6E2ERF5oKjKcoCDMkMXB2US4yIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q
-      4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS4Q4wIxLhDjAjEuEOMCMS7Q77KwzuK7fgkB
-      AAAAAElFTkSuQmCC
+      AAAFOUlEQVR4nO3dX0xbZRzG8R8c7NyIDldgjEPVRQbN2FxXJMwVWHAXGvVqM43iSDolUSNu
+      UTNnYowQlxhnYrY5jbvAdGMJs5ElbmEXm2YZKHUiqGC3drhQKIeVP92yLFjWWOoFpSbEP9Oc
+      p1B9Pnfv6enLm+/FaZO34U2LxWJCGOnzvYD/MsYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDG
+      BWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwg
+      xgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXKCM+V7Av+H1eud7CbckJeOKiNls
+      nu8l/D0+FoAYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXCBQ34jv80oGu
+      +OBG16H6WrvdXuPY2ejyhEUkGjjR4Kix2+21dW8c6NBERGvb2+hsD4QTM0THvnE21h/q+qPZ
+      UwUgbiT49UevNbaNzo4HTh35ufKtIy0uZ0Nl+OS5iyJh97GTWc8cPOpqOVi3vK+tOygikfHR
+      b4990nEt/qaw+3DTOf/YTf2Xl0T6x9XOuH5a9/qLFbPjcGDgtvKNhbcrYri3YqM6MKiJNjhQ
+      ssG2zCDK0g0V64f8ARERybTZFnW4QzNv6naH1q7P1n1xyaV/XPWxHc/Z8gyJ8dVQSFHifyZv
+      Rf5gYESuhSbSFWXm0vIVamBYExGRJRZrhvt8SETCXV+NlT9o0n1tSbagNiizSstk3/nQo9We
+      ziHLE/nSOftCqmz3zoGPu8xonJz9oApeGbnHlC93GbN/CYdFFovI6BXNVKbG7zWus07ta/dk
+      9A7Zni6UvsQcc/Z6U6U1/qvY4vuKM3/o9kdEIld7L2imgjxZWWS+3NNzPSrRqQt9F1VTfuJm
+      da1lstN5xl9qKYQvDC8JjwW16pGc3W9ua70pGUtWP/m2VRHFunnT0fdeeGr/r7Iod/OOd1QR
+      LX5zYblt8vMvKhwlv19KXWmpeMKJ1+vlj0L+7xgXiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEY
+      F4hxgRgXaEFt88yb6VistXu4o3+iclX21tKC9LQ0XaZlXJmOxZ51fnfWNyYiJ34cOdUXbHI8
+      oEtfPhaktXt4puyMs76x4z367IIwrnT0T8y50n5pXJeZGReIcaVy1dxf9lQV5egyM+PK1tKC
+      6uLcxPAhc+4Wq/oX99867v6KiEzHYsd7tPZL41VFOVusql5fxRgXiI8FIMYFYlwgxgViXCDG
+      BWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwg
+      xgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJcIMYFYlwgxgViXCDGBWJc
+      IMYFYlwgxgViXKBkxL3R69ztqLHba+v3ng5ERXjAp26ivS0fBB/e3+xyNb//uPZhMw/41FHw
+      cn9WcfFSRUQMq9fk93oCPOBTN3kFpqDPdz0qEgme/vL74ZEgD/jUjVK2fZdnz87ajyN3WrZV
+      r8kIKX96Kw/4/OfuuN/xrtMhIhL47JW7C3jAp448Tdt3feqPSHRq3OPLrLLxgE8dldhfLtnT
+      4GiNGFZuev7VOqOI8IDPhYv/hZQYF4lxgRgXiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hx
+      gRgXiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF4hxgRgXiHGBGBeIcYEYF+g3WxXGHTkMvvAA
+      AAAASUVORK5CYII=
     </thumbnail>
     <thumbnail height='192' name='Sheet 4' width='192'>
       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
-      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
-      A8f/A0D5+hmEelDVAAAAAElFTkSuQmCC
+      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
+      ATGkFHnG3HAeAAAAAElFTkSuQmCC
     </thumbnail>
     <thumbnail height='192' name='Dashboard 1' width='192'>
       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
-      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
+      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
+      RK5CYII=
     </thumbnail>
   </thumbnails>
 </workbook>

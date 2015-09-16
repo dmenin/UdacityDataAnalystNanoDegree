@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import sys
 import pickle
 import pprint
@@ -10,91 +8,44 @@ from collections import Counter
 
 sys.path.append("../tools/")
 
+#may need to replace this line:
 from MiniProjects.tools.feature_format import featureFormat, targetFeatureSplit
+
+#for this one on the submission:
+#from feature_format import featureFormat, targetFeatureSplit
+
 from tester import test_classifier, dump_classifier_and_data
 
 ### Task 1: Select what features you'll use.
-### features_list is a list of strings, each of which is a feature name.
-### The first feature must be "poi".
-#features_list = ['poi','salary'] # You will need to use more features
-
-features_list = ['poi'
-                 ,'bonus'
-                 ,'deferral_payments'
-                 ,'deferred_income','director_fees','exercised_stock_options'
-                 ,'expenses', 'from_messages','loan_advances'
-                 ,'long_term_incentive','other','restricted_stock','restricted_stock_deferred','salary'
-                 ,'to_messages','total_payments', 'total_stock_value'
-                ]
-#removed 'email_address' feature
-#removed: from_poi_to_this_person, from_this_person_to_poi, shared_receipt_with_poi
-
-def pprint_df(df, n):
-    print tabulate(df.head(n), headers='keys', tablefmt='psql', floatfmt=".1f")
-
-
-### Load the dictionary containing the dataset
-data_dict = pickle.load(open("final_project_dataset.pkl", "r") )
-
-#print pprint.pprint(data_dict)
-
-### Task 2: Remove outliers
-#https://www.youtube.com/watch?v=2HmopqF6V6w
-
-
-#data_dict.pop('TOTAL') # 129
-#data_dict.pop('THE TRAVEL AGENCY IN THE PARK') #126
-
-
-#pprint.pprint(data_dict['THE TRAVEL AGENCY IN THE PARK'])
-
-#for k in data_dict:
-#    print k
-
-
-
-### Task 3: Create new feature(s)
-
-### Store to my_dataset for easy export below.
-my_dataset = data_dict
-
-### Extract features and labels from dataset for local testing
-data = featureFormat(my_dataset, features_list, sort_keys = True)
-#print data[0:2,]
-df = pd.DataFrame(data, columns=features_list)
-
-#print df.head(5)
-#print df.loc[129]
-#print df.loc[129]
-
-
-
-def union(a,b):
-    for e in b:
-        if e not in a:
-            a.append(e)
-
-def suggest_outliers(df, debug = 0, ignore_zeroes_on_calc = 0, ignore_zeroes_on_print = 0):
+#Auxuliar function for outlier detection:
+""" For each column of a data frame, checks the values that are considered outliers based on the IQR rule
+    Parameters:
+        df: data frame
+        g: g-value for interquartile calcularion
+        debug: print messages as the function runs
+        ignore_zeroes_on_calc: do not use the zero values on the IQR calculation
+        ignore_zeroes_on_print: do not print "outliers" that are zero
+        NOTE: the last two parameters are specific for one particular situation, thats the reason the default is 0
+            first column is assumed to be the "outcome", so it is ignored
+        OUTPUT: Dictionary where the key is the column and the value is a list of suggestions
+"""
+def suggest_outliers(df, g = 2.2, debug = 0, ignore_zeroes_on_calc = 0, ignore_zeroes_on_print = 0):
     possible_outliers = {}
-    if ignore_zeroes_on_calc ==1:
+    if ignore_zeroes_on_calc == 1:
         ignore_zeroes_on_print =1
 
     for column in df.columns[1:]:
         key = column
-        #mean = (df.ix[:,column]).mean()
-        #std = (df.ix[:,column]).std()
-
         #print df[df[column] >0] [column]
 
         if ignore_zeroes_on_calc:
-            Q1 =  (df[df[column] !=0] .ix[:,column]).quantile(0.25)
-            Q3 =  (df[df[column] !=0] .ix[:,column]).quantile(0.75)
+            Q1 =  (df[df[column] !=0].ix[:,column]).quantile(0.25)
+            Q3 =  (df[df[column] !=0].ix[:,column]).quantile(0.75)
         else:
             Q1 =  (df.ix[:,column]).quantile(0.25)
             Q3 =  (df.ix[:,column]).quantile(0.75)
 
 
-        g =2.2
         limit = (Q3 - Q1) * g
 
         lower_limit = Q1 - limit
@@ -113,97 +64,201 @@ def suggest_outliers(df, debug = 0, ignore_zeroes_on_calc = 0, ignore_zeroes_on_
 
     return possible_outliers
 
+#Joins N list into one list of unique values
+def union(a,b):
+    for e in b:
+        if e not in a:
+            a.append(e)
 
-possible_outliers = suggest_outliers(df, 0, 1, 1)
+#Runs the suggest outlier function. Needs to be called AFTER the dataset with the features is created
+def suggest_outlier(df):
+    possible_outliers = suggest_outliers(df, 2.2, 0, 1, 1)
 
+    merged = []
+    for key in possible_outliers:
+        for item in possible_outliers[key]:
+            if item not in merged:
+                merged.append(item)
 
-merged = []
-for key in possible_outliers:
-    for item in possible_outliers[key]:
-        if item not in merged:
-            merged.append(item)
+    for key in possible_outliers:
+        l = possible_outliers[key]
+        print 'Column:',key, '- Number of suggested outliers (ignoring 0s):',  len(l), 'Indices:', l
 
-print sorted(merged)
-print len(merged)
-print max(merged)
+    print 'Unique Suggestions:', merged
 
-
-
-
-for key in possible_outliers:
-    l = possible_outliers[key]
-    print 'Column:',key, '- Number of suggested outliers (ignoring 0s):',  len(l), 'Indices:', l
-
-
-
-
-
-#print df.loc[l]
-#pprint.pprint(possible_outliers)
-
-#c = Counter([values[1] for values in possible_outliers.itervalues()])
+#pretty print top N rows of a data frame
+def pprint_df(df, n):
+    print tabulate(df.head(n), headers='keys', tablefmt='psql', floatfmt=".1f")
 
 
 
+all_features = ['poi'
+                 ,'bonus'
+                 ,'deferral_payments'
+                 ,'deferred_income','director_fees','exercised_stock_options'
+                 ,'expenses', 'from_messages','loan_advances'
+                 ,'long_term_incentive','other','restricted_stock','restricted_stock_deferred','salary'
+                 ,'to_messages','total_payments', 'total_stock_value'
+                ]
+
+features_list = ['poi'
+                 ,'bonus'
+                 ,'deferral_payments'
+                 ,'deferred_income'
+                 ,'director_fees'
+                 ,'exercised_stock_options'
+                 ,'expenses'
+                 , 'from_messages'
+                 ,'long_term_incentive','other','restricted_stock','restricted_stock_deferred','salary'
+                 ,'to_messages','total_payments', 'total_stock_value'
+                ]
 
 
-#newnames= [x + 'Norm' for x in df.columns]
-#print newnames
 
 
-#print pprint_df(df,999)
 
+
+
+
+
+### Load the dictionary containing the dataset
+data_dict = pickle.load(open("final_project_dataset.pkl", "r") )
+#print pprint.pprint(data_dict)
+
+### Task 2: Remove outliers
+#df = pd.DataFrame(data, columns=features_list)
+#labels = df['poi']
+#features = df[features_list[1:]] # all expect for poi
+#suggest_outlier(df)
+data_dict.pop('TOTAL') # 129
+data_dict.pop('THE TRAVEL AGENCY IN THE PARK') #126
+
+
+### Task 3: Create new feature(s)
+my_dataset = data_dict
+#print pprint.pprint(my_dataset)
+
+
+
+### Extract features and labels from dataset for local testing
+data = featureFormat(my_dataset, features_list, sort_keys = True)
+labels, features = targetFeatureSplit(data)
+
+from sklearn.feature_selection import SelectKBest
+k = 5
+k_best = SelectKBest(k=k)
+k_best.fit(features, labels)
+
+scores = k_best.scores_
+unsorted_pairs = zip(features_list[1:], scores)
+sorted_pairs = list(reversed(sorted(unsorted_pairs, key=lambda x: x[1])))
+k_best_features = dict(sorted_pairs[:k])
+print "{0} best features: {1}\n".format(k, k_best_features.keys())
 print ""
-print ""
-print ""
+print (k_best_features.keys())
 
 
-#pprint_df(df,16)
-#df_norm = (df - df.mean()) / (df.std())
-#df_norm .to_csv("fooNorm.csv")
-#print tabulate(df_norm.head(16), headers='keys', tablefmt='psql', floatfmt=".4f")
+#new_list = features_list[1:]
+new_list = k_best_features.keys()
+all = []
+import itertools
+for i in range(len(new_list)):
+    all.extend([sorted(l) for l in itertools.combinations(new_list, i+1)])
 
-
-labels = df['poi']
-features = df[features_list[1:]] # all expect for poi
-
-
-#collist = ['from_poi_to_this_person', 'from_this_person_to_poi']
-#features = df[collist]
-#features = df[1:]
-#print tabulate(features, headers='keys', tablefmt='psql', floatfmt=".1f")
-
-
-
-
+for item in all:
+    poi ='poi'
+    item.insert(0, poi)
+#print (all)
 
 from sklearn import tree
+mycolumns = ['feature_list', 'accuracy', 'precision', 'recall', 'f1', 'f2']
+resultdf = pd.DataFrame(columns=mycolumns)
+print len(resultdf)
+
+for item in all:
+    data = featureFormat(my_dataset, item, sort_keys = True)
+    labels, features = targetFeatureSplit(data)
+
+    clf = tree.DecisionTreeClassifier(min_samples_split = 4)
+    clf.fit(features, labels)
+    resultdf.loc[len(resultdf)] =  (test_classifier(clf, my_dataset, item))
+
+print  tabulate(resultdf, headers='keys', tablefmt='psql', floatfmt=".4f")
+
+
+
+
+def one_term_predict():
+    all = []
+    for i in features_list:
+        if i != 'poi':
+            l = []
+            l.append('poi')
+            l.append(i)
+            all.append(l)
+    #print all
+
+    for item in all:
+        data = featureFormat(my_dataset, item, sort_keys = True)
+        labels, features = targetFeatureSplit(data)
+
+        clf = tree.DecisionTreeClassifier(min_samples_split = 4)
+        clf.fit(features, labels)
+        test_classifier(clf, my_dataset, item)
+
+
+
+
+
 from sklearn.naive_bayes import GaussianNB
 from sklearn import svm
 from sklearn.metrics import accuracy_score
 
-clf = tree.DecisionTreeClassifier(min_samples_split = 4)
-clf.fit(features, labels)
-pred = clf.predict(features)
-acc = accuracy_score(pred, labels)
-#print type(pred)
+#clf = tree.DecisionTreeClassifier(min_samples_split = 4)
+#clf.fit(features, labels)
 
-df['result'] = pred
-#prettyPicture(clf, features, labels)
+#pred = clf.predict(features)
+#acc = accuracy_score(pred, labels)
+#print acc
+#df['result'] = pred
 #pprint_df(df[['poi', 'result']],999)
 
-# clf = GaussianNB()
-# clf.fit(features, labels)
-# pred = clf.predict(features)
-# acc = accuracy_score(pred, labels)
-# print acc
+#test_classifier(clf, my_dataset, features_list)
 
 
-# clf = svm.SVC(kernel='rbf', C=10000)
-# clf.fit(features, labels)
-# pred = clf.predict(features)
-# acc = accuracy_score(pred, labels)
-# print acc
+
+from sklearn.cluster import KMeans
+##data2 = featureFormat(data_dict, features_list )
+##poi, finance_features = targetFeatureSplit( data2 )
+#clf = KMeans(n_clusters=2).fit(features, labels) #Accuracy: 0.83560	Precision: 0.21860	Recall: 0.09050	F1: 0.12801	F2: 0.10251
+#test_classifier(clf, my_dataset, features_list)
+##pred = clf.fit_predict( features )
+
+
+
+#from sklearn.preprocessing import MinMaxScaler
+#scaler = MinMaxScaler()
+#finance_features = scaler.fit_transform(finance_features)
+#print scaler.transform([200000., 1000000.])
+
+
+
+
+
+#clf = GaussianNB()
+#clf.fit(features, labels)
+#test_classifier(clf, my_dataset, features_list)
+## pred = clf.predict(features)
+## acc = accuracy_score(pred, labels)
+## print acc
+
+
+#clf = svm.SVC(kernel='rbf', C=10000)
+#clf.fit(features, labels)
+#test_classifier(clf, my_dataset, features_list)
+## pred = clf.predict(features)
+## acc = accuracy_score(pred, labels)
+## print acc
 
 
 #output_image("test.png", "png", open("test.png", "rb").read())
@@ -239,4 +294,7 @@ df['result'] = pred
 ### Dump your classifier, dataset, and features_list so
 ### anyone can run/check your results.
 
-dump_classifier_and_data(clf, my_dataset, features_list)
+#dump_classifier_and_data(clf, my_dataset, features_list)
+
+
+#https://www.youtube.com/watch?v=2HmopqF6V6w
