@@ -108,17 +108,16 @@ features_list = ['poi'
                  ,'director_fees'
                  ,'exercised_stock_options'
                  ,'expenses'
-                 , 'from_messages'
-                 ,'long_term_incentive','other','restricted_stock','restricted_stock_deferred','salary'
-                 ,'to_messages','total_payments', 'total_stock_value'
+                 ,'from_messages'
+                 #,'loan_advances'
+                 ,'long_term_incentive'
+                 ,'other','restricted_stock'
+                 ,'restricted_stock_deferred'
+                 ,'salary'
+                 ,'to_messages'
+                 ,'total_payments'
+                 ,'total_stock_value'
                 ]
-
-
-
-
-
-
-
 
 
 ### Load the dictionary containing the dataset
@@ -141,54 +140,13 @@ my_dataset = data_dict
 
 
 ### Extract features and labels from dataset for local testing
+#Start feature selecting
 data = featureFormat(my_dataset, features_list, sort_keys = True)
 labels, features = targetFeatureSplit(data)
 
-from sklearn.feature_selection import SelectKBest
-k = 5
-k_best = SelectKBest(k=k)
-k_best.fit(features, labels)
-
-scores = k_best.scores_
-unsorted_pairs = zip(features_list[1:], scores)
-sorted_pairs = list(reversed(sorted(unsorted_pairs, key=lambda x: x[1])))
-k_best_features = dict(sorted_pairs[:k])
-print "{0} best features: {1}\n".format(k, k_best_features.keys())
-print ""
-print (k_best_features.keys())
-
-
-#new_list = features_list[1:]
-new_list = k_best_features.keys()
-all = []
-import itertools
-for i in range(len(new_list)):
-    all.extend([sorted(l) for l in itertools.combinations(new_list, i+1)])
-
-for item in all:
-    poi ='poi'
-    item.insert(0, poi)
-#print (all)
-
+################################################################Attempt 1: simple tree with each individual measure
 from sklearn import tree
-mycolumns = ['feature_list', 'accuracy', 'precision', 'recall', 'f1', 'f2']
-resultdf = pd.DataFrame(columns=mycolumns)
-print len(resultdf)
-
-for item in all:
-    data = featureFormat(my_dataset, item, sort_keys = True)
-    labels, features = targetFeatureSplit(data)
-
-    clf = tree.DecisionTreeClassifier(min_samples_split = 4)
-    clf.fit(features, labels)
-    resultdf.loc[len(resultdf)] =  (test_classifier(clf, my_dataset, item))
-
-print  tabulate(resultdf, headers='keys', tablefmt='psql', floatfmt=".4f")
-
-
-
-
-def one_term_predict():
+def one_feature_predict(features_list, my_dataset):
     all = []
     for i in features_list:
         if i != 'poi':
@@ -197,14 +155,116 @@ def one_term_predict():
             l.append(i)
             all.append(l)
     #print all
-
+    mycolumns = ['feature_list', 'accuracy', 'precision', 'recall', 'f1', 'f2']
+    resultdf = pd.DataFrame(columns=mycolumns)
     for item in all:
         data = featureFormat(my_dataset, item, sort_keys = True)
         labels, features = targetFeatureSplit(data)
 
         clf = tree.DecisionTreeClassifier(min_samples_split = 4)
         clf.fit(features, labels)
-        test_classifier(clf, my_dataset, item)
+        resultdf.loc[len(resultdf)] =  (test_classifier(clf, my_dataset, item))
+    return resultdf
+
+#uncomment for Test 1
+#resultdf1 = one_feature_predict(features_list, my_dataset)
+#print  tabulate(resultdf1.sort(['recall','accuracy', 'precision'], ascending = [0,0,0]) , headers='keys', tablefmt='psql', floatfmt=".4f")
+#######################################################################
+
+
+
+#######################################################SelectKBest
+from sklearn.feature_selection import SelectKBest
+k_best = SelectKBest(k='all')# score all features
+k_best.fit(features, labels)
+
+scores = k_best.scores_
+unsorted_pairs = zip(features_list[1:], scores)# joins the labels with the values #Example:('bonus', 20.792252047181535), ('deferral_payments', 0.22461127473600989), ('deferred_income', 11.458476579280369),...]
+sorted_pairs = list(reversed(sorted(unsorted_pairs, key=lambda x: x[1]))) #Example: [('exercised_stock_options', 24.815079733218194), ('total_stock_value', 24.182898678566879), ('bonus', 20.792252047181535), ...]
+k = 3
+k_best_features = dict(sorted_pairs[:k])
+print "{0} best features: {1}\n".format(k, k_best_features.keys())
+#######################################################
+
+def combine_to_dict(features_df=None, labels_df=None):
+    features_df.insert(0, 'poi', labels_df)
+
+    data_dict = features_df.T.to_dict()
+    del features_df
+    return data_dict
+
+
+################################################################Attempt 2:
+import itertools
+from sklearn import tree
+from sklearn.neighbors import KNeighborsClassifier
+
+def topk_feature_predict(k_best_features, my_dataset):
+    new_list = k_best_features.keys()
+    all = []
+    for i in range(len(new_list)):
+        if i !=0: #already looked at individual features on step 1. Start by 2X2
+            all.extend([sorted(l) for l in itertools.combinations(new_list, i+1)])
+
+
+    for item in all: #add 'poi' in the beginning to all combinations
+        poi ='poi'
+        item.insert(0, poi)
+    #print (all)
+
+    mycolumns = ['feature_list', 'accuracy', 'precision', 'recall', 'f1', 'f2']
+    resultdf2 = pd.DataFrame(columns=mycolumns)
+
+
+    for item in all:
+
+        data = featureFormat(my_dataset, item, sort_keys = True)
+        #non-norm:
+        #labels, features = targetFeatureSplit(data)
+
+        #norm:
+        df = pd.DataFrame(data, columns=item)
+        for column in df.columns[1:]:
+            df[column] = (df[column] - df[column].mean()) / (df[column].std())
+        labels = df['poi']
+        features = df[item[1:]] # all expect for poi
+
+
+        #Attempt2 -  Tree with 5 best:
+        #clf = tree.DecisionTreeClassifier(min_samples_split = 4)
+
+        #Attempt3 -  KNeighborsClassifier with 5 best:
+        #clf = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', metric_params=None, n_neighbors=5, p=2, weights='distance')
+
+
+        clf.fit(features, labels)
+        new_dataset = combine_to_dict(features_df=features, labels_df=labels)
+        resultdf2.loc[len(resultdf2)]= (test_classifier(clf, new_dataset, item))
+
+    return resultdf2
+
+#uncomment for Test 2
+resultdf2 = topk_feature_predict(k_best_features, my_dataset)
+print tabulate(resultdf2.sort(['recall','accuracy', 'precision'], ascending = [0,0,0]) , headers='keys', tablefmt='psql', floatfmt=".4f")
+
+sys.exit(0)
+
+features_list = ['poi', 'bonus', 'exercised_stock_options', 'salary', 'total_stock_value']
+
+data = featureFormat(my_dataset, features_list, sort_keys = True)
+df = pd.DataFrame(data, columns=features_list)
+for column in df.columns[1:]:
+    df[column] = (df[column] - df[column].mean()) / (df[column].std())
+labels = df['poi']
+features = df[features_list[1:]] # all expect for poi
+
+clf = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', metric_params=None, n_neighbors=5, p=2, weights='distance')
+clf.fit(features, labels)
+
+my_dataset = combine_to_dict(features_df=features, labels_df=labels)
+
+
+print (test_classifier(clf, my_dataset, features_list))
 
 
 
