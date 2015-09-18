@@ -2,9 +2,13 @@ import sys
 import pickle
 import pprint
 import pandas as pd
+from sklearn.grid_search import GridSearchCV
+from sklearn.svm import SVC
 from tabulate import tabulate
 from class_vis import prettyPicture, output_image
 from collections import Counter
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 
 sys.path.append("../tools/")
 
@@ -181,7 +185,7 @@ k_best.fit(features, labels)
 scores = k_best.scores_
 unsorted_pairs = zip(features_list[1:], scores)# joins the labels with the values #Example:('bonus', 20.792252047181535), ('deferral_payments', 0.22461127473600989), ('deferred_income', 11.458476579280369),...]
 sorted_pairs = list(reversed(sorted(unsorted_pairs, key=lambda x: x[1]))) #Example: [('exercised_stock_options', 24.815079733218194), ('total_stock_value', 24.182898678566879), ('bonus', 20.792252047181535), ...]
-k = 3
+k = 5
 k_best_features = dict(sorted_pairs[:k])
 print "{0} best features: {1}\n".format(k, k_best_features.keys())
 #######################################################
@@ -199,7 +203,7 @@ import itertools
 from sklearn import tree
 from sklearn.neighbors import KNeighborsClassifier
 
-def topk_feature_predict(k_best_features, my_dataset):
+def topk_feature_predict(k_best_features, my_dataset, normalize_data = False):
     new_list = k_best_features.keys()
     all = []
     for i in range(len(new_list)):
@@ -219,15 +223,16 @@ def topk_feature_predict(k_best_features, my_dataset):
     for item in all:
 
         data = featureFormat(my_dataset, item, sort_keys = True)
-        #non-norm:
-        #labels, features = targetFeatureSplit(data)
 
-        #norm:
-        df = pd.DataFrame(data, columns=item)
-        for column in df.columns[1:]:
-            df[column] = (df[column] - df[column].mean()) / (df[column].std())
-        labels = df['poi']
-        features = df[item[1:]] # all expect for poi
+
+        if normalize_data:
+            df = pd.DataFrame(data, columns=item)
+            for column in df.columns[1:]:
+                df[column] = (df[column] - df[column].mean()) / (df[column].std())
+            labels = df['poi']
+            features = df[item[1:]] # all expect for poi
+        else:
+            labels, features = targetFeatureSplit(data)
 
 
         #Attempt2 -  Tree with 5 best:
@@ -236,35 +241,81 @@ def topk_feature_predict(k_best_features, my_dataset):
         #Attempt3 -  KNeighborsClassifier with 5 best:
         #clf = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', metric_params=None, n_neighbors=5, p=2, weights='distance')
 
+        #Attempt4 - Logistic regression:
+        #clf = LogisticRegression( C=10**20,penalty='l2',random_state=42,tol=10**-10,class_weight='auto')
+
+        #clf = RandomForestClassifier(n_estimators=10, min_samples_split = 4, n_jobs = -1, max_features = 0.5)
+        clf = LogisticRegression( C=0.1,penalty='l1',random_state=42,tol=10**-10,class_weight='auto')
+
 
         clf.fit(features, labels)
-        new_dataset = combine_to_dict(features_df=features, labels_df=labels)
+
+
+        #only have to transform back to dictionary if I had to make it a data frame to normalize
+        if normalize_data:
+            new_dataset = combine_to_dict(features_df=features, labels_df=labels)
+        else:
+            new_dataset = my_dataset
         resultdf2.loc[len(resultdf2)]= (test_classifier(clf, new_dataset, item))
 
     return resultdf2
 
 #uncomment for Test 2
-resultdf2 = topk_feature_predict(k_best_features, my_dataset)
+resultdf2 = topk_feature_predict(k_best_features, my_dataset, False)
 print tabulate(resultdf2.sort(['recall','accuracy', 'precision'], ascending = [0,0,0]) , headers='keys', tablefmt='psql', floatfmt=".4f")
 
 sys.exit(0)
 
-features_list = ['poi', 'bonus', 'exercised_stock_options', 'salary', 'total_stock_value']
+new_list = k_best_features.keys()
+new_list.insert(0, 'poi')
+data = featureFormat(my_dataset, new_list, sort_keys = True)
+labels, features = targetFeatureSplit(data)
+#clf = RandomForestClassifier(n_estimators=10, min_samples_split = 4, n_jobs = -1, max_features = 0.5)
+#clf = AdaBoostClassifier(base_estimator=None, n_estimators=50, learning_rate=1.0, algorithm='SAMME.R', random_state=None)
 
-data = featureFormat(my_dataset, features_list, sort_keys = True)
-df = pd.DataFrame(data, columns=features_list)
-for column in df.columns[1:]:
-    df[column] = (df[column] - df[column].mean()) / (df[column].std())
-labels = df['poi']
-features = df[features_list[1:]] # all expect for poi
 
-clf = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', metric_params=None, n_neighbors=5, p=2, weights='distance')
+# param_grid = {
+# 'C': [1e3, 5e3, 1e4, 5e4, 1e5],
+# 'gamma': [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1],
+# }
+# clf = GridSearchCV(SVC(kernel='rbf', class_weight='auto'), param_grid)
+# clf = clf.fit(features, labels)
+
+new_list =['poi', 'exercised_stock_options', 'total_stock_value', 'salary']
+
+data = featureFormat(my_dataset, new_list, sort_keys = True)
+labels, features = targetFeatureSplit(data)
+#clf = LogisticRegression( C=0.0001,penalty='l2',random_state=42,tol=10**-10,class_weight='auto')
+
+clf = LogisticRegression( C=0.1,penalty='l1',random_state=42,tol=10**-10,class_weight='auto')
+
+
+#param_grid = {'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000], 'penalty': ['l1', 'l2'] }
+#clf = GridSearchCV(LogisticRegression(), param_grid)
+#foo = clf.fit(features, labels)
+#print foo.best_estimator_
+
+
 clf.fit(features, labels)
+test_classifier(clf, my_dataset, new_list)
 
-my_dataset = combine_to_dict(features_df=features, labels_df=labels)
+
+# features_list = ['poi', 'bonus', 'exercised_stock_options', 'salary', 'total_stock_value']
+#
+# data = featureFormat(my_dataset, features_list, sort_keys = True)
+# df = pd.DataFrame(data, columns=features_list)
+# for column in df.columns[1:]:
+#     df[column] = (df[column] - df[column].mean()) / (df[column].std())
+# labels = df['poi']
+# features = df[features_list[1:]] # all expect for poi
+#
+# clf = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', metric_params=None, n_neighbors=5, p=2, weights='distance')
+# clf.fit(features, labels)
+#
+# my_dataset = combine_to_dict(features_df=features, labels_df=labels)
 
 
-print (test_classifier(clf, my_dataset, features_list))
+
 
 
 
@@ -358,3 +409,5 @@ from sklearn.cluster import KMeans
 
 
 #https://www.youtube.com/watch?v=2HmopqF6V6w
+
+
