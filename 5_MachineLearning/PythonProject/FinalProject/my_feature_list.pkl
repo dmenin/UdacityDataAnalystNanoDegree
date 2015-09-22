@@ -3,10 +3,8 @@ S'poi'
 p1
 aS'bonus'
 p2
-aS'deferred_income'
-p3
 aS'exercised_stock_options'
-p4
+p3
 aS'salary'
-p5
+p4
 a.

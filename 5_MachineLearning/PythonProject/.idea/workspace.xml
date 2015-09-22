@@ -23,109 +23,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="poi_id.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="poi_id.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FinalProject/poi_id.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3727" max-vertical-offset="6715">
-              <caret line="331" column="61" selection-start-line="331" selection-start-column="61" selection-end-line="331" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.35901925" vertical-offset="1580" max-vertical-offset="3485">
+              <caret line="269" column="34" selection-start-line="269" selection-start-column="34" selection-end-line="269" selection-end-column="34" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#827#1509#1" expanded="false" />
-                <element signature="e#1622#2744#0" expanded="false" />
-                <element signature="e#2865#2926#0" expanded="false" />
-                <element signature="e#3117#3556#0" expanded="false" />
-                <element signature="e#3680#3755#0" expanded="false" />
-                <element signature="e#4527#5163#0" expanded="false" />
+                <element signature="e#1676#2798#0" expanded="false" />
+                <element signature="e#2936#2997#0" expanded="false" />
+                <element signature="e#3269#3708#0" expanded="false" />
+                <element signature="e#3853#3928#0" expanded="false" />
+                <element signature="e#4749#5385#0" expanded="false" />
+                <element signature="e#5841#8542#0" expanded="false" />
+                <element signature="e#9079#10531#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4002" max-vertical-offset="7854">
-              <caret line="255" column="0" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/svm/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="11363" max-vertical-offset="14416">
-              <caret line="697" column="0" selection-start-line="697" selection-start-column="0" selection-end-line="697" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pydevd.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="19489" max-vertical-offset="28458">
-              <caret line="1225" column="0" selection-start-line="1225" selection-start-column="0" selection-end-line="1225" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pca.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/decomposition/pca.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4512" max-vertical-offset="11509">
-              <caret line="289" column="0" selection-start-line="289" selection-start-column="0" selection-end-line="289" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid_search.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/grid_search.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4512" max-vertical-offset="15368">
-              <caret line="279" column="0" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/neighbors/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="12402" max-vertical-offset="13124">
-              <caret line="758" column="0" selection-start-line="758" selection-start-column="0" selection-end-line="758" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="indexing.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Anaconda/Lib/site-packages/pandas/core/indexing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="18505" max-vertical-offset="30124">
-              <caret line="1111" column="0" selection-start-line="1111" selection-start-column="0" selection-end-line="1111" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="validation.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/utils/validation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="485" max-vertical-offset="10642">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tester.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tester.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FinalProject/tester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3102453" vertical-offset="584" max-vertical-offset="1819">
-              <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="874" max-vertical-offset="1751">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -531,7 +452,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -540,7 +461,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19479166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32490638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4391386" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21910113" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -571,17 +492,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/sklearn/linear_model/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33242506" vertical-offset="1864" max-vertical-offset="7225">
-          <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4952251" vertical-offset="9242" max-vertical-offset="87771">
@@ -940,27 +854,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/poi_id.py">
+    <entry file="file://C:/Anaconda/Lib/site-packages/sklearn/metrics/scorer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3727" max-vertical-offset="6715">
-          <caret line="331" column="61" selection-start-line="331" selection-start-column="61" selection-end-line="331" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#827#1509#1" expanded="false" />
-            <element signature="e#1622#2744#0" expanded="false" />
-            <element signature="e#2865#2926#0" expanded="false" />
-            <element signature="e#3117#3556#0" expanded="false" />
-            <element signature="e#3680#3755#0" expanded="false" />
-            <element signature="e#4527#5163#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="2846" max-vertical-offset="5899">
+          <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FinalProject/tester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3102453" vertical-offset="584" max-vertical-offset="1819">
-          <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="874" max-vertical-offset="1751">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/poi_id.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35901925" vertical-offset="1580" max-vertical-offset="3485">
+          <caret line="269" column="34" selection-start-line="269" selection-start-column="34" selection-end-line="269" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#1676#2798#0" expanded="false" />
+            <element signature="e#2936#2997#0" expanded="false" />
+            <element signature="e#3269#3708#0" expanded="false" />
+            <element signature="e#3853#3928#0" expanded="false" />
+            <element signature="e#4749#5385#0" expanded="false" />
+            <element signature="e#5841#8542#0" expanded="false" />
+            <element signature="e#9079#10531#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
