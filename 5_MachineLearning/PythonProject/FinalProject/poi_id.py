@@ -5,7 +5,6 @@ import pandas as pd
 from sklearn.grid_search import GridSearchCV
 from sklearn.svm import SVC
 from tabulate import tabulate
-from class_vis import prettyPicture, output_image
 from collections import Counter
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
