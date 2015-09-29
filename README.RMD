@@ -6,6 +6,8 @@ ReadMe
 	* Completed Final Project Reports
 		* P2: Analysing the NYC Subway Dataset
 		* P3: Data Wrangle OpenStreetMapsData (Dublin)
+		* P4: Explore and Summarize Data with R
+		* P5: Intro to Machine Learning with Python
   * 2_IntroDS: Introduction to Data Science
   * 3_Mongo: Data Wrangling with MongoDB and Python
   * 4_R: Explore and Summarize Data
