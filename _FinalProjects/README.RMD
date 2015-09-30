@@ -1,5 +1,4 @@
 <br>
-<br>
 
 This folder contains the the final project for each  of the courses on the Nanodegree.
 
