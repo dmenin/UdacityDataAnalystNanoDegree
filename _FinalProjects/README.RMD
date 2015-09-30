@@ -1,4 +1,34 @@
-Final Projects Summary
-===================
+<style type="text/css">
+.table {
 
-*test
+    width: 700px
+
+}
+</style>
+
+<br>
+<br>
+
+This folder contains the the final project for each  of the courses on the Nanodegree.
+
+Click on the individual pdf file above for each project  visit equivalent folder for details\code of the project.
+<br>
+<br>
+
+
+
+Project | Main Technologies
+------------- | -------------
+[P2: Intro to Data Science](https://github.com/dmenin/UdacityDataAnalystNanoDegree/tree/master/2_IntroDS)  | ![](..//Miscellaneous//stats.png)
+[P3: OpenStreetMaps Data Wrangling with MongoDB](https://github.com/dmenin/UdacityDataAnalystNanoDegree/tree/master/3_Mongo) | ![](..//Miscellaneous//mongo.png) ![](..//Miscellaneous//Python.png)
+[P4: Explore and Summarize Data with R](https://github.com/dmenin/UdacityDataAnalystNanoDegree/tree/master/4_R) | ![](..//Miscellaneous//R.png)
+[P5: Intro to Machine Learning with Python](https://github.com/dmenin/UdacityDataAnalystNanoDegree/tree/master/5_MachineLearning/PythonProject) | ![](..//Miscellaneous//Python.png) ![](..//Miscellaneous//ml.png)
+
+
+
+
+
+
+![](..//Miscellaneous//cover2.png)
+
+
