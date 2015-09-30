@@ -1,8 +1,6 @@
-<br>
-
 This folder contains the the final project for each  of the courses on the Nanodegree.
 
-Click on the individual pdf file above for each project  visit equivalent folder for details\code of the project.
+Click on each individual pdf file above to visualize the project and use the links below to check the code\more details for the desired project.
 <br>
 <br>
 
