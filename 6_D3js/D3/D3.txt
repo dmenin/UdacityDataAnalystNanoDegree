@@ -1,0 +1,47 @@
+document.querySelector("header.navbar-static-top")
+d3.select("header.navbar-static-top")
+
+
+
+d3.select("header.navbar-static-top").style('background-color')
+	"rgb(41, 72, 96)"
+d3.select("header.navbar-static-top").style('background-color', 'green')
+
+
+
+d3.selectAll("header.navbar-static-top")
+
+
+var header = d3.select("header.navbar-static-top")
+header
+
+d3.select('h1.left-hand-nav-title').text("Jonathan's pretty pictures");
+
+
+
+var parent_el = d3.select('a#header-logo')
+parent_el.select('img')
+
+
+parent_el.select('img').attr('alt', "Jon's logo")
+
+
+
+zipf = 'https://www.google.ie/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+
+d3.select('a.navbar-brand.logo').select('img').attr('src', zipf)
+
+
+
+
+clearing a pane's html
+d3.select('div.col-xs-3').html('')
+
+
+
+
+var svg = d3.select('div.col-xs-3').append('svg')
+var y =d3.scale.linear().domain([15,90]).range([150,0])
+var x =d3.scale.log().domain([250,100000]).range([0,250])
+console.log(y(75), x(8347))
+svg.append('circle').attr('r',10).attr('fill','red').attr('cx', x(8347)).attr('cy',y(75));
