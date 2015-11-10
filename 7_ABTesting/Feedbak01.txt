@@ -1,0 +1,6 @@
+changed the metrics
+added "expectations" section
+updated section about whether the analytic variance is likely to match the empirical variance.
+Bonferroni Correction update
+
+
