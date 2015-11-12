@@ -1,6 +1,12 @@
+01
 changed the metrics
 added "expectations" section
 updated section about whether the analytic variance is likely to match the empirical variance.
 Bonferroni Correction update
 
 
+
+02
+user id on invariant metric
+bonferoni correction
+metric on followup experiment
