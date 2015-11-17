@@ -45,3 +45,8 @@ var y =d3.scale.linear().domain([15,90]).range([150,0])
 var x =d3.scale.log().domain([250,100000]).range([0,250])
 console.log(y(75), x(8347))
 svg.append('circle').attr('r',10).attr('fill','red').attr('cx', x(8347)).attr('cy',y(75));
+
+
+
+#print tabular data
+console.table(data);
