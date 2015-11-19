@@ -15,88 +15,94 @@ function createPlot1() {
 	var ec = document.getElementById('measureCompareToSelection');
 	var categoryValCompare = ec.options[ec.selectedIndex].value;
 	var categoryTextCompare = ec.options[ec.selectedIndex].text;
-
+	
+	//clear all graphs
 	svg1.selectAll('g').remove();
 	svg2.selectAll('g').remove();
 	svg3.selectAll('g').remove();
 
-
-	if (categoryVal === "select"){
-	return false;
+	//do not print anything if category not selected
+	if (categoryVal === "select"){ 
+		return false;
 	}
-
-
-
-	var canvas_width = 800;
-	var canvas_height = 400;
-	var padding = 50;  // for chart edges	  
-
-	var margin = 75,
-	width = 600 - margin,
-	height = 300 - margin;
 
 	d3.csv("poi.csv", function (data) {
 
-
+	//remove zeros
 	filtereddata = data.filter(function(d){
-
-	if (parseInt(d[categoryVal]) == 0){
-		return false;
-	}		  
-
-	  return true;
+		if (parseInt(d[categoryVal]) == 0){
+			return false;
+		}		  
+		  return true;
 	});
-
-	var count_extent = d3.extent(data, function(d) {
-	  return d[categoryVal];
-	});		
 
 
 	var myChart = new dimple.chart(svg1, filtereddata);	  
 	var x = myChart.addCategoryAxis("x", "Index");   	  	
-	x.title = ""; //no title on index
+	x.title = "Person's Index"; 
 	x._getFormat = function() { return ""; }; //clears the labels on the indexes
 	var y = myChart.addMeasureAxis("y", categoryVal);
 	y.title = categoryText;
 	var mySeries = myChart.addSeries("poi", dimple.plot.bar);
-	myChart.addLegend(200, 10, 380, 20, "right");
 	
-	myChart.draw();
+	var myLegend = myChart.addLegend(350, 10, 380, 20, "right",mySeries);
+	myLegend._getEntries = function () {
+		var orderedValues = ["Not a POI", "POI"];
+		var entries = [];
+		orderedValues.forEach(function (v) {
+        entries.push(
+			{
+                key: v,
+                fill: myChart.getColor(v).fill,
+                stroke: myChart.getColor(v).stroke,
+                opacity: myChart.getColor(v).opacity,
+                series: mySeries,
+                aggField: [v]
+            }
+        );
+		}, this);
+  
+    return entries;
+	};	
+	
+	myChart.assignColor("0", "rgb(139,172,195)");
+	myChart.assignColor("1", "rgb(251,153,142)");	
+	myChart.draw(1000);
 
+	
 	categoryValNorm = categoryVal+"Norm"
 	var myChart2 = new dimple.chart(svg2, filtereddata);	  
 	var x = myChart2.addMeasureAxis("x", categoryValNorm); 
 	x.title = categoryText + " Z-Score";
 	var y = myChart2.addCategoryAxis("y", "Index");
-	y.title = "";
+	y.title = "Person's Index"; 
 	y._getFormat = function() { return ""; }; //clears the labels on the indexes
-	myChart2.addSeries("poi", dimple.plot.bar);
-	myChart2.draw();
+	var mySeries2 = myChart2.addSeries("poi", dimple.plot.bar);
+	myChart2.assignColor("0", "rgb(139,172,195)");
+	myChart2.assignColor("1", "rgb(251,153,142)");	
+	var myLegend2 = myChart2.addLegend(80, 10, 380, 20, "right",mySeries2);
+	myLegend2._getEntries = myLegend._getEntries //use the same values generated on the first graph
+	myChart2.draw(1000);
 
-	//var myChart4 = new dimple.chart(svg4, data);
-	//myChart4.addMeasureAxis("x", categoryVal); 	
-	//myChart4.draw();
-	
 	
 	if (categoryValCompare === "select"){
 	  return false;
 	}
 
 	var myChart3 = new dimple.chart(svg3, data);
-	myChart3.addCategoryAxis("x", categoryVal); 
-	myChart3.addCategoryAxis("y", categoryValCompare);			
-	myChart3.addSeries("poi", dimple.plot.bubble);
-	myChart3.draw();
+	var x3 = myChart3.addMeasureAxis("x", categoryVal); 
+	x3.title = categoryText;
+	
+	var y3 = myChart3.addMeasureAxis("y", categoryValCompare);
+	y3.title = categoryTextCompare;
+	var mySeries3 = myChart3.addSeries(["Index","", "poi"], dimple.plot.scatter);
+	myChart3.assignColor("0", "rgb(139,172,195)");
+	myChart3.assignColor("1", "rgb(251,153,142)");	
+	var myLegend3 = myChart3.addLegend(530, 10, 380, 20, "right",mySeries3);
+	myLegend3._getEntries = myLegend._getEntries //use the same values generated on the first graph	
+	myChart3.draw(1000);	
 
-
-
-			
-
-			
-
-
-
-	  
+  
 	  
     });
 }
