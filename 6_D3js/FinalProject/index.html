@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+  <style type="text/css">
+  
+
+	.tg  {border-collapse:collapse;border-spacing:0; width: 1300px}
+	.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+	.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-width:1px;overflow:hidden;word-break:normal;}
+	.tg .tg-yw4l{vertical-align:top}
+
+	.title {font-size:34px;}
+	.subtitle {font-size:16px;font-style:italic;}
+	.minititle {font-weight: bold;text-decoration: underline;}
+	.small-it {font-size:9px;font-style:italic;}
+	
+	.select-drop {font-weight: bold;}
+
+	.nothing{
+		border-collapse:collapse;
+	} 
+	.nothing td{
+		border:none;
+		outline:none;
+	}
+	.par {padding-left:5em}
+  </style>
+  
+
+</head>
+  
+<body>
+<div style="width:1500px; margin:0 auto;">
+	<table class="tg">
+	  <tr>
+		<th class="tg-031e" colspan="2">
+			<label class="title">Identifying Fraud from Enron Emails</label>
+			<br>
+				<table class="nothing">
+				  <tr>
+					<td width="15%"></td>
+					<td width="70%">
+						<label class="subtitle">This Visualization aims to help students on the Intro to Machine Learning course from the Udacity's Data Analyst Nanodegree to work on their final project, which consists on building an algorithm to identify Enron Employees who may have committed fraud based on the public Enron financial and email dataset.</label>
+					</td>
+					<td width="15%"></td>
+				  </tr>
+				</table>						
+		</th>
+	  </tr>
+	  
+	  <tr class="nothing">
+		<td class="tg-031e" colspan="2">
+			<label class="minititle">The Dataset:</label>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;The dataset was provided by the Udacity team and consists of a hand-generated list of persons of interest (POI) in the fraud case, which means individuals who were indicted, reached a settlement or plea deal with the government, or testified in exchange for prosecution immunity. It contains 145 observations, 18 of each are considered POIs.  Each observation contains 14 measures that indicates for example, how much was the person’s salary or bonus.</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;I chose not to include the person’s name on this visualization but it can be easily be looked up on the course’s original dataset. I also removed a few  observations due to its data quality (won’t get into more details because this is actually one of the project’s goal).</p>	
+		</td>
+	  </tr>
+
+	  <tr class="nothing">
+		<td class="tg-031e" colspan="2">
+			<label class="minititle">The Visualization:</label>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;The idea is to select one of the measures (like salary for example) and show one bar plot with the actual values and a second bar plot with the normalized values (z-score). Is is also possible to select a second measure and see a scatter plot between both of them.</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;On all the plots, the colour identifies whether the person is a POI or not</p>	
+		</td>
+	  </tr>
+	  
+
+	  <tr>
+		<td class="tg-031e" colspan="2">
+			<table class= 'select-drop-table'>
+			  <tr>
+				<th><label class="select-drop">Select Measure to Display:</label></th>
+				<th>
+					<div class='input-form'>
+					  <select onchange="MeasureSelected()" id="measureSelection" class="input">
+						<option value="select">Select Your Measure</option>
+						<option value="bonus">Bonus</option>
+						<option value="salary">Salary</option>
+						<option value="expenses">Expenses</option>
+						
+						<option value="deferral_payments">Deferral Payments</option>
+						<option value="deferred_income">Deferred Income</option>
+						<option value="director_fees">Director Fees</option>
+						<option value="exercised_stock_options">Exercised Stock Options</option>
+						<option value="from_messages">From Messages</option>
+						<option value="loan_advances">Loan Advances</option>
+						<option value="long_term_incentive">Long Term Incentive</option>
+						<option value="other">Other</option>
+						<option value="restricted_stock">Restricted Stock</option>
+						<option value="restricted_stock_deferred">Restricted Stock Deferred</option>		
+						<option value="to_messages">To Messages</option>		
+						<option value="total_payments">Total Payments</option>		
+						<option value="total_stock_value">Total Stock Value</option>				
+					  </select>
+					</div>  				
+				</th>
+			  </tr>
+			</table>
+		</td>
+	  </tr>
+	  <tr>
+		<td class="tg-031e"><div class="chart" id="chart1Container"></div></td>
+		<td class="tg-031e">
+			<table class="nothing">
+			  <tr>
+				<td>
+					<label class="select-drop">Measure Normalized:</label>
+					<label class="small-it"> ((X - Mean(x)) / SD(X))</label>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+					<div class="chart" id="chart2Container"></div>					
+				</td>
+			  </tr>
+			</table>		
+
+		</td>
+	  </tr>
+	  <tr>
+		<td class="tg-031e" colspan="2"> 
+			<table class= 'select-drop-table'>
+			  <tr>
+				<th><label class="select-drop">Select Measure to Compare to:</label></th>
+				<th>
+					<div class='input-form'>
+					  <select onchange="MeasureSelected()" id="measureCompareToSelection" class="input">
+						<option value="select">Select Your Measure</option>
+						<option value="bonus">Bonus</option>
+						<option value="salary">Salary</option>
+						<option value="expenses">Expenses</option>
+						
+						<option value="deferral_payments">Deferral Payments</option>
+						<option value="deferred_income">Deferred Income</option>
+						<option value="director_fees">Director Fees</option>
+						<option value="exercised_stock_options">Exercised Stock Options</option>
+						<option value="from_messages">From Messages</option>
+						<option value="loan_advances">Loan Advances</option>
+						<option value="long_term_incentive">Long Term Incentive</option>
+						<option value="other">Other</option>
+						<option value="restricted_stock">Restricted Stock</option>
+						<option value="restricted_stock_deferred">Restricted Stock Deferred</option>		
+						<option value="to_messages">To Messages</option>		
+						<option value="total_payments">Total Payments</option>		
+						<option value="total_stock_value">Total Stock Value</option>				
+					  </select>
+					</div>  				
+				</th>
+			  </tr>
+			</table>
+		</td>
+	  </tr>
+	  <tr>
+		<td class="tg-yw4l" colspan="2">
+			<div class="chart3" id="chart3Container" align="center">
+			</div>				
+		</td>
+	  </tr>
+	</table>
+	<script src="main.js"></script>
+</div>	
+</body>
+</html>

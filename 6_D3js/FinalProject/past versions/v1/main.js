@@ -45,7 +45,6 @@ function createPlot1() {
 	y.title = categoryText;
 	var mySeries = myChart.addSeries("poi", dimple.plot.bar);
 	
-	//Updates the legend text ("POI"" instead on "1" for example)
 	var myLegend = myChart.addLegend(350, 10, 380, 20, "right",mySeries);
 	myLegend._getEntries = function () {
 		var orderedValues = ["Not a POI", "POI"];
@@ -66,7 +65,6 @@ function createPlot1() {
     return entries;
 	};	
 	
-	//manually set colours to avoid same category receiving different colour on the next graph
 	myChart.assignColor("0", "rgb(139,172,195)");
 	myChart.assignColor("1", "rgb(251,153,142)");	
 	myChart.draw(1000);
@@ -104,6 +102,7 @@ function createPlot1() {
 	myLegend3._getEntries = myLegend._getEntries //use the same values generated on the first graph	
 	myChart3.draw(1000);	
 
+  
 	  
     });
 }
