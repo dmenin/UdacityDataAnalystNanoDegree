@@ -2,7 +2,6 @@ var svg1 = dimple.newSvg("#chart1Container", 790, 400);
 var svg2 = dimple.newSvg("#chart2Container", 490, 400);
 var svg3 = dimple.newSvg("#chart3Container", 1000, 500);
 
-
 function MeasureSelected() {
   createPlot1();
 }
@@ -107,4 +106,3 @@ function createPlot1() {
 	  
     });
 }
-
