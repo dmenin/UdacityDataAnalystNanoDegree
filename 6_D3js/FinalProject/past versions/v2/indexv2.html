@@ -93,34 +93,7 @@
 					  </select>
 					</div>  				
 				</th>
-			  </tr>
-			</table>
-		</td>
-	  </tr>
-	  <tr>
-		<td class="tg-031e"><div class="chart" id="chart1Container"></div></td>
-		<td class="tg-031e">
-			<table class="nothing">
-			  <tr>
-				<td>
-					<label class="select-drop">Measure Normalized:</label>
-					<label class="small-it"> ((X - Mean(x)) / SD(X))</label>
-				</td>
-			  </tr>
-			  <tr>
-				<td>
-					<div class="chart" id="chart2Container"></div>					
-				</td>
-			  </tr>
-			</table>		
-
-		</td>
-	  </tr>
-	  <tr>
-		<td class="tg-031e" colspan="2"> 
-			<table class= 'select-drop-table'>
-			  <tr>
-				<th><label class="select-drop">Select Measure to Compare to:</label></th>
+				<th><label class="select-drop">Select Measure to Compare To:</label></th>
 				<th>
 					<div class='input-form'>
 					  <select onchange="MeasureSelected()" id="measureCompareToSelection" class="input">
@@ -143,17 +116,26 @@
 						<option value="total_payments">Total Payments</option>		
 						<option value="total_stock_value">Total Stock Value</option>				
 					  </select>
-					</div>  				
+					</div>  
 				</th>
+					
+				
 			  </tr>
 			</table>
+		
 		</td>
 	  </tr>
 	  <tr>
-		<td class="tg-yw4l" colspan="2">
-			<div class="chart3" id="chart3Container" align="center">
-			</div>				
-		</td>
+		<td class="tg-031e">
+			<table class="nothing">
+			  <tr>
+				<th><div class="chart" id="chart1Container"></th>
+				<th><div class="chart" id="chart2Container"></th>
+				<th><div class="chart" id="chart3Container"></th>
+			  </tr>
+			</table>
+		</td>			
+
 	  </tr>
 	  <tr>
 		<td class="tg-yw4l" colspan="2">
@@ -161,7 +143,10 @@
 		</td>
 	  </tr>	  
 	</table>
-	<script src="main.js"></script>
+	<script src="main2.js"></script>
 </div>	
 </body>
 </html>
+
+
+

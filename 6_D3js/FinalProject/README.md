@@ -1,11 +1,14 @@
 # Project 6 - Data Visualization with D3.js
 
 
+Final version can be found [here!](http://bl.ocks.org/dmenin/raw/d12a22521ad32cacc906).
+
+
+
+
 ##Summary
 
      The Visualization aims to help students on the Intro to Machine Learning course from the Udacity's Data Analyst Nanodegree to work on their final project, which consists on building an algorithm to identify Enron Employees who may have committed fraud based on the public Enron financial and email dataset.
-    - Final version can be found [here](http://bl.ocks.org/dmenin/raw/d12a22521ad32cacc906).
-
    
 
 
@@ -15,6 +18,7 @@
       Design Changes:
 
     	1) Implemented feedback 1 by adding a global <div> tag to center the visualization
+		2) Implemented feedback 2 by adding a link to the glossary to explain what the measures are; Was also suggested that all 3 plots should be on the same line, which I tested but didn't like because the scatter plot is two narrow. The result can be seen bu running the code on the "past versions\v2" folder or checking the "feedback2-result.png" file
 
 
 
@@ -29,7 +33,9 @@
 > Very nice work!
 
 
+    - v3: feedback received:
 
+> Hi there, I'm not familiar with the dataset, so it would've helped to have a glossary of what the measures represent. What is "Other"? What are "Deferral Payments"? Also, it might've been nice to have all three visualizations on one page; playing with the comparison, > I've found myself scrolling up and down to make different selections which was a bit annoying. Hope that helps - Lee
 
 
 
@@ -38,8 +44,6 @@
     - http://dimplejs.org/
     - http://dillinger.io/
     - https://github.com/PMSI-AlignAlytics/dimple/wiki
+	- https://gist.github.com/
     - Several StackOverflow Posts
     - Special thanks to John Kiernander who helped me with the colouring http://stackoverflow.com/questions/33799829/changing-colors-on-dimple-js-scatter-plot/33801051
-
-
-
