@@ -57,11 +57,15 @@ d3.json("graph.json", function(error, json) {
 	  function(d, i) { 
 								console.log(d)
 								if (d.group=="CEO") {
-									return "https://github.com/favicon.ico"
-								} else  if (d.group=="none") {
-									return "img/vp.png"
+									return "img/CEO.png"
+								} else  if (d.group=="Managing Director") {
+									return "img/MD.png"
+								} else  if (d.group=="Vice President") {
+									return "img/VP.png"
+								} else  if (d.group=="President") {
+									return "img/PR.png"									
 								} else 
-									return "https://github.com/favicon.ico"								
+									return "img/emp.png"
 								}
 	  
 	  

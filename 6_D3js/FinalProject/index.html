@@ -1,68 +1,234 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
-  <style type="text/css">
-	.tg  {border-collapse:collapse;border-spacing:0; width: 1300px}
-	.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-	.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-width:1px;overflow:hidden;word-break:normal;}
-	.tg .tg-yw4l{vertical-align:top}
+	<meta charset="utf-8">
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+	<style type="text/css">			
+		path.link {
+		  fill: none;
+		  stroke: #666;
+		  stroke-width: 1.5px;
+		}
+		text {
+		  fill: #000;
+		  font: 10px sans-serif;
+		  pointer-events: none;
+		}
 
-	.title {font-size:34px;}
-	.subtitle {font-size:16px;font-style:italic;}
-	.minititle {font-weight: bold;text-decoration: underline;}
-	.small-it {font-size:9px;font-style:italic;}
-	
-	.select-drop {font-weight: bold;}
 
-	.nothing{
-		border-collapse:collapse;
-	} 
-	.nothing td{
-		border:none;
-		outline:none;
-	}
-	.par {padding-left:5em}
-  </style>
+
+		.tg  {border-collapse:collapse;border-spacing:0; width: 1300px}
+		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-width:1px;overflow:hidden;word-break:normal;}
+		.tg .tg-yw4l{vertical-align:top}
+
+		.title {font-size:34px;}
+		.subtitle {font-size:16px;font-style:italic;}
+		.minititle {font-weight: bold;text-decoration: underline;}
+		.small-it {font-size:9px;font-style:italic;}
+
+		.select-drop {font-weight: bold;}
+
+		.nothing{
+			border-collapse:collapse;
+		} 
+		.nothing td{
+			border:none;
+			outline:none;
+		}
+		.par {padding-left:5em}
+
+	</style>
+	<script>
+		d3.csv("edges.csv", function(error, links) {
+			//filter data to show only connections with less than 50 emails
+			links = links.filter(function(d){
+				if (parseInt(d.amt) <50){
+					return false;
+				}		  
+				  return true;
+			}); 
+			var nodes = {};
+
+			//Compute the distinct nodes from the links.
+			//"Hide" the source type on the name
+			links.forEach(function(link) {
+				link.source = nodes[link.source] || 
+					(nodes[link.source] = {name: link.source+'-'+link.sourcetype});
+				link.target = nodes[link.target] || 
+					(nodes[link.target] = {name: link.target+'-'+link.targettype});
+
+				link.value = +link.value;
+			});
+			//debugger;
+
+			var width = 1300,
+				height = 800;
+
+			var force = d3.layout.force()
+				.nodes(d3.values(nodes))
+				.links(links)
+				.size([width, height])
+				.linkDistance(100)
+				.charge(-300)
+				.on("tick", tick)
+				.start();
+
+			var svg = d3.select("div.explanatory").append("svg")
+				.attr("width", width)
+				.attr("height", height);
+
+			// build the arrow.
+			svg.append("svg:defs").selectAll("marker")
+				.data(["end"])      // Different link/path types can be defined here
+			    .enter().append("svg:marker")    // This section adds in the arrows
+				.attr("id", String)
+				.attr("viewBox", "0 -5 10 10")
+				.attr("refX", 15)
+				.attr("refY", -1.5)
+				.attr("markerWidth", 6)
+				.attr("markerHeight", 6)
+				.attr("orient", "auto")
+			    .append("svg:path")
+				.attr("d", "M0,-5L10,0L0,5");
+
+			// add the links and the arrows
+			var path = svg.append("svg:g").selectAll("path")
+				.data(force.links())
+				.enter().append("svg:path")	
+				.attr("class", "link")
+				.attr("id",function(d,i) { return "linkId_" + i; })
+				.attr("marker-end", "url(#end)");
+				
+				
+			var linktext = svg.append("svg:g").selectAll("g.linklabelholder").data(force.links());
+			
+			linktext.enter().append("g").attr("class", "linklabelholder")
+			 .append("text")
+			 .attr("class", "linklabel")
+			 .style("font-size", "9px")
+			 .attr("x", "50")
+			 .attr("y", "-20")
+			 .attr("text-anchor", "start")
+			  .style("fill","#000")
+			 .append("textPath")
+			 .attr("xlink:href",function(d,i) { return "#linkId_" + i;})
+			 .text(function(d) {return d.amt; });
+
+			// define the nodes
+			var node = svg.selectAll(".node")
+				.data(force.nodes())
+			   .enter().append("g")
+				.attr("class", "node")
+				.call(force.drag);
+
+			// add the nodes
+			node.append("circle").attr("r", 5);
+
+			// add the text 
+			node.append("text")
+				.attr("x", 12)
+				.attr("dy", ".35em")
+				.text(function(d) { return get_print_name(d.name,"begin"); });
+			
+
+			node.append("image")
+			  .attr("xlink:href", 
+			  function(d, i) { 
+					group = get_print_name(d.name, "end");
+					//console.log(group);
+					if (group=="CEO") {
+						return "img/CEO.png"
+					} else  if (group=="Managing Director") {
+						return "img/MD.png"
+					} else  if (group=="Vice President") {
+						return "img/VP.png"
+					} else  if (group=="President") {
+						return "img/PR.png"									
+					} else 
+						return "img/emp.png"
+					}
+			  )
+			  .attr("x", -8)
+			  .attr("y", -8)
+			  .attr("width", 16)
+			  .attr("height", 16);
+			  
+		function get_print_name(name, type){
+			if (type == "end") {
+				return name.substring(name.indexOf('-')+1, name.length);
+			} 
+			else{
+				return name.substring(0,name.indexOf('@'));
+			}
+		}
+		
+		// add the curvy lines
+		function tick() {
+			path.attr("d", function(d) {
+				var dx = d.target.x - d.source.x,
+					dy = d.target.y - d.source.y,
+					dr = Math.sqrt(dx * dx + dy * dy);
+				return "M" + 
+					d.source.x + "," + 
+					d.source.y + "A" + 
+					dr + "," + dr + " 0 0,1 " + 
+					d.target.x + "," + 
+					d.target.y;
+			});
+
+			node
+				.attr("transform", function(d) { 
+				return "translate(" + d.x + "," + d.y + ")"; });
+		}
+
+		});
+	</script>
 </head>
   
 <body>
-<div style="width:1500px; margin:0 auto;">
+
+
+<div class="explanatory" style="width:1500px; margin:0 auto;">
 	<table class="tg">
 	  <tr>
 		<th class="tg-031e" colspan="2">
 			<label class="title">Identifying Fraud from Enron Emails</label>
 			<br>
-				<table class="nothing">
-				  <tr>
-					<td width="15%"></td>
-					<td width="70%">
-						<label class="subtitle">This Visualization aims to help students on the Intro to Machine Learning course from the Udacity's Data Analyst Nanodegree to work on their final project, which consists on building an algorithm to identify Enron Employees who may have committed fraud based on the public Enron financial and email dataset.</label>
-					</td>
-					<td width="15%"></td>
-				  </tr>
-				</table>						
+			<table class="nothing">
+			  <tr>
+				<td width="15%"></td>
+				<td width="70%">
+					<label class="subtitle">These Visualizations aim to help students on the Intro to Machine Learning course from the Udacity's Data Analyst Nanodegree to work on their final project, which consists on building an algorithm to identify Enron Employees who may have committed fraud based on the public Enron financial and email dataset.</label>
+				</td>
+				<td width="15%"></td>
+			  </tr>
+			</table>						
 		</th>
 	  </tr>
 	  
-	  <tr class="nothing">
-		<td class="tg-031e" colspan="2">
-			<label class="minititle">The Dataset:</label>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;The dataset was provided by the Udacity team and consists of a hand-generated list of persons of interest (POI) in the fraud case, which means individuals who were indicted, reached a settlement or plea deal with the government, or testified in exchange for prosecution immunity. It contains 145 observations, 18 of each are considered POIs.  Each observation contains 14 measures that indicates for example, how much was the person’s salary or bonus.</p>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;I chose not to include the person’s name on this visualization but it can be easily be looked up on the course’s original dataset. I also removed a few  observations due to its data quality (won’t get into more details because this is actually one of the project’s goal).</p>	
-		</td>
-	  </tr>
 
 	  <tr class="nothing">
-		<td class="tg-031e" colspan="2">
-			<label class="minititle">The Visualization:</label>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;The idea is to select one of the measures (like salary for example) and show one bar plot with the actual values and a second bar plot with the normalized values (z-score). Is is also possible to select a second measure and see a scatter plot between both of them.</p>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;On all the plots, the colour identifies whether the person is a POI or not</p>	
+		<td class="tg-031e" colspan="2">			
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; This First visualization shows a graph of e-mail communication between Enron employees on the period from 19/11/1998 to 21/06/2002. Each node represents an employee and the links between them indicate who many e-mail were sent between the nodes (to keep the visualization simple, I’m only displaying links with more than 50 e-mails).</p>
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; In case the person's title is one of the following: "CEO", "President"(Pr), "Vice President"(VP), "Managing Director"(MD); it can be seen on the node's icon .</p>
 		</td>
 	  </tr>
+	 </table>
 	  
+</div>
+<br>
+<br>
+<br>
+<div style="width:1500px; margin:0 auto;">
+	<table class="tg">
+	  <tr class="nothing">
+		<td class="tg-031e" colspan="2">
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;The following group of visualizations allow you to do some exploratory data analysis on the official dataset provided by the Udacity team to complete the project. It consists of a hand-generated list of persons of interest (POI) in the fraud case. A POI refers to individuals who were indicted, reached a settlement or plea deal with the government, or testified in exchange for prosecution immunity. It contains 145 observations, 18 of each are considered POIs. Each observation contains 14 measures that indicates for example, how much was the person’s salary or bonus.</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;Select one measure from the first drop down to a bar chart of the raw distribution and a second bar chart showing the values normalized .</p>
+		</td>
+	  </tr> 
 
 	  <tr>
 		<td class="tg-031e" colspan="2">
@@ -161,7 +327,7 @@
 		</td>
 	  </tr>	  
 	</table>
-	<script src="main.js"></script>
+	<script src="main.js"></script>	
 </div>	
 </body>
 </html>
