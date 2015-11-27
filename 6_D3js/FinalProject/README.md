@@ -1,7 +1,7 @@
 # Project 6 - Data Visualization with D3.js
 
 
-Final version can be found [here!](http://bl.ocks.org/dmenin/raw/d12a22521ad32cacc906).
+Final version can be found [here!](http://bl.ocks.org/dmenin/raw/8a0fb0167eecb7f7c53d/).
 
 
 
@@ -28,7 +28,7 @@ Final version can be found [here!](http://bl.ocks.org/dmenin/raw/d12a22521ad32ca
     	1) Implemented feedback 1 by adding a global <div> tag to centre the visualization
 		2) Implemented feedback 2 by adding a link to the glossary to explain what the measures are; Was also suggested that all 3 plots should be on the same line, which I tested but didn't like because the scatter plot is two narrow. The result can be seen bu running the code on the "past versions\v2" folder or checking the "feedback2-result.png" file. (http://bl.ocks.org/dmenin/raw/d12a22521ad32cacc906/)
 		3) Added an explanatory view of the "email relationship" between employees. (http://bl.ocks.org/dmenin/raw/913540b03d9c43af15e7/)
-		3) Expanded the previous view trying to extract a story from the data set. ()
+		4) Expanded the previous view trying to extract a story from the data set. (http://bl.ocks.org/dmenin/raw/8a0fb0167eecb7f7c53d/)
 
 
 
