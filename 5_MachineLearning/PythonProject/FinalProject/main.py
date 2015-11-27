@@ -29,9 +29,24 @@ enron_data = pickle.load(open("../Data/final_project_dataset.pkl", "r"))
 # print i
 
 # i=0
-# for key in enron_data:
-#     if enron_data[key]["poi"]:
-#         i+= 1
+l = [
+'jeff.skilling@enron.com',
+'kenneth.lay@enron.com',
+'louise.kitchen@enron.com',
+'james.derrick@enron.com',
+'danny.mccarty@enron.com',
+'greg.whalley@enron.com',
+'richard.shapiro@enron.com',
+'rick.buy@enron.com',
+'rod.hayslett@enron.com',
+'sally.beck@enron.com',
+'stanley.horton@enron.com'
+]
+
+for key in enron_data:
+    if enron_data[key]["email_address"] in l:
+        print enron_data[key]["email_address"], enron_data[key] #["email_address"], enron_data[key]["bonus"], enron_data[key]["deferral_payments"], enron_data[key]
+
 # print i
 
 

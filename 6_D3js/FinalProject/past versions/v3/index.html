@@ -41,14 +41,10 @@
 
 	</style>
 	<script>
-		window.onload = function() {
-		  MeasureSelected();
-		};
-	
 		d3.csv("edges.csv", function(error, links) {
-			//filter data to show only connections with more than 10 emails
+			//filter data to show only connections with more than 50 emails
 			links = links.filter(function(d){
-				if (parseInt(d.amt) <=10){
+				if (parseInt(d.amt) <=50){
 					return false;
 				}		  
 				  return true;
@@ -68,7 +64,7 @@
 			//debugger;
 
 			var width = 1300,
-				height = 600;
+				height = 800;
 
 			var force = d3.layout.force()
 				.nodes(d3.values(nodes))
@@ -143,15 +139,15 @@
 					group = get_print_name(d.name, "end");
 					//console.log(group);
 					if (group=="CEO") {
-						return "CEO.png"
+						return "img/CEO.png"
 					} else  if (group=="Managing Director") {
-						return "MD.png"
+						return "img/MD.png"
 					} else  if (group=="Vice President") {
-						return "VP.png"
+						return "img/VP.png"
 					} else  if (group=="President") {
-						return "PR.png"									
+						return "img/PR.png"									
 					} else 
-						return "emp.png"
+						return "img/emp.png"
 					}
 			  )
 			  .attr("x", -8)
@@ -198,7 +194,7 @@
 	<table class="tg">
 	  <tr>
 		<th class="tg-031e" colspan="2">
-			<label class="title">The Enron Scandal</label>
+			<!--<label class="title">The Enron Scandal</label>-->
 			<br>
 			<table class="nothing">
 			  <tr>
@@ -214,15 +210,9 @@
 	  
 
 	  <tr class="nothing">
-		<td class="tg-031e" colspan="2">
-			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; In 2000, Enron was one of the largest companies in the United States. By 2002, it had collapsed into bankruptcy due to widespread corporate fraud. In the resulting Federal investigation, a significant amount of typically confidential information entered into the public record, including tens of thousands of emails and detailed financial data for top executives.</p>
-			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; After that happened, a corpus of emails were made public (more information  <a target="_blank" href="http://www.cs.cmu.edu/~enron/">here</a>).
-			As part of the Machine Learning Project, students aim to build a model to identify possible persons of interest (POI) in the fraud case based on a data set developed by the Udacity team.
-			On this visualization I'll go a step further and suggest adding three new individuals to the POI dataset based on the amount of messages exchanged, their financial information and Job Title.
-			<br>
-			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; I'll start by plotting a graph of e-mail communication between Enron employees on the period from 19/11/1998 to 21/06/2002. 
-			Each node represents an employee and the links indicate how many e-mails were sent between them. Most Senior personnel are identified by the node's icon:
-			"CEO", "President"(Pr), "Vice President"(VP), "Managing Director"(MD).</p>			
+		<td class="tg-031e" colspan="2">			
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; This visualization shows a graph of e-mail communication between Enron employees on the period from 19/11/1998 to 21/06/2002. Each node represents an employee and the links between them indicate how many e-mails were sent between the nodes (to keep the visualization simple, I’m only displaying links with more than 50 e-mails).</p>
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; In case the person's title is one of the following: "CEO", "President"(Pr), "Vice President"(VP), "Managing Director"(MD); it can be seen on the node's icon .</p>
 		</td>
 	  </tr>
 	 </table>
@@ -236,26 +226,37 @@
 	<table class="tg">
 	  <tr class="nothing">
 		<td class="tg-031e" colspan="2">
-			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; By looking at the graph we can see that there are some people who seem to be central/hubs while other people are peripheral. 
-														(That may not be obvious at first but try dragging the points with your mouse). That is the case for "louise.kitchen", "sally.beck" and "greg.whalley". 
-			Specially when it comes to Sally, she sends a good amount of e-mails to several people. What I found interesting is that none of these people were marked as POIs.</p>
-			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Lets take a look on how their bonuses (lets call them PnPOI - Possible new POI) look like compared with the rest of the dataset, including the POIs.</p>
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;The following group of visualizations allow you to do some exploratory data analysis on the official dataset provided by the Udacity team to complete the project. It consists of a hand-generated list of persons of interest (POI) in the fraud case. A POI refers to individuals who were indicted, reached a settlement or plea deal with the government, or testified in exchange for prosecution immunity. It contains 145 observations, 18 of each are considered POIs. Each observation contains 14 measures that indicates for example, how much was the person’s salary or bonus.</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;Select one measure from the first drop down to a bar chart of the raw distribution and a second bar chart showing the values normalized .</p>
 		</td>
-	  </tr>
- 
-	  <tr>
-		<td class="tg-031e"><div align="center" class="chart" id="chart1Container"></div></td>
-	  </tr>
+	  </tr> 
+
 	  <tr>
 		<td class="tg-031e" colspan="2">
 			<table class= 'select-drop-table'>
 			  <tr>
-				<th><label>optionally - Check similar behaviour on salary by selecting it here:</label></th>
+				<th><label class="select-drop">Select Measure to Display:</label></th>
 				<th>
 					<div class='input-form'>
 					  <select onchange="MeasureSelected()" id="measureSelection" class="input">
+						<option value="select">Select Your Measure</option>
 						<option value="bonus">Bonus</option>
 						<option value="salary">Salary</option>
+						<option value="expenses">Expenses</option>
+						
+						<option value="deferral_payments">Deferral Payments</option>
+						<option value="deferred_income">Deferred Income</option>
+						<option value="director_fees">Director Fees</option>
+						<option value="exercised_stock_options">Exercised Stock Options</option>
+						<option value="from_messages">From Messages</option>
+						<option value="loan_advances">Loan Advances</option>
+						<option value="long_term_incentive">Long Term Incentive</option>
+						<option value="other">Other</option>
+						<option value="restricted_stock">Restricted Stock</option>
+						<option value="restricted_stock_deferred">Restricted Stock Deferred</option>		
+						<option value="to_messages">To Messages</option>		
+						<option value="total_payments">Total Payments</option>		
+						<option value="total_stock_value">Total Stock Value</option>				
 					  </select>
 					</div>  				
 				</th>
@@ -263,19 +264,69 @@
 			</table>
 		</td>
 	  </tr>
-	  <tr class="nothing">
-		<td class="tg-031e" colspan="2">
-			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; That is quite interesting. We know from the Machine Learning project that a high "bonus" is a big factor on determine whether a 
-			person is a POI or not, and 2 out of our 3 "candidates" (louise.kitchen and greg.whalley, index 75 and 138 respectively) do have a big bonus. 
-			Also, the fact that they were both "Presidents" is another strong indicator that they each could be a Person of Interest on the investigation.
-			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Regarding Sally, even though her bonus is not as high as the others, according to 
-							<a target="_blank" href="http://www.inf.ed.ac.uk/teaching/courses/tts/assessed/roles.txt">this</a> link, her role in the company was "Chief Operating Officer", 
-							a pretty Senior Role, so its worth considering her a POI as Well.
-			
-		</td>
-	  </tr> 	  
-	  
+	  <tr>
+		<td class="tg-031e"><div class="chart" id="chart1Container"></div></td>
+		<td class="tg-031e">
+			<table class="nothing">
+			  <tr>
+				<td>
+					<label class="select-drop">Measure Normalized:</label>
+					<label class="small-it"> ((X - Mean(x)) / SD(X))</label>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+					<div class="chart" id="chart2Container"></div>					
+				</td>
+			  </tr>
+			</table>		
 
+		</td>
+	  </tr>
+	  <tr>
+		<td class="tg-031e" colspan="2"> 
+			<table class= 'select-drop-table'>
+			  <tr>
+				<th><label class="select-drop">Select Measure to Compare to:</label></th>
+				<th>
+					<div class='input-form'>
+					  <select onchange="MeasureSelected()" id="measureCompareToSelection" class="input">
+						<option value="select">Select Your Measure</option>
+						<option value="bonus">Bonus</option>
+						<option value="salary">Salary</option>
+						<option value="expenses">Expenses</option>
+						
+						<option value="deferral_payments">Deferral Payments</option>
+						<option value="deferred_income">Deferred Income</option>
+						<option value="director_fees">Director Fees</option>
+						<option value="exercised_stock_options">Exercised Stock Options</option>
+						<option value="from_messages">From Messages</option>
+						<option value="loan_advances">Loan Advances</option>
+						<option value="long_term_incentive">Long Term Incentive</option>
+						<option value="other">Other</option>
+						<option value="restricted_stock">Restricted Stock</option>
+						<option value="restricted_stock_deferred">Restricted Stock Deferred</option>		
+						<option value="to_messages">To Messages</option>		
+						<option value="total_payments">Total Payments</option>		
+						<option value="total_stock_value">Total Stock Value</option>				
+					  </select>
+					</div>  				
+				</th>
+			  </tr>
+			</table>
+		</td>
+	  </tr>
+	  <tr>
+		<td class="tg-yw4l" colspan="2">
+			<div class="chart3" id="chart3Container" align="center">
+			</div>				
+		</td>
+	  </tr>
+	  <tr>
+		<td class="tg-yw4l" colspan="2">
+			<p>A glossary of terms can be found on page 5 of <a target="_blank" href="https://github.com/udacity/ud120-projects/blob/master/final_project/enron61702insiderpay.pdf">this pdf</a></p>
+		</td>
+	  </tr>	  
 	</table>
 	<script src="main.js"></script>	
 </div>	

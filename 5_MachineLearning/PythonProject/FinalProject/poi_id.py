@@ -263,7 +263,7 @@ def getBestKNeighborsClassifier(features, labels):
 
 #####################HELP FUNCTIONS:
 ### Task 1: Select what features you'll use.
-all_features = ['poi'
+all_features = ['poi', 'email_address'
                  ,'bonus'
                  ,'deferral_payments'
                  ,'deferred_income','director_fees','exercised_stock_options'
@@ -293,6 +293,9 @@ features_list = ['poi'
 
 ### Load the dictionary containing the dataset
 data_dict = pickle.load(open("final_project_dataset.pkl", "r") )
+pprint.pprint(data_dict)
+sys.exit(0)
+
 
 ### Task 2: Remove outliers - No need to run this code. See project description for details.
 #df = pd.DataFrame(data, columns=features_list)
@@ -316,7 +319,10 @@ features_list.append('bonus_salary_ratio')
 
 
 ### Extract features and labels from dataset for local testing
-data = featureFormat(my_dataset, features_list, sort_keys = True)
+data = featureFormat(my_dataset, all_features, sort_keys = True)
+pprint.pprint(my_dataset)
+sys.exit(0)
+
 labels, features = targetFeatureSplit(data)
 
 k_best_features = SelectKBestFeatures(features, labels, 5, False)
