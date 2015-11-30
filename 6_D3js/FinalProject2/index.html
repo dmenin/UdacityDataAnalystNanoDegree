@@ -15,6 +15,23 @@
 <body>
 <script src="//d3js.org/d3.v3.min.js"></script>
 
+<div id="chartContainer5">  
+  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+  <script type="text/javascript">
+    var svg5 = dimple.newSvg("#chartContainer5", 590, 400);
+    d3.csv("titanic.csv", function (data) {
+      var myChart = new dimple.chart(svg5, data);
+      myChart.setBounds(60, 30, 510, 305)
+      var x = myChart.addMeasureAxis("x", "Fare");
+
+      myChart.addMeasureAxis("y", "rowcount");
+      myChart.addSeries(["Index","Survived"], dimple.plot.bar);
+      myChart.addLegend(60, 10, 510, 20, "right");
+      myChart.draw(1000);
+    });
+  </script>
+</div>
+
 
 <div id="chartContainer"> 
   <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
@@ -101,6 +118,7 @@
 </div>
 
 
+<!-- 95% of women in first and second class survived-->
 <div id="chartContainer4">
   <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
   <script type="text/javascript">
