@@ -42,3 +42,4 @@ svg.append('circle').attr('r',10).attr('fill','red').attr('cx', x(8347)).attr('c
 
 #print tabular data
 console.table(data);
+

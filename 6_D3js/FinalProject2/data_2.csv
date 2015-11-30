@@ -1,0 +1,5 @@
+gender,status,amount
+female,Survived,233
+female,Not Survived,81
+male,Survived,109
+male,Not Survived,468
