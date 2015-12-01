@@ -14,23 +14,12 @@
 </style>
 <body>
 <script src="//d3js.org/d3.v3.min.js"></script>
+<label> 95% of Women on 1st and 2nd class survived - that's 161 out of 170 women </label>
+<label> but what if you are not a wealthy woman? </label> 
 
-<div id="chartContainer5">  
-  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-  <script type="text/javascript">
-    var svg5 = dimple.newSvg("#chartContainer5", 590, 400);
-    d3.csv("titanic.csv", function (data) {
-      var myChart = new dimple.chart(svg5, data);
-      myChart.setBounds(60, 30, 510, 305)
-      var x = myChart.addMeasureAxis("x", "Fare");
+<label> females with less than 3 family members on board who either embarked in Cherbourg or Queenstown had a 70% of chance of survivor</label>
 
-      myChart.addMeasureAxis("y", "rowcount");
-      myChart.addSeries(["Index","Survived"], dimple.plot.bar);
-      myChart.addLegend(60, 10, 510, 20, "right");
-      myChart.draw(1000);
-    });
-  </script>
-</div>
+First class men who embarked in Cherbourg had a 40% survival rate
 
 
 <div id="chartContainer"> 
@@ -69,7 +58,7 @@
 </div>
 
 
-
+<!--
 <div id="chartContainer3">
   <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
   <script type="text/javascript">
@@ -116,14 +105,14 @@
     });
   </script>
 </div>
+-->
 
 
-<!-- 95% of women in first and second class survived-->
 <div id="chartContainer4">
   <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
   <script type="text/javascript">
     // This is the simple vertical grouped stacked 100% bar example
-    var svg4 = dimple.newSvg("#chartContainer3", 590, 400);
+    var svg4 = dimple.newSvg("#chartContainer4", 590, 400);
     d3.csv("titanic.csv", function (data) {
       var myChart = new dimple.chart(svg4, data);
       myChart.setBounds(65, 45, 505, 315)
