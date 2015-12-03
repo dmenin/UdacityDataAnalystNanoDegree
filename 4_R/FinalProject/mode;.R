@@ -3,7 +3,7 @@ setwd('C:\\git\\UdacityDataAnalystNanoDegree\\6_D3js\\FinalProject2')
 
 d <- read.csv("train.csv")
 
-factor
+
 head(d)
 d["PassengerId"] <-  list(NULL)
 d["Name"] <-  list(NULL)
@@ -66,3 +66,53 @@ prp(fit2,
     split.box.col="lightgray",
     split.border.col="darkgray"
 )  
+
+
+
+dmales <- read.csv("train.csv")
+
+
+head(dmales)
+dmales["PassengerId"] <-  list(NULL)
+dmales["Name"] <-  list(NULL)
+dmales["Ticket"] <-  list(NULL)
+dmales["Cabin"] <-  list(NULL)
+dmales["Fare"] <-  round(dmales["Fare"])
+
+dmales$family = d$SibSp + d$Parch
+dmales$Pclass <- factor(d$Pclass)
+
+dmales["Age"] <-  list(NULL)
+head(dmales)
+
+
+
+
+
+dmales <-subset (dmales, ( dmales$Sex=="male"))
+nrow(dmales)
+
+
+
+
+fit3  <- rpart(Survived ~ ., method="class", data=dmales)
+
+
+
+cols <- ifelse(fit3$frame$yval == 1, "red", "green4")
+
+prp(fit3,     
+    digits=6,
+    extra=1,             
+    branch=.5,           
+    faclen=0,            
+    shadow.col="gray",   
+    branch.lty=3,        
+    split.cex=1.2,       
+    split.prefix="is ",  
+    split.suffix="?",    
+    col=cols, border.col=cols,
+    split.box.col="lightgray",
+    split.border.col="darkgray"
+)  
+

@@ -24,9 +24,15 @@ Recall: {:>0.{display_precision}f}\tF1: {:>0.{display_precision}f}\tF2: {:>0.{di
 RESULTS_FORMAT_STRING = "\tTotal predictions: {:4d}\tTrue positives: {:4d}\tFalse positives: {:4d}\tFalse negatives: {:4d}\tTrue negatives: {:4d}"
 
 def test_classifier(clf, dataset, feature_list, folds = 1000):
+    #print dataset
     data = featureFormat(dataset, feature_list, sort_keys = True)
     labels, features = targetFeatureSplit(data)
+    print len(labels)
+    folds= 2
     cv = StratifiedShuffleSplit(labels, folds, random_state = 42)
+    for train_index, test_index in cv:
+        print("TRAIN:", train_index, "TEST:", test_index)
+
     true_negatives = 0
     false_negatives = 0
     true_positives = 0
@@ -65,7 +71,7 @@ def test_classifier(clf, dataset, feature_list, folds = 1000):
         f2 = (1+2.0*2.0) * precision*recall/(4*precision + recall)
         print 'Feature List:', feature_list
         print PERF_FORMAT_STRING.format(accuracy, precision, recall, f1, f2, display_precision = 5)
-        #return [feature_list, accuracy, precision, recall, f1, f2]
+        return [feature_list, accuracy, precision, recall, f1, f2]
 
         print RESULTS_FORMAT_STRING.format(total_predictions, true_positives, false_positives, false_negatives, true_negatives)
 

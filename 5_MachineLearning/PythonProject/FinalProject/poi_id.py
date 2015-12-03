@@ -263,7 +263,7 @@ def getBestKNeighborsClassifier(features, labels):
 
 #####################HELP FUNCTIONS:
 ### Task 1: Select what features you'll use.
-all_features = ['poi', 'email_address'
+all_features = ['poi'
                  ,'bonus'
                  ,'deferral_payments'
                  ,'deferred_income','director_fees','exercised_stock_options'
@@ -293,8 +293,8 @@ features_list = ['poi'
 
 ### Load the dictionary containing the dataset
 data_dict = pickle.load(open("final_project_dataset.pkl", "r") )
-pprint.pprint(data_dict)
-sys.exit(0)
+#pprint.pprint(data_dict)
+#sys.exit(0)
 
 
 ### Task 2: Remove outliers - No need to run this code. See project description for details.
@@ -320,8 +320,8 @@ features_list.append('bonus_salary_ratio')
 
 ### Extract features and labels from dataset for local testing
 data = featureFormat(my_dataset, all_features, sort_keys = True)
-pprint.pprint(my_dataset)
-sys.exit(0)
+#pprint.pprint(my_dataset)
+
 
 labels, features = targetFeatureSplit(data)
 
@@ -360,10 +360,10 @@ clf.fit(features, labels)
 
 #Uncomment to see the result here
 #slo need to add the return to the tester function
-#mycolumns = ['feature_list', 'accuracy', 'precision', 'recall', 'f1', 'f2']
-#resultdf = pd.DataFrame(columns=mycolumns)
-#resultdf.loc[0]= (test_classifier(clf, my_dataset, final_feature_list))
-#print tabulate(resultdf.sort(['f1','recall','accuracy', 'precision'], ascending = [0, 0,0,0]) , headers='keys', tablefmt='psql', floatfmt=".4f")
+mycolumns = ['feature_list', 'accuracy', 'precision', 'recall', 'f1', 'f2']
+resultdf = pd.DataFrame(columns=mycolumns)
+resultdf.loc[0]= (test_classifier(clf, my_dataset, final_feature_list))
+print tabulate(resultdf.sort(['f1','recall','accuracy', 'precision'], ascending = [0, 0,0,0]) , headers='keys', tablefmt='psql', floatfmt=".4f")
 #Otherwise, Dump the classifier:
 
-dump_classifier_and_data(clf, my_dataset, final_feature_list)
+#dump_classifier_and_data(clf, my_dataset, final_feature_list)
