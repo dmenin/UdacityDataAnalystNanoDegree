@@ -1,0 +1,19 @@
+Order Launched,LaunchTime,Location,Class,NumberOfPassengers,PercentofMen,NumberOfMen,NumberOfWomen
+1st,12:45,Starboard,only FIRST CLASS,27,0.8,22,5
+2nd,12:55,Starboard,only FIRST CLASS,35,0.6,21,14
+3rd,12:56,Port,only FIRST CLASS,25,0.05,1,24
+4th,01:00,Starboard,only FIRST CLASS,31,0.6,19,12
+5th,01:10,Starboard,only FIRST CLASS,12,0.8,10,2
+6th,01:11,Port,only FIRST CLASS,27,0,0,27
+7th,01:20,Port,Primarily FIRST,55,0,0,55
+8th,01:25,Port,Third and Second,42,0,0,42
+9th,01:26,Port,Primarily SECOND,51,0,0,51
+10th,01:30,Starboard,Primaril SECOND,40,0.2,8,32
+11th,01:31,Port,Primarily SECOND,32,0,0,32
+12th,01:35,Starboard,Primarily SECOND,56,0.1,6,50
+13th,01:40,Starboard,all,54,0.25,14,40
+14th,01:41,Starboard,all,57,0.4,23,34
+15th,01:45,Port,all,20,0,0,20
+16th,01:50,Port,Primarily FIRST,34,0,0,34
+17th,01:51,Starboard,all,39,0.25,10,29
+18th,02:05,Port,all,17,0.23,4,13

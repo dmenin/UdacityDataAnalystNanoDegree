@@ -1,892 +1,467 @@
-Index,rowcount,Survived,Pclass,ThirdClass,Gender,Age,SibSp,Parch,Fare,FareRound,Embarked
-1,1,0,3,3rd,male,22,1,0,7.25,7,Southampton
-2,1,1,1,1st and 2nd,female,38,1,0,71.2833,71,Cherbourg
-3,1,1,3,3rd,female,26,0,0,7.925,8,Southampton
-4,1,1,1,1st and 2nd,female,35,1,0,53.1,53,Southampton
-5,1,0,3,3rd,male,35,0,0,8.05,8,Southampton
-6,1,0,3,3rd,male,0,0,0,8.4583,8,Queenstown
-7,1,0,1,1st and 2nd,male,54,0,0,51.8625,52,Southampton
-8,1,0,3,3rd,male,2,3,1,21.075,21,Southampton
-9,1,1,3,3rd,female,27,0,2,11.1333,11,Southampton
-10,1,1,2,1st and 2nd,female,14,1,0,30.0708,30,Cherbourg
-11,1,1,3,3rd,female,4,1,1,16.7,17,Southampton
-12,1,1,1,1st and 2nd,female,58,0,0,26.55,27,Southampton
-13,1,0,3,3rd,male,20,0,0,8.05,8,Southampton
-14,1,0,3,3rd,male,39,1,5,31.275,31,Southampton
-15,1,0,3,3rd,female,14,0,0,7.8542,8,Southampton
-16,1,1,2,1st and 2nd,female,55,0,0,16,16,Southampton
-17,1,0,3,3rd,male,2,4,1,29.125,29,Queenstown
-18,1,1,2,1st and 2nd,male,0,0,0,13,13,Southampton
-19,1,0,3,3rd,female,31,1,0,18,18,Southampton
-20,1,1,3,3rd,female,0,0,0,7.225,7,Cherbourg
-21,1,0,2,1st and 2nd,male,35,0,0,26,26,Southampton
-22,1,1,2,1st and 2nd,male,34,0,0,13,13,Southampton
-23,1,1,3,3rd,female,15,0,0,8.0292,8,Queenstown
-24,1,1,1,1st and 2nd,male,28,0,0,35.5,36,Southampton
-25,1,0,3,3rd,female,8,3,1,21.075,21,Southampton
-26,1,1,3,3rd,female,38,1,5,31.3875,31,Southampton
-27,1,0,3,3rd,male,0,0,0,7.225,7,Cherbourg
-28,1,0,1,1st and 2nd,male,19,3,2,263,263,Southampton
-29,1,1,3,3rd,female,0,0,0,7.8792,8,Queenstown
-30,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-31,1,0,1,1st and 2nd,male,40,0,0,27.7208,28,Cherbourg
-32,1,1,1,1st and 2nd,female,0,1,0,146.5208,147,Cherbourg
-33,1,1,3,3rd,female,0,0,0,7.75,8,Queenstown
-34,1,0,2,1st and 2nd,male,66,0,0,10.5,11,Southampton
-35,1,0,1,1st and 2nd,male,28,1,0,82.1708,82,Cherbourg
-36,1,0,1,1st and 2nd,male,42,1,0,52,52,Southampton
-37,1,1,3,3rd,male,0,0,0,7.2292,7,Cherbourg
-38,1,0,3,3rd,male,21,0,0,8.05,8,Southampton
-39,1,0,3,3rd,female,18,2,0,18,18,Southampton
-40,1,1,3,3rd,female,14,1,0,11.2417,11,Cherbourg
-41,1,0,3,3rd,female,40,1,0,9.475,9,Southampton
-42,1,0,2,1st and 2nd,female,27,1,0,21,21,Southampton
-43,1,0,3,3rd,male,0,0,0,7.8958,8,Cherbourg
-44,1,1,2,1st and 2nd,female,3,1,2,41.5792,42,Cherbourg
-45,1,1,3,3rd,female,19,0,0,7.8792,8,Queenstown
-46,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-47,1,0,3,3rd,male,0,1,0,15.5,16,Queenstown
-48,1,1,3,3rd,female,0,0,0,7.75,8,Queenstown
-49,1,0,3,3rd,male,0,2,0,21.6792,22,Cherbourg
-50,1,0,3,3rd,female,18,1,0,17.8,18,Southampton
-51,1,0,3,3rd,male,7,4,1,39.6875,40,Southampton
-52,1,0,3,3rd,male,21,0,0,7.8,8,Southampton
-53,1,1,1,1st and 2nd,female,49,1,0,76.7292,77,Cherbourg
-54,1,1,2,1st and 2nd,female,29,1,0,26,26,Southampton
-55,1,0,1,1st and 2nd,male,65,0,1,61.9792,62,Cherbourg
-56,1,1,1,1st and 2nd,male,0,0,0,35.5,36,Southampton
-57,1,1,2,1st and 2nd,female,21,0,0,10.5,11,Southampton
-58,1,0,3,3rd,male,28.5,0,0,7.2292,7,Cherbourg
-59,1,1,2,1st and 2nd,female,5,1,2,27.75,28,Southampton
-60,1,0,3,3rd,male,11,5,2,46.9,47,Southampton
-61,1,0,3,3rd,male,22,0,0,7.2292,7,Queenstown
-62,1,1,1,1st and 2nd,female,38,0,0,80,80,Cherbourg
-63,1,0,1,1st and 2nd,male,45,1,0,83.475,83,Southampton
-64,1,0,3,3rd,male,4,3,2,27.9,28,Southampton
-65,1,0,1,1st and 2nd,male,0,0,0,27.7208,28,Cherbourg
-66,1,1,3,3rd,male,0,1,1,15.2458,15,Cherbourg
-67,1,1,2,1st and 2nd,female,29,0,0,10.5,11,Southampton
-68,1,0,3,3rd,male,19,0,0,8.1583,8,Southampton
-69,1,1,3,3rd,female,17,4,2,7.925,8,Southampton
-70,1,0,3,3rd,male,26,2,0,8.6625,9,Southampton
-71,1,0,2,1st and 2nd,male,32,0,0,10.5,11,Southampton
-72,1,0,3,3rd,female,16,5,2,46.9,47,Southampton
-73,1,0,2,1st and 2nd,male,21,0,0,73.5,74,Southampton
-74,1,0,3,3rd,male,26,1,0,14.4542,14,Cherbourg
-75,1,1,3,3rd,male,32,0,0,56.4958,56,Southampton
-76,1,0,3,3rd,male,25,0,0,7.65,8,Southampton
-77,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-78,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-79,1,1,2,1st and 2nd,male,0.83,0,2,29,29,Southampton
-80,1,1,3,3rd,female,30,0,0,12.475,12,Southampton
-81,1,0,3,3rd,male,22,0,0,9,9,Southampton
-82,1,1,3,3rd,male,29,0,0,9.5,10,Southampton
-83,1,1,3,3rd,female,0,0,0,7.7875,8,Queenstown
-84,1,0,1,1st and 2nd,male,28,0,0,47.1,47,Southampton
-85,1,1,2,1st and 2nd,female,17,0,0,10.5,11,Southampton
-86,1,1,3,3rd,female,33,3,0,15.85,16,Southampton
-87,1,0,3,3rd,male,16,1,3,34.375,34,Southampton
-88,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-89,1,1,1,1st and 2nd,female,23,3,2,263,263,Southampton
-90,1,0,3,3rd,male,24,0,0,8.05,8,Southampton
-91,1,0,3,3rd,male,29,0,0,8.05,8,Southampton
-92,1,0,3,3rd,male,20,0,0,7.8542,8,Southampton
-93,1,0,1,1st and 2nd,male,46,1,0,61.175,61,Southampton
-94,1,0,3,3rd,male,26,1,2,20.575,21,Southampton
-95,1,0,3,3rd,male,59,0,0,7.25,7,Southampton
-96,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-97,1,0,1,1st and 2nd,male,71,0,0,34.6542,35,Cherbourg
-98,1,1,1,1st and 2nd,male,23,0,1,63.3583,63,Cherbourg
-99,1,1,2,1st and 2nd,female,34,0,1,23,23,Southampton
-100,1,0,2,1st and 2nd,male,34,1,0,26,26,Southampton
-101,1,0,3,3rd,female,28,0,0,7.8958,8,Southampton
-102,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-103,1,0,1,1st and 2nd,male,21,0,1,77.2875,77,Southampton
-104,1,0,3,3rd,male,33,0,0,8.6542,9,Southampton
-105,1,0,3,3rd,male,37,2,0,7.925,8,Southampton
-106,1,0,3,3rd,male,28,0,0,7.8958,8,Southampton
-107,1,1,3,3rd,female,21,0,0,7.65,8,Southampton
-108,1,1,3,3rd,male,0,0,0,7.775,8,Southampton
-109,1,0,3,3rd,male,38,0,0,7.8958,8,Southampton
-110,1,1,3,3rd,female,0,1,0,24.15,24,Queenstown
-111,1,0,1,1st and 2nd,male,47,0,0,52,52,Southampton
-112,1,0,3,3rd,female,14.5,1,0,14.4542,14,Cherbourg
-113,1,0,3,3rd,male,22,0,0,8.05,8,Southampton
-114,1,0,3,3rd,female,20,1,0,9.825,10,Southampton
-115,1,0,3,3rd,female,17,0,0,14.4583,14,Cherbourg
-116,1,0,3,3rd,male,21,0,0,7.925,8,Southampton
-117,1,0,3,3rd,male,70.5,0,0,7.75,8,Queenstown
-118,1,0,2,1st and 2nd,male,29,1,0,21,21,Southampton
-119,1,0,1,1st and 2nd,male,24,0,1,247.5208,248,Cherbourg
-120,1,0,3,3rd,female,2,4,2,31.275,31,Southampton
-121,1,0,2,1st and 2nd,male,21,2,0,73.5,74,Southampton
-122,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-123,1,0,2,1st and 2nd,male,32.5,1,0,30.0708,30,Cherbourg
-124,1,1,2,1st and 2nd,female,32.5,0,0,13,13,Southampton
-125,1,0,1,1st and 2nd,male,54,0,1,77.2875,77,Southampton
-126,1,1,3,3rd,male,12,1,0,11.2417,11,Cherbourg
-127,1,0,3,3rd,male,0,0,0,7.75,8,Queenstown
-128,1,1,3,3rd,male,24,0,0,7.1417,7,Southampton
-129,1,1,3,3rd,female,0,1,1,22.3583,22,Cherbourg
-130,1,0,3,3rd,male,45,0,0,6.975,7,Southampton
-131,1,0,3,3rd,male,33,0,0,7.8958,8,Cherbourg
-132,1,0,3,3rd,male,20,0,0,7.05,7,Southampton
-133,1,0,3,3rd,female,47,1,0,14.5,15,Southampton
-134,1,1,2,1st and 2nd,female,29,1,0,26,26,Southampton
-135,1,0,2,1st and 2nd,male,25,0,0,13,13,Southampton
-136,1,0,2,1st and 2nd,male,23,0,0,15.0458,15,Cherbourg
-137,1,1,1,1st and 2nd,female,19,0,2,26.2833,26,Southampton
-138,1,0,1,1st and 2nd,male,37,1,0,53.1,53,Southampton
-139,1,0,3,3rd,male,16,0,0,9.2167,9,Southampton
-140,1,0,1,1st and 2nd,male,24,0,0,79.2,79,Cherbourg
-141,1,0,3,3rd,female,0,0,2,15.2458,15,Cherbourg
-142,1,1,3,3rd,female,22,0,0,7.75,8,Southampton
-143,1,1,3,3rd,female,24,1,0,15.85,16,Southampton
-144,1,0,3,3rd,male,19,0,0,6.75,7,Queenstown
-145,1,0,2,1st and 2nd,male,18,0,0,11.5,12,Southampton
-146,1,0,2,1st and 2nd,male,19,1,1,36.75,37,Southampton
-147,1,1,3,3rd,male,27,0,0,7.7958,8,Southampton
-148,1,0,3,3rd,female,9,2,2,34.375,34,Southampton
-149,1,0,2,1st and 2nd,male,36.5,0,2,26,26,Southampton
-150,1,0,2,1st and 2nd,male,42,0,0,13,13,Southampton
-151,1,0,2,1st and 2nd,male,51,0,0,12.525,13,Southampton
-152,1,1,1,1st and 2nd,female,22,1,0,66.6,67,Southampton
-153,1,0,3,3rd,male,55.5,0,0,8.05,8,Southampton
-154,1,0,3,3rd,male,40.5,0,2,14.5,15,Southampton
-155,1,0,3,3rd,male,0,0,0,7.3125,7,Southampton
-156,1,0,1,1st and 2nd,male,51,0,1,61.3792,61,Cherbourg
-157,1,1,3,3rd,female,16,0,0,7.7333,8,Queenstown
-158,1,0,3,3rd,male,30,0,0,8.05,8,Southampton
-159,1,0,3,3rd,male,0,0,0,8.6625,9,Southampton
-160,1,0,3,3rd,male,0,8,2,69.55,70,Southampton
-161,1,0,3,3rd,male,44,0,1,16.1,16,Southampton
-162,1,1,2,1st and 2nd,female,40,0,0,15.75,16,Southampton
-163,1,0,3,3rd,male,26,0,0,7.775,8,Southampton
-164,1,0,3,3rd,male,17,0,0,8.6625,9,Southampton
-165,1,0,3,3rd,male,1,4,1,39.6875,40,Southampton
-166,1,1,3,3rd,male,9,0,2,20.525,21,Southampton
-167,1,1,1,1st and 2nd,female,0,0,1,55,55,Southampton
-168,1,0,3,3rd,female,45,1,4,27.9,28,Southampton
-169,1,0,1,1st and 2nd,male,0,0,0,25.925,26,Southampton
-170,1,0,3,3rd,male,28,0,0,56.4958,56,Southampton
-171,1,0,1,1st and 2nd,male,61,0,0,33.5,34,Southampton
-172,1,0,3,3rd,male,4,4,1,29.125,29,Queenstown
-173,1,1,3,3rd,female,1,1,1,11.1333,11,Southampton
-174,1,0,3,3rd,male,21,0,0,7.925,8,Southampton
-175,1,0,1,1st and 2nd,male,56,0,0,30.6958,31,Cherbourg
-176,1,0,3,3rd,male,18,1,1,7.8542,8,Southampton
-177,1,0,3,3rd,male,0,3,1,25.4667,25,Southampton
-178,1,0,1,1st and 2nd,female,50,0,0,28.7125,29,Cherbourg
-179,1,0,2,1st and 2nd,male,30,0,0,13,13,Southampton
-180,1,0,3,3rd,male,36,0,0,0,0,Southampton
-181,1,0,3,3rd,female,0,8,2,69.55,70,Southampton
-182,1,0,2,1st and 2nd,male,0,0,0,15.05,15,Cherbourg
-183,1,0,3,3rd,male,9,4,2,31.3875,31,Southampton
-184,1,1,2,1st and 2nd,male,1,2,1,39,39,Southampton
-185,1,1,3,3rd,female,4,0,2,22.025,22,Southampton
-186,1,0,1,1st and 2nd,male,0,0,0,50,50,Southampton
-187,1,1,3,3rd,female,0,1,0,15.5,16,Queenstown
-188,1,1,1,1st and 2nd,male,45,0,0,26.55,27,Southampton
-189,1,0,3,3rd,male,40,1,1,15.5,16,Queenstown
-190,1,0,3,3rd,male,36,0,0,7.8958,8,Southampton
-191,1,1,2,1st and 2nd,female,32,0,0,13,13,Southampton
-192,1,0,2,1st and 2nd,male,19,0,0,13,13,Southampton
-193,1,1,3,3rd,female,19,1,0,7.8542,8,Southampton
-194,1,1,2,1st and 2nd,male,3,1,1,26,26,Southampton
-195,1,1,1,1st and 2nd,female,44,0,0,27.7208,28,Cherbourg
-196,1,1,1,1st and 2nd,female,58,0,0,146.5208,147,Cherbourg
-197,1,0,3,3rd,male,0,0,0,7.75,8,Queenstown
-198,1,0,3,3rd,male,42,0,1,8.4042,8,Southampton
-199,1,1,3,3rd,female,0,0,0,7.75,8,Queenstown
-200,1,0,2,1st and 2nd,female,24,0,0,13,13,Southampton
-201,1,0,3,3rd,male,28,0,0,9.5,10,Southampton
-202,1,0,3,3rd,male,0,8,2,69.55,70,Southampton
-203,1,0,3,3rd,male,34,0,0,6.4958,6,Southampton
-204,1,0,3,3rd,male,45.5,0,0,7.225,7,Cherbourg
-205,1,1,3,3rd,male,18,0,0,8.05,8,Southampton
-206,1,0,3,3rd,female,2,0,1,10.4625,10,Southampton
-207,1,0,3,3rd,male,32,1,0,15.85,16,Southampton
-208,1,1,3,3rd,male,26,0,0,18.7875,19,Cherbourg
-209,1,1,3,3rd,female,16,0,0,7.75,8,Queenstown
-210,1,1,1,1st and 2nd,male,40,0,0,31,31,Cherbourg
-211,1,0,3,3rd,male,24,0,0,7.05,7,Southampton
-212,1,1,2,1st and 2nd,female,35,0,0,21,21,Southampton
-213,1,0,3,3rd,male,22,0,0,7.25,7,Southampton
-214,1,0,2,1st and 2nd,male,30,0,0,13,13,Southampton
-215,1,0,3,3rd,male,0,1,0,7.75,8,Queenstown
-216,1,1,1,1st and 2nd,female,31,1,0,113.275,113,Cherbourg
-217,1,1,3,3rd,female,27,0,0,7.925,8,Southampton
-218,1,0,2,1st and 2nd,male,42,1,0,27,27,Southampton
-219,1,1,1,1st and 2nd,female,32,0,0,76.2917,76,Cherbourg
-220,1,0,2,1st and 2nd,male,30,0,0,10.5,11,Southampton
-221,1,1,3,3rd,male,16,0,0,8.05,8,Southampton
-222,1,0,2,1st and 2nd,male,27,0,0,13,13,Southampton
-223,1,0,3,3rd,male,51,0,0,8.05,8,Southampton
-224,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-225,1,1,1,1st and 2nd,male,38,1,0,90,90,Southampton
-226,1,0,3,3rd,male,22,0,0,9.35,9,Southampton
-227,1,1,2,1st and 2nd,male,19,0,0,10.5,11,Southampton
-228,1,0,3,3rd,male,20.5,0,0,7.25,7,Southampton
-229,1,0,2,1st and 2nd,male,18,0,0,13,13,Southampton
-230,1,0,3,3rd,female,0,3,1,25.4667,25,Southampton
-231,1,1,1,1st and 2nd,female,35,1,0,83.475,83,Southampton
-232,1,0,3,3rd,male,29,0,0,7.775,8,Southampton
-233,1,0,2,1st and 2nd,male,59,0,0,13.5,14,Southampton
-234,1,1,3,3rd,female,5,4,2,31.3875,31,Southampton
-235,1,0,2,1st and 2nd,male,24,0,0,10.5,11,Southampton
-236,1,0,3,3rd,female,0,0,0,7.55,8,Southampton
-237,1,0,2,1st and 2nd,male,44,1,0,26,26,Southampton
-238,1,1,2,1st and 2nd,female,8,0,2,26.25,26,Southampton
-239,1,0,2,1st and 2nd,male,19,0,0,10.5,11,Southampton
-240,1,0,2,1st and 2nd,male,33,0,0,12.275,12,Southampton
-241,1,0,3,3rd,female,0,1,0,14.4542,14,Cherbourg
-242,1,1,3,3rd,female,0,1,0,15.5,16,Queenstown
-243,1,0,2,1st and 2nd,male,29,0,0,10.5,11,Southampton
-244,1,0,3,3rd,male,22,0,0,7.125,7,Southampton
-245,1,0,3,3rd,male,30,0,0,7.225,7,Cherbourg
-246,1,0,1,1st and 2nd,male,44,2,0,90,90,Queenstown
-247,1,0,3,3rd,female,25,0,0,7.775,8,Southampton
-248,1,1,2,1st and 2nd,female,24,0,2,14.5,15,Southampton
-249,1,1,1,1st and 2nd,male,37,1,1,52.5542,53,Southampton
-250,1,0,2,1st and 2nd,male,54,1,0,26,26,Southampton
-251,1,0,3,3rd,male,0,0,0,7.25,7,Southampton
-252,1,0,3,3rd,female,29,1,1,10.4625,10,Southampton
-253,1,0,1,1st and 2nd,male,62,0,0,26.55,27,Southampton
-254,1,0,3,3rd,male,30,1,0,16.1,16,Southampton
-255,1,0,3,3rd,female,41,0,2,20.2125,20,Southampton
-256,1,1,3,3rd,female,29,0,2,15.2458,15,Cherbourg
-257,1,1,1,1st and 2nd,female,0,0,0,79.2,79,Cherbourg
-258,1,1,1,1st and 2nd,female,30,0,0,86.5,87,Southampton
-259,1,1,1,1st and 2nd,female,35,0,0,512.3292,512,Cherbourg
-260,1,1,2,1st and 2nd,female,50,0,1,26,26,Southampton
-261,1,0,3,3rd,male,0,0,0,7.75,8,Queenstown
-262,1,1,3,3rd,male,3,4,2,31.3875,31,Southampton
-263,1,0,1,1st and 2nd,male,52,1,1,79.65,80,Southampton
-264,1,0,1,1st and 2nd,male,40,0,0,0,0,Southampton
-265,1,0,3,3rd,female,0,0,0,7.75,8,Queenstown
-266,1,0,2,1st and 2nd,male,36,0,0,10.5,11,Southampton
-267,1,0,3,3rd,male,16,4,1,39.6875,40,Southampton
-268,1,1,3,3rd,male,25,1,0,7.775,8,Southampton
-269,1,1,1,1st and 2nd,female,58,0,1,153.4625,153,Southampton
-270,1,1,1,1st and 2nd,female,35,0,0,135.6333,136,Southampton
-271,1,0,1,1st and 2nd,male,0,0,0,31,31,Southampton
-272,1,1,3,3rd,male,25,0,0,0,0,Southampton
-273,1,1,2,1st and 2nd,female,41,0,1,19.5,20,Southampton
-274,1,0,1,1st and 2nd,male,37,0,1,29.7,30,Cherbourg
-275,1,1,3,3rd,female,0,0,0,7.75,8,Queenstown
-276,1,1,1,1st and 2nd,female,63,1,0,77.9583,78,Southampton
-277,1,0,3,3rd,female,45,0,0,7.75,8,Southampton
-278,1,0,2,1st and 2nd,male,0,0,0,0,0,Southampton
-279,1,0,3,3rd,male,7,4,1,29.125,29,Queenstown
-280,1,1,3,3rd,female,35,1,1,20.25,20,Southampton
-281,1,0,3,3rd,male,65,0,0,7.75,8,Queenstown
-282,1,0,3,3rd,male,28,0,0,7.8542,8,Southampton
-283,1,0,3,3rd,male,16,0,0,9.5,10,Southampton
-284,1,1,3,3rd,male,19,0,0,8.05,8,Southampton
-285,1,0,1,1st and 2nd,male,0,0,0,26,26,Southampton
-286,1,0,3,3rd,male,33,0,0,8.6625,9,Cherbourg
-287,1,1,3,3rd,male,30,0,0,9.5,10,Southampton
-288,1,0,3,3rd,male,22,0,0,7.8958,8,Southampton
-289,1,1,2,1st and 2nd,male,42,0,0,13,13,Southampton
-290,1,1,3,3rd,female,22,0,0,7.75,8,Queenstown
-291,1,1,1,1st and 2nd,female,26,0,0,78.85,79,Southampton
-292,1,1,1,1st and 2nd,female,19,1,0,91.0792,91,Cherbourg
-293,1,0,2,1st and 2nd,male,36,0,0,12.875,13,Cherbourg
-294,1,0,3,3rd,female,24,0,0,8.85,9,Southampton
-295,1,0,3,3rd,male,24,0,0,7.8958,8,Southampton
-296,1,0,1,1st and 2nd,male,0,0,0,27.7208,28,Cherbourg
-297,1,0,3,3rd,male,23.5,0,0,7.2292,7,Cherbourg
-298,1,0,1,1st and 2nd,female,2,1,2,151.55,152,Southampton
-299,1,1,1,1st and 2nd,male,0,0,0,30.5,31,Southampton
-300,1,1,1,1st and 2nd,female,50,0,1,247.5208,248,Cherbourg
-301,1,1,3,3rd,female,0,0,0,7.75,8,Queenstown
-302,1,1,3,3rd,male,0,2,0,23.25,23,Queenstown
-303,1,0,3,3rd,male,19,0,0,0,0,Southampton
-304,1,1,2,1st and 2nd,female,0,0,0,12.35,12,Queenstown
-305,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-306,1,1,1,1st and 2nd,male,0.92,1,2,151.55,152,Southampton
-307,1,1,1,1st and 2nd,female,0,0,0,110.8833,111,Cherbourg
-308,1,1,1,1st and 2nd,female,17,1,0,108.9,109,Cherbourg
-309,1,0,2,1st and 2nd,male,30,1,0,24,24,Cherbourg
-310,1,1,1,1st and 2nd,female,30,0,0,56.9292,57,Cherbourg
-311,1,1,1,1st and 2nd,female,24,0,0,83.1583,83,Cherbourg
-312,1,1,1,1st and 2nd,female,18,2,2,262.375,262,Cherbourg
-313,1,0,2,1st and 2nd,female,26,1,1,26,26,Southampton
-314,1,0,3,3rd,male,28,0,0,7.8958,8,Southampton
-315,1,0,2,1st and 2nd,male,43,1,1,26.25,26,Southampton
-316,1,1,3,3rd,female,26,0,0,7.8542,8,Southampton
-317,1,1,2,1st and 2nd,female,24,1,0,26,26,Southampton
-318,1,0,2,1st and 2nd,male,54,0,0,14,14,Southampton
-319,1,1,1,1st and 2nd,female,31,0,2,164.8667,165,Southampton
-320,1,1,1,1st and 2nd,female,40,1,1,134.5,135,Cherbourg
-321,1,0,3,3rd,male,22,0,0,7.25,7,Southampton
-322,1,0,3,3rd,male,27,0,0,7.8958,8,Southampton
-323,1,1,2,1st and 2nd,female,30,0,0,12.35,12,Queenstown
-324,1,1,2,1st and 2nd,female,22,1,1,29,29,Southampton
-325,1,0,3,3rd,male,0,8,2,69.55,70,Southampton
-326,1,1,1,1st and 2nd,female,36,0,0,135.6333,136,Cherbourg
-327,1,0,3,3rd,male,61,0,0,6.2375,6,Southampton
-328,1,1,2,1st and 2nd,female,36,0,0,13,13,Southampton
-329,1,1,3,3rd,female,31,1,1,20.525,21,Southampton
-330,1,1,1,1st and 2nd,female,16,0,1,57.9792,58,Cherbourg
-331,1,1,3,3rd,female,0,2,0,23.25,23,Queenstown
-332,1,0,1,1st and 2nd,male,45.5,0,0,28.5,29,Southampton
-333,1,0,1,1st and 2nd,male,38,0,1,153.4625,153,Southampton
-334,1,0,3,3rd,male,16,2,0,18,18,Southampton
-335,1,1,1,1st and 2nd,female,0,1,0,133.65,134,Southampton
-336,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-337,1,0,1,1st and 2nd,male,29,1,0,66.6,67,Southampton
-338,1,1,1,1st and 2nd,female,41,0,0,134.5,135,Cherbourg
-339,1,1,3,3rd,male,45,0,0,8.05,8,Southampton
-340,1,0,1,1st and 2nd,male,45,0,0,35.5,36,Southampton
-341,1,1,2,1st and 2nd,male,2,1,1,26,26,Southampton
-342,1,1,1,1st and 2nd,female,24,3,2,263,263,Southampton
-343,1,0,2,1st and 2nd,male,28,0,0,13,13,Southampton
-344,1,0,2,1st and 2nd,male,25,0,0,13,13,Southampton
-345,1,0,2,1st and 2nd,male,36,0,0,13,13,Southampton
-346,1,1,2,1st and 2nd,female,24,0,0,13,13,Southampton
-347,1,1,2,1st and 2nd,female,40,0,0,13,13,Southampton
-348,1,1,3,3rd,female,0,1,0,16.1,16,Southampton
-349,1,1,3,3rd,male,3,1,1,15.9,16,Southampton
-350,1,0,3,3rd,male,42,0,0,8.6625,9,Southampton
-351,1,0,3,3rd,male,23,0,0,9.225,9,Southampton
-352,1,0,1,1st and 2nd,male,0,0,0,35,35,Southampton
-353,1,0,3,3rd,male,15,1,1,7.2292,7,Cherbourg
-354,1,0,3,3rd,male,25,1,0,17.8,18,Southampton
-355,1,0,3,3rd,male,0,0,0,7.225,7,Cherbourg
-356,1,0,3,3rd,male,28,0,0,9.5,10,Southampton
-357,1,1,1,1st and 2nd,female,22,0,1,55,55,Southampton
-358,1,0,2,1st and 2nd,female,38,0,0,13,13,Southampton
-359,1,1,3,3rd,female,0,0,0,7.8792,8,Queenstown
-360,1,1,3,3rd,female,0,0,0,7.8792,8,Queenstown
-361,1,0,3,3rd,male,40,1,4,27.9,28,Southampton
-362,1,0,2,1st and 2nd,male,29,1,0,27.7208,28,Cherbourg
-363,1,0,3,3rd,female,45,0,1,14.4542,14,Cherbourg
-364,1,0,3,3rd,male,35,0,0,7.05,7,Southampton
-365,1,0,3,3rd,male,0,1,0,15.5,16,Queenstown
-366,1,0,3,3rd,male,30,0,0,7.25,7,Southampton
-367,1,1,1,1st and 2nd,female,60,1,0,75.25,75,Cherbourg
-368,1,1,3,3rd,female,0,0,0,7.2292,7,Cherbourg
-369,1,1,3,3rd,female,0,0,0,7.75,8,Queenstown
-370,1,1,1,1st and 2nd,female,24,0,0,69.3,69,Cherbourg
-371,1,1,1,1st and 2nd,male,25,1,0,55.4417,55,Cherbourg
-372,1,0,3,3rd,male,18,1,0,6.4958,6,Southampton
-373,1,0,3,3rd,male,19,0,0,8.05,8,Southampton
-374,1,0,1,1st and 2nd,male,22,0,0,135.6333,136,Cherbourg
-375,1,0,3,3rd,female,3,3,1,21.075,21,Southampton
-376,1,1,1,1st and 2nd,female,0,1,0,82.1708,82,Cherbourg
-377,1,1,3,3rd,female,22,0,0,7.25,7,Southampton
-378,1,0,1,1st and 2nd,male,27,0,2,211.5,212,Cherbourg
-379,1,0,3,3rd,male,20,0,0,4.0125,4,Cherbourg
-380,1,0,3,3rd,male,19,0,0,7.775,8,Southampton
-381,1,1,1,1st and 2nd,female,42,0,0,227.525,228,Cherbourg
-382,1,1,3,3rd,female,1,0,2,15.7417,16,Cherbourg
-383,1,0,3,3rd,male,32,0,0,7.925,8,Southampton
-384,1,1,1,1st and 2nd,female,35,1,0,52,52,Southampton
-385,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-386,1,0,2,1st and 2nd,male,18,0,0,73.5,74,Southampton
-387,1,0,3,3rd,male,1,5,2,46.9,47,Southampton
-388,1,1,2,1st and 2nd,female,36,0,0,13,13,Southampton
-389,1,0,3,3rd,male,0,0,0,7.7292,8,Queenstown
-390,1,1,2,1st and 2nd,female,17,0,0,12,12,Cherbourg
-391,1,1,1,1st and 2nd,male,36,1,2,120,120,Southampton
-392,1,1,3,3rd,male,21,0,0,7.7958,8,Southampton
-393,1,0,3,3rd,male,28,2,0,7.925,8,Southampton
-394,1,1,1,1st and 2nd,female,23,1,0,113.275,113,Cherbourg
-395,1,1,3,3rd,female,24,0,2,16.7,17,Southampton
-396,1,0,3,3rd,male,22,0,0,7.7958,8,Southampton
-397,1,0,3,3rd,female,31,0,0,7.8542,8,Southampton
-398,1,0,2,1st and 2nd,male,46,0,0,26,26,Southampton
-399,1,0,2,1st and 2nd,male,23,0,0,10.5,11,Southampton
-400,1,1,2,1st and 2nd,female,28,0,0,12.65,13,Southampton
-401,1,1,3,3rd,male,39,0,0,7.925,8,Southampton
-402,1,0,3,3rd,male,26,0,0,8.05,8,Southampton
-403,1,0,3,3rd,female,21,1,0,9.825,10,Southampton
-404,1,0,3,3rd,male,28,1,0,15.85,16,Southampton
-405,1,0,3,3rd,female,20,0,0,8.6625,9,Southampton
-406,1,0,2,1st and 2nd,male,34,1,0,21,21,Southampton
-407,1,0,3,3rd,male,51,0,0,7.75,8,Southampton
-408,1,1,2,1st and 2nd,male,3,1,1,18.75,19,Southampton
-409,1,0,3,3rd,male,21,0,0,7.775,8,Southampton
-410,1,0,3,3rd,female,0,3,1,25.4667,25,Southampton
-411,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-412,1,0,3,3rd,male,0,0,0,6.8583,7,Queenstown
-413,1,1,1,1st and 2nd,female,33,1,0,90,90,Queenstown
-414,1,0,2,1st and 2nd,male,0,0,0,0,0,Southampton
-415,1,1,3,3rd,male,44,0,0,7.925,8,Southampton
-416,1,0,3,3rd,female,0,0,0,8.05,8,Southampton
-417,1,1,2,1st and 2nd,female,34,1,1,32.5,33,Southampton
-418,1,1,2,1st and 2nd,female,18,0,2,13,13,Southampton
-419,1,0,2,1st and 2nd,male,30,0,0,13,13,Southampton
-420,1,0,3,3rd,female,10,0,2,24.15,24,Southampton
-421,1,0,3,3rd,male,0,0,0,7.8958,8,Cherbourg
-422,1,0,3,3rd,male,21,0,0,7.7333,8,Queenstown
-423,1,0,3,3rd,male,29,0,0,7.875,8,Southampton
-424,1,0,3,3rd,female,28,1,1,14.4,14,Southampton
-425,1,0,3,3rd,male,18,1,1,20.2125,20,Southampton
-426,1,0,3,3rd,male,0,0,0,7.25,7,Southampton
-427,1,1,2,1st and 2nd,female,28,1,0,26,26,Southampton
-428,1,1,2,1st and 2nd,female,19,0,0,26,26,Southampton
-429,1,0,3,3rd,male,0,0,0,7.75,8,Queenstown
-430,1,1,3,3rd,male,32,0,0,8.05,8,Southampton
-431,1,1,1,1st and 2nd,male,28,0,0,26.55,27,Southampton
-432,1,1,3,3rd,female,0,1,0,16.1,16,Southampton
-433,1,1,2,1st and 2nd,female,42,1,0,26,26,Southampton
-434,1,0,3,3rd,male,17,0,0,7.125,7,Southampton
-435,1,0,1,1st and 2nd,male,50,1,0,55.9,56,Southampton
-436,1,1,1,1st and 2nd,female,14,1,2,120,120,Southampton
-437,1,0,3,3rd,female,21,2,2,34.375,34,Southampton
-438,1,1,2,1st and 2nd,female,24,2,3,18.75,19,Southampton
-439,1,0,1,1st and 2nd,male,64,1,4,263,263,Southampton
-440,1,0,2,1st and 2nd,male,31,0,0,10.5,11,Southampton
-441,1,1,2,1st and 2nd,female,45,1,1,26.25,26,Southampton
-442,1,0,3,3rd,male,20,0,0,9.5,10,Southampton
-443,1,0,3,3rd,male,25,1,0,7.775,8,Southampton
-444,1,1,2,1st and 2nd,female,28,0,0,13,13,Southampton
-445,1,1,3,3rd,male,0,0,0,8.1125,8,Southampton
-446,1,1,1,1st and 2nd,male,4,0,2,81.8583,82,Southampton
-447,1,1,2,1st and 2nd,female,13,0,1,19.5,20,Southampton
-448,1,1,1,1st and 2nd,male,34,0,0,26.55,27,Southampton
-449,1,1,3,3rd,female,5,2,1,19.2583,19,Cherbourg
-450,1,1,1,1st and 2nd,male,52,0,0,30.5,31,Southampton
-451,1,0,2,1st and 2nd,male,36,1,2,27.75,28,Southampton
-452,1,0,3,3rd,male,0,1,0,19.9667,20,Southampton
-453,1,0,1,1st and 2nd,male,30,0,0,27.75,28,Cherbourg
-454,1,1,1,1st and 2nd,male,49,1,0,89.1042,89,Cherbourg
-455,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-456,1,1,3,3rd,male,29,0,0,7.8958,8,Cherbourg
-457,1,0,1,1st and 2nd,male,65,0,0,26.55,27,Southampton
-458,1,1,1,1st and 2nd,female,0,1,0,51.8625,52,Southampton
-459,1,1,2,1st and 2nd,female,50,0,0,10.5,11,Southampton
-460,1,0,3,3rd,male,0,0,0,7.75,8,Queenstown
-461,1,1,1,1st and 2nd,male,48,0,0,26.55,27,Southampton
-462,1,0,3,3rd,male,34,0,0,8.05,8,Southampton
-463,1,0,1,1st and 2nd,male,47,0,0,38.5,39,Southampton
-464,1,0,2,1st and 2nd,male,48,0,0,13,13,Southampton
-465,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-466,1,0,3,3rd,male,38,0,0,7.05,7,Southampton
-467,1,0,2,1st and 2nd,male,0,0,0,0,0,Southampton
-468,1,0,1,1st and 2nd,male,56,0,0,26.55,27,Southampton
-469,1,0,3,3rd,male,0,0,0,7.725,8,Queenstown
-470,1,1,3,3rd,female,0.75,2,1,19.2583,19,Cherbourg
-471,1,0,3,3rd,male,0,0,0,7.25,7,Southampton
-472,1,0,3,3rd,male,38,0,0,8.6625,9,Southampton
-473,1,1,2,1st and 2nd,female,33,1,2,27.75,28,Southampton
-474,1,1,2,1st and 2nd,female,23,0,0,13.7917,14,Cherbourg
-475,1,0,3,3rd,female,22,0,0,9.8375,10,Southampton
-476,1,0,1,1st and 2nd,male,0,0,0,52,52,Southampton
-477,1,0,2,1st and 2nd,male,34,1,0,21,21,Southampton
-478,1,0,3,3rd,male,29,1,0,7.0458,7,Southampton
-479,1,0,3,3rd,male,22,0,0,7.5208,8,Southampton
-480,1,1,3,3rd,female,2,0,1,12.2875,12,Southampton
-481,1,0,3,3rd,male,9,5,2,46.9,47,Southampton
-482,1,0,2,1st and 2nd,male,0,0,0,0,0,Southampton
-483,1,0,3,3rd,male,50,0,0,8.05,8,Southampton
-484,1,1,3,3rd,female,63,0,0,9.5875,10,Southampton
-485,1,1,1,1st and 2nd,male,25,1,0,91.0792,91,Cherbourg
-486,1,0,3,3rd,female,0,3,1,25.4667,25,Southampton
-487,1,1,1,1st and 2nd,female,35,1,0,90,90,Southampton
-488,1,0,1,1st and 2nd,male,58,0,0,29.7,30,Cherbourg
-489,1,0,3,3rd,male,30,0,0,8.05,8,Southampton
-490,1,1,3,3rd,male,9,1,1,15.9,16,Southampton
-491,1,0,3,3rd,male,0,1,0,19.9667,20,Southampton
-492,1,0,3,3rd,male,21,0,0,7.25,7,Southampton
-493,1,0,1,1st and 2nd,male,55,0,0,30.5,31,Southampton
-494,1,0,1,1st and 2nd,male,71,0,0,49.5042,50,Cherbourg
-495,1,0,3,3rd,male,21,0,0,8.05,8,Southampton
-496,1,0,3,3rd,male,0,0,0,14.4583,14,Cherbourg
-497,1,1,1,1st and 2nd,female,54,1,0,78.2667,78,Cherbourg
-498,1,0,3,3rd,male,0,0,0,15.1,15,Southampton
-499,1,0,1,1st and 2nd,female,25,1,2,151.55,152,Southampton
-500,1,0,3,3rd,male,24,0,0,7.7958,8,Southampton
-501,1,0,3,3rd,male,17,0,0,8.6625,9,Southampton
-502,1,0,3,3rd,female,21,0,0,7.75,8,Queenstown
-503,1,0,3,3rd,female,0,0,0,7.6292,8,Queenstown
-504,1,0,3,3rd,female,37,0,0,9.5875,10,Southampton
-505,1,1,1,1st and 2nd,female,16,0,0,86.5,87,Southampton
-506,1,0,1,1st and 2nd,male,18,1,0,108.9,109,Cherbourg
-507,1,1,2,1st and 2nd,female,33,0,2,26,26,Southampton
-508,1,1,1,1st and 2nd,male,0,0,0,26.55,27,Southampton
-509,1,0,3,3rd,male,28,0,0,22.525,23,Southampton
-510,1,1,3,3rd,male,26,0,0,56.4958,56,Southampton
-511,1,1,3,3rd,male,29,0,0,7.75,8,Queenstown
-512,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-513,1,1,1,1st and 2nd,male,36,0,0,26.2875,26,Southampton
-514,1,1,1,1st and 2nd,female,54,1,0,59.4,59,Cherbourg
-515,1,0,3,3rd,male,24,0,0,7.4958,7,Southampton
-516,1,0,1,1st and 2nd,male,47,0,0,34.0208,34,Southampton
-517,1,1,2,1st and 2nd,female,34,0,0,10.5,11,Southampton
-518,1,0,3,3rd,male,0,0,0,24.15,24,Queenstown
-519,1,1,2,1st and 2nd,female,36,1,0,26,26,Southampton
-520,1,0,3,3rd,male,32,0,0,7.8958,8,Southampton
-521,1,1,1,1st and 2nd,female,30,0,0,93.5,94,Southampton
-522,1,0,3,3rd,male,22,0,0,7.8958,8,Southampton
-523,1,0,3,3rd,male,0,0,0,7.225,7,Cherbourg
-524,1,1,1,1st and 2nd,female,44,0,1,57.9792,58,Cherbourg
-525,1,0,3,3rd,male,0,0,0,7.2292,7,Cherbourg
-526,1,0,3,3rd,male,40.5,0,0,7.75,8,Queenstown
-527,1,1,2,1st and 2nd,female,50,0,0,10.5,11,Southampton
-528,1,0,1,1st and 2nd,male,0,0,0,221.7792,222,Southampton
-529,1,0,3,3rd,male,39,0,0,7.925,8,Southampton
-530,1,0,2,1st and 2nd,male,23,2,1,11.5,12,Southampton
-531,1,1,2,1st and 2nd,female,2,1,1,26,26,Southampton
-532,1,0,3,3rd,male,0,0,0,7.2292,7,Cherbourg
-533,1,0,3,3rd,male,17,1,1,7.2292,7,Cherbourg
-534,1,1,3,3rd,female,0,0,2,22.3583,22,Cherbourg
-535,1,0,3,3rd,female,30,0,0,8.6625,9,Southampton
-536,1,1,2,1st and 2nd,female,7,0,2,26.25,26,Southampton
-537,1,0,1,1st and 2nd,male,45,0,0,26.55,27,Southampton
-538,1,1,1,1st and 2nd,female,30,0,0,106.425,106,Cherbourg
-539,1,0,3,3rd,male,0,0,0,14.5,15,Southampton
-540,1,1,1,1st and 2nd,female,22,0,2,49.5,50,Cherbourg
-541,1,1,1,1st and 2nd,female,36,0,2,71,71,Southampton
-542,1,0,3,3rd,female,9,4,2,31.275,31,Southampton
-543,1,0,3,3rd,female,11,4,2,31.275,31,Southampton
-544,1,1,2,1st and 2nd,male,32,1,0,26,26,Southampton
-545,1,0,1,1st and 2nd,male,50,1,0,106.425,106,Cherbourg
-546,1,0,1,1st and 2nd,male,64,0,0,26,26,Southampton
-547,1,1,2,1st and 2nd,female,19,1,0,26,26,Southampton
-548,1,1,2,1st and 2nd,male,0,0,0,13.8625,14,Cherbourg
-549,1,0,3,3rd,male,33,1,1,20.525,21,Southampton
-550,1,1,2,1st and 2nd,male,8,1,1,36.75,37,Southampton
-551,1,1,1,1st and 2nd,male,17,0,2,110.8833,111,Cherbourg
-552,1,0,2,1st and 2nd,male,27,0,0,26,26,Southampton
-553,1,0,3,3rd,male,0,0,0,7.8292,8,Queenstown
-554,1,1,3,3rd,male,22,0,0,7.225,7,Cherbourg
-555,1,1,3,3rd,female,22,0,0,7.775,8,Southampton
-556,1,0,1,1st and 2nd,male,62,0,0,26.55,27,Southampton
-557,1,1,1,1st and 2nd,female,48,1,0,39.6,40,Cherbourg
-558,1,0,1,1st and 2nd,male,0,0,0,227.525,228,Cherbourg
-559,1,1,1,1st and 2nd,female,39,1,1,79.65,80,Southampton
-560,1,1,3,3rd,female,36,1,0,17.4,17,Southampton
-561,1,0,3,3rd,male,0,0,0,7.75,8,Queenstown
-562,1,0,3,3rd,male,40,0,0,7.8958,8,Southampton
-563,1,0,2,1st and 2nd,male,28,0,0,13.5,14,Southampton
-564,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-565,1,0,3,3rd,female,0,0,0,8.05,8,Southampton
-566,1,0,3,3rd,male,24,2,0,24.15,24,Southampton
-567,1,0,3,3rd,male,19,0,0,7.8958,8,Southampton
-568,1,0,3,3rd,female,29,0,4,21.075,21,Southampton
-569,1,0,3,3rd,male,0,0,0,7.2292,7,Cherbourg
-570,1,1,3,3rd,male,32,0,0,7.8542,8,Southampton
-571,1,1,2,1st and 2nd,male,62,0,0,10.5,11,Southampton
-572,1,1,1,1st and 2nd,female,53,2,0,51.4792,51,Southampton
-573,1,1,1,1st and 2nd,male,36,0,0,26.3875,26,Southampton
-574,1,1,3,3rd,female,0,0,0,7.75,8,Queenstown
-575,1,0,3,3rd,male,16,0,0,8.05,8,Southampton
-576,1,0,3,3rd,male,19,0,0,14.5,15,Southampton
-577,1,1,2,1st and 2nd,female,34,0,0,13,13,Southampton
-578,1,1,1,1st and 2nd,female,39,1,0,55.9,56,Southampton
-579,1,0,3,3rd,female,0,1,0,14.4583,14,Cherbourg
-580,1,1,3,3rd,male,32,0,0,7.925,8,Southampton
-581,1,1,2,1st and 2nd,female,25,1,1,30,30,Southampton
-582,1,1,1,1st and 2nd,female,39,1,1,110.8833,111,Cherbourg
-583,1,0,2,1st and 2nd,male,54,0,0,26,26,Southampton
-584,1,0,1,1st and 2nd,male,36,0,0,40.125,40,Cherbourg
-585,1,0,3,3rd,male,0,0,0,8.7125,9,Cherbourg
-586,1,1,1,1st and 2nd,female,18,0,2,79.65,80,Southampton
-587,1,0,2,1st and 2nd,male,47,0,0,15,15,Southampton
-588,1,1,1,1st and 2nd,male,60,1,1,79.2,79,Cherbourg
-589,1,0,3,3rd,male,22,0,0,8.05,8,Southampton
-590,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-591,1,0,3,3rd,male,35,0,0,7.125,7,Southampton
-592,1,1,1,1st and 2nd,female,52,1,0,78.2667,78,Cherbourg
-593,1,0,3,3rd,male,47,0,0,7.25,7,Southampton
-594,1,0,3,3rd,female,0,0,2,7.75,8,Queenstown
-595,1,0,2,1st and 2nd,male,37,1,0,26,26,Southampton
-596,1,0,3,3rd,male,36,1,1,24.15,24,Southampton
-597,1,1,2,1st and 2nd,female,0,0,0,33,33,Southampton
-598,1,0,3,3rd,male,49,0,0,0,0,Southampton
-599,1,0,3,3rd,male,0,0,0,7.225,7,Cherbourg
-600,1,1,1,1st and 2nd,male,49,1,0,56.9292,57,Cherbourg
-601,1,1,2,1st and 2nd,female,24,2,1,27,27,Southampton
-602,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-603,1,0,1,1st and 2nd,male,0,0,0,42.4,42,Southampton
-604,1,0,3,3rd,male,44,0,0,8.05,8,Southampton
-605,1,1,1,1st and 2nd,male,35,0,0,26.55,27,Cherbourg
-606,1,0,3,3rd,male,36,1,0,15.55,16,Southampton
-607,1,0,3,3rd,male,30,0,0,7.8958,8,Southampton
-608,1,1,1,1st and 2nd,male,27,0,0,30.5,31,Southampton
-609,1,1,2,1st and 2nd,female,22,1,2,41.5792,42,Cherbourg
-610,1,1,1,1st and 2nd,female,40,0,0,153.4625,153,Southampton
-611,1,0,3,3rd,female,39,1,5,31.275,31,Southampton
-612,1,0,3,3rd,male,0,0,0,7.05,7,Southampton
-613,1,1,3,3rd,female,0,1,0,15.5,16,Queenstown
-614,1,0,3,3rd,male,0,0,0,7.75,8,Queenstown
-615,1,0,3,3rd,male,35,0,0,8.05,8,Southampton
-616,1,1,2,1st and 2nd,female,24,1,2,65,65,Southampton
-617,1,0,3,3rd,male,34,1,1,14.4,14,Southampton
-618,1,0,3,3rd,female,26,1,0,16.1,16,Southampton
-619,1,1,2,1st and 2nd,female,4,2,1,39,39,Southampton
-620,1,0,2,1st and 2nd,male,26,0,0,10.5,11,Southampton
-621,1,0,3,3rd,male,27,1,0,14.4542,14,Cherbourg
-622,1,1,1,1st and 2nd,male,42,1,0,52.5542,53,Southampton
-623,1,1,3,3rd,male,20,1,1,15.7417,16,Cherbourg
-624,1,0,3,3rd,male,21,0,0,7.8542,8,Southampton
-625,1,0,3,3rd,male,21,0,0,16.1,16,Southampton
-626,1,0,1,1st and 2nd,male,61,0,0,32.3208,32,Southampton
-627,1,0,2,1st and 2nd,male,57,0,0,12.35,12,Queenstown
-628,1,1,1,1st and 2nd,female,21,0,0,77.9583,78,Southampton
-629,1,0,3,3rd,male,26,0,0,7.8958,8,Southampton
-630,1,0,3,3rd,male,0,0,0,7.7333,8,Queenstown
-631,1,1,1,1st and 2nd,male,80,0,0,30,30,Southampton
-632,1,0,3,3rd,male,51,0,0,7.0542,7,Southampton
-633,1,1,1,1st and 2nd,male,32,0,0,30.5,31,Cherbourg
-634,1,0,1,1st and 2nd,male,0,0,0,0,0,Southampton
-635,1,0,3,3rd,female,9,3,2,27.9,28,Southampton
-636,1,1,2,1st and 2nd,female,28,0,0,13,13,Southampton
-637,1,0,3,3rd,male,32,0,0,7.925,8,Southampton
-638,1,0,2,1st and 2nd,male,31,1,1,26.25,26,Southampton
-639,1,0,3,3rd,female,41,0,5,39.6875,40,Southampton
-640,1,0,3,3rd,male,0,1,0,16.1,16,Southampton
-641,1,0,3,3rd,male,20,0,0,7.8542,8,Southampton
-642,1,1,1,1st and 2nd,female,24,0,0,69.3,69,Cherbourg
-643,1,0,3,3rd,female,2,3,2,27.9,28,Southampton
-644,1,1,3,3rd,male,0,0,0,56.4958,56,Southampton
-645,1,1,3,3rd,female,0.75,2,1,19.2583,19,Cherbourg
-646,1,1,1,1st and 2nd,male,48,1,0,76.7292,77,Cherbourg
-647,1,0,3,3rd,male,19,0,0,7.8958,8,Southampton
-648,1,1,1,1st and 2nd,male,56,0,0,35.5,36,Cherbourg
-649,1,0,3,3rd,male,0,0,0,7.55,8,Southampton
-650,1,1,3,3rd,female,23,0,0,7.55,8,Southampton
-651,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-652,1,1,2,1st and 2nd,female,18,0,1,23,23,Southampton
-653,1,0,3,3rd,male,21,0,0,8.4333,8,Southampton
-654,1,1,3,3rd,female,0,0,0,7.8292,8,Queenstown
-655,1,0,3,3rd,female,18,0,0,6.75,7,Queenstown
-656,1,0,2,1st and 2nd,male,24,2,0,73.5,74,Southampton
-657,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-658,1,0,3,3rd,female,32,1,1,15.5,16,Queenstown
-659,1,0,2,1st and 2nd,male,23,0,0,13,13,Southampton
-660,1,0,1,1st and 2nd,male,58,0,2,113.275,113,Cherbourg
-661,1,1,1,1st and 2nd,male,50,2,0,133.65,134,Southampton
-662,1,0,3,3rd,male,40,0,0,7.225,7,Cherbourg
-663,1,0,1,1st and 2nd,male,47,0,0,25.5875,26,Southampton
-664,1,0,3,3rd,male,36,0,0,7.4958,7,Southampton
-665,1,1,3,3rd,male,20,1,0,7.925,8,Southampton
-666,1,0,2,1st and 2nd,male,32,2,0,73.5,74,Southampton
-667,1,0,2,1st and 2nd,male,25,0,0,13,13,Southampton
-668,1,0,3,3rd,male,0,0,0,7.775,8,Southampton
-669,1,0,3,3rd,male,43,0,0,8.05,8,Southampton
-670,1,1,1,1st and 2nd,female,0,1,0,52,52,Southampton
-671,1,1,2,1st and 2nd,female,40,1,1,39,39,Southampton
-672,1,0,1,1st and 2nd,male,31,1,0,52,52,Southampton
-673,1,0,2,1st and 2nd,male,70,0,0,10.5,11,Southampton
-674,1,1,2,1st and 2nd,male,31,0,0,13,13,Southampton
-675,1,0,2,1st and 2nd,male,0,0,0,0,0,Southampton
-676,1,0,3,3rd,male,18,0,0,7.775,8,Southampton
-677,1,0,3,3rd,male,24.5,0,0,8.05,8,Southampton
-678,1,1,3,3rd,female,18,0,0,9.8417,10,Southampton
-679,1,0,3,3rd,female,43,1,6,46.9,47,Southampton
-680,1,1,1,1st and 2nd,male,36,0,1,512.3292,512,Cherbourg
-681,1,0,3,3rd,female,0,0,0,8.1375,8,Queenstown
-682,1,1,1,1st and 2nd,male,27,0,0,76.7292,77,Cherbourg
-683,1,0,3,3rd,male,20,0,0,9.225,9,Southampton
-684,1,0,3,3rd,male,14,5,2,46.9,47,Southampton
-685,1,0,2,1st and 2nd,male,60,1,1,39,39,Southampton
-686,1,0,2,1st and 2nd,male,25,1,2,41.5792,42,Cherbourg
-687,1,0,3,3rd,male,14,4,1,39.6875,40,Southampton
-688,1,0,3,3rd,male,19,0,0,10.1708,10,Southampton
-689,1,0,3,3rd,male,18,0,0,7.7958,8,Southampton
-690,1,1,1,1st and 2nd,female,15,0,1,211.3375,211,Southampton
-691,1,1,1,1st and 2nd,male,31,1,0,57,57,Southampton
-692,1,1,3,3rd,female,4,0,1,13.4167,13,Cherbourg
-693,1,1,3,3rd,male,0,0,0,56.4958,56,Southampton
-694,1,0,3,3rd,male,25,0,0,7.225,7,Cherbourg
-695,1,0,1,1st and 2nd,male,60,0,0,26.55,27,Southampton
-696,1,0,2,1st and 2nd,male,52,0,0,13.5,14,Southampton
-697,1,0,3,3rd,male,44,0,0,8.05,8,Southampton
-698,1,1,3,3rd,female,0,0,0,7.7333,8,Queenstown
-699,1,0,1,1st and 2nd,male,49,1,1,110.8833,111,Cherbourg
-700,1,0,3,3rd,male,42,0,0,7.65,8,Southampton
-701,1,1,1,1st and 2nd,female,18,1,0,227.525,228,Cherbourg
-702,1,1,1,1st and 2nd,male,35,0,0,26.2875,26,Southampton
-703,1,0,3,3rd,female,18,0,1,14.4542,14,Cherbourg
-704,1,0,3,3rd,male,25,0,0,7.7417,8,Queenstown
-705,1,0,3,3rd,male,26,1,0,7.8542,8,Southampton
-706,1,0,2,1st and 2nd,male,39,0,0,26,26,Southampton
-707,1,1,2,1st and 2nd,female,45,0,0,13.5,14,Southampton
-708,1,1,1,1st and 2nd,male,42,0,0,26.2875,26,Southampton
-709,1,1,1,1st and 2nd,female,22,0,0,151.55,152,Southampton
-710,1,1,3,3rd,male,0,1,1,15.2458,15,Cherbourg
-711,1,1,1,1st and 2nd,female,24,0,0,49.5042,50,Cherbourg
-712,1,0,1,1st and 2nd,male,0,0,0,26.55,27,Southampton
-713,1,1,1,1st and 2nd,male,48,1,0,52,52,Southampton
-714,1,0,3,3rd,male,29,0,0,9.4833,9,Southampton
-715,1,0,2,1st and 2nd,male,52,0,0,13,13,Southampton
-716,1,0,3,3rd,male,19,0,0,7.65,8,Southampton
-717,1,1,1,1st and 2nd,female,38,0,0,227.525,228,Cherbourg
-718,1,1,2,1st and 2nd,female,27,0,0,10.5,11,Southampton
-719,1,0,3,3rd,male,0,0,0,15.5,16,Queenstown
-720,1,0,3,3rd,male,33,0,0,7.775,8,Southampton
-721,1,1,2,1st and 2nd,female,6,0,1,33,33,Southampton
-722,1,0,3,3rd,male,17,1,0,7.0542,7,Southampton
-723,1,0,2,1st and 2nd,male,34,0,0,13,13,Southampton
-724,1,0,2,1st and 2nd,male,50,0,0,13,13,Southampton
-725,1,1,1,1st and 2nd,male,27,1,0,53.1,53,Southampton
-726,1,0,3,3rd,male,20,0,0,8.6625,9,Southampton
-727,1,1,2,1st and 2nd,female,30,3,0,21,21,Southampton
-728,1,1,3,3rd,female,0,0,0,7.7375,8,Queenstown
-729,1,0,2,1st and 2nd,male,25,1,0,26,26,Southampton
-730,1,0,3,3rd,female,25,1,0,7.925,8,Southampton
-731,1,1,1,1st and 2nd,female,29,0,0,211.3375,211,Southampton
-732,1,0,3,3rd,male,11,0,0,18.7875,19,Cherbourg
-733,1,0,2,1st and 2nd,male,0,0,0,0,0,Southampton
-734,1,0,2,1st and 2nd,male,23,0,0,13,13,Southampton
-735,1,0,2,1st and 2nd,male,23,0,0,13,13,Southampton
-736,1,0,3,3rd,male,28.5,0,0,16.1,16,Southampton
-737,1,0,3,3rd,female,48,1,3,34.375,34,Southampton
-738,1,1,1,1st and 2nd,male,35,0,0,512.3292,512,Cherbourg
-739,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-740,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-741,1,1,1,1st and 2nd,male,0,0,0,30,30,Southampton
-742,1,0,1,1st and 2nd,male,36,1,0,78.85,79,Southampton
-743,1,1,1,1st and 2nd,female,21,2,2,262.375,262,Cherbourg
-744,1,0,3,3rd,male,24,1,0,16.1,16,Southampton
-745,1,1,3,3rd,male,31,0,0,7.925,8,Southampton
-746,1,0,1,1st and 2nd,male,70,1,1,71,71,Southampton
-747,1,0,3,3rd,male,16,1,1,20.25,20,Southampton
-748,1,1,2,1st and 2nd,female,30,0,0,13,13,Southampton
-749,1,0,1,1st and 2nd,male,19,1,0,53.1,53,Southampton
-750,1,0,3,3rd,male,31,0,0,7.75,8,Queenstown
-751,1,1,2,1st and 2nd,female,4,1,1,23,23,Southampton
-752,1,1,3,3rd,male,6,0,1,12.475,12,Southampton
-753,1,0,3,3rd,male,33,0,0,9.5,10,Southampton
-754,1,0,3,3rd,male,23,0,0,7.8958,8,Southampton
-755,1,1,2,1st and 2nd,female,48,1,2,65,65,Southampton
-756,1,1,2,1st and 2nd,male,0.67,1,1,14.5,15,Southampton
-757,1,0,3,3rd,male,28,0,0,7.7958,8,Southampton
-758,1,0,2,1st and 2nd,male,18,0,0,11.5,12,Southampton
-759,1,0,3,3rd,male,34,0,0,8.05,8,Southampton
-760,1,1,1,1st and 2nd,female,33,0,0,86.5,87,Southampton
-761,1,0,3,3rd,male,0,0,0,14.5,15,Southampton
-762,1,0,3,3rd,male,41,0,0,7.125,7,Southampton
-763,1,1,3,3rd,male,20,0,0,7.2292,7,Cherbourg
-764,1,1,1,1st and 2nd,female,36,1,2,120,120,Southampton
-765,1,0,3,3rd,male,16,0,0,7.775,8,Southampton
-766,1,1,1,1st and 2nd,female,51,1,0,77.9583,78,Southampton
-767,1,0,1,1st and 2nd,male,0,0,0,39.6,40,Cherbourg
-768,1,0,3,3rd,female,30.5,0,0,7.75,8,Queenstown
-769,1,0,3,3rd,male,0,1,0,24.15,24,Queenstown
-770,1,0,3,3rd,male,32,0,0,8.3625,8,Southampton
-771,1,0,3,3rd,male,24,0,0,9.5,10,Southampton
-772,1,0,3,3rd,male,48,0,0,7.8542,8,Southampton
-773,1,0,2,1st and 2nd,female,57,0,0,10.5,11,Southampton
-774,1,0,3,3rd,male,0,0,0,7.225,7,Cherbourg
-775,1,1,2,1st and 2nd,female,54,1,3,23,23,Southampton
-776,1,0,3,3rd,male,18,0,0,7.75,8,Southampton
-777,1,0,3,3rd,male,0,0,0,7.75,8,Queenstown
-778,1,1,3,3rd,female,5,0,0,12.475,12,Southampton
-779,1,0,3,3rd,male,0,0,0,7.7375,8,Queenstown
-780,1,1,1,1st and 2nd,female,43,0,1,211.3375,211,Southampton
-781,1,1,3,3rd,female,13,0,0,7.2292,7,Cherbourg
-782,1,1,1,1st and 2nd,female,17,1,0,57,57,Southampton
-783,1,0,1,1st and 2nd,male,29,0,0,30,30,Southampton
-784,1,0,3,3rd,male,0,1,2,23.45,23,Southampton
-785,1,0,3,3rd,male,25,0,0,7.05,7,Southampton
-786,1,0,3,3rd,male,25,0,0,7.25,7,Southampton
-787,1,1,3,3rd,female,18,0,0,7.4958,7,Southampton
-788,1,0,3,3rd,male,8,4,1,29.125,29,Queenstown
-789,1,1,3,3rd,male,1,1,2,20.575,21,Southampton
-790,1,0,1,1st and 2nd,male,46,0,0,79.2,79,Cherbourg
-791,1,0,3,3rd,male,0,0,0,7.75,8,Queenstown
-792,1,0,2,1st and 2nd,male,16,0,0,26,26,Southampton
-793,1,0,3,3rd,female,0,8,2,69.55,70,Southampton
-794,1,0,1,1st and 2nd,male,0,0,0,30.6958,31,Cherbourg
-795,1,0,3,3rd,male,25,0,0,7.8958,8,Southampton
-796,1,0,2,1st and 2nd,male,39,0,0,13,13,Southampton
-797,1,1,1,1st and 2nd,female,49,0,0,25.9292,26,Southampton
-798,1,1,3,3rd,female,31,0,0,8.6833,9,Southampton
-799,1,0,3,3rd,male,30,0,0,7.2292,7,Cherbourg
-800,1,0,3,3rd,female,30,1,1,24.15,24,Southampton
-801,1,0,2,1st and 2nd,male,34,0,0,13,13,Southampton
-802,1,1,2,1st and 2nd,female,31,1,1,26.25,26,Southampton
-803,1,1,1,1st and 2nd,male,11,1,2,120,120,Southampton
-804,1,1,3,3rd,male,0.42,0,1,8.5167,9,Cherbourg
-805,1,1,3,3rd,male,27,0,0,6.975,7,Southampton
-806,1,0,3,3rd,male,31,0,0,7.775,8,Southampton
-807,1,0,1,1st and 2nd,male,39,0,0,0,0,Southampton
-808,1,0,3,3rd,female,18,0,0,7.775,8,Southampton
-809,1,0,2,1st and 2nd,male,39,0,0,13,13,Southampton
-810,1,1,1,1st and 2nd,female,33,1,0,53.1,53,Southampton
-811,1,0,3,3rd,male,26,0,0,7.8875,8,Southampton
-812,1,0,3,3rd,male,39,0,0,24.15,24,Southampton
-813,1,0,2,1st and 2nd,male,35,0,0,10.5,11,Southampton
-814,1,0,3,3rd,female,6,4,2,31.275,31,Southampton
-815,1,0,3,3rd,male,30.5,0,0,8.05,8,Southampton
-816,1,0,1,1st and 2nd,male,0,0,0,0,0,Southampton
-817,1,0,3,3rd,female,23,0,0,7.925,8,Southampton
-818,1,0,2,1st and 2nd,male,31,1,1,37.0042,37,Cherbourg
-819,1,0,3,3rd,male,43,0,0,6.45,6,Southampton
-820,1,0,3,3rd,male,10,3,2,27.9,28,Southampton
-821,1,1,1,1st and 2nd,female,52,1,1,93.5,94,Southampton
-822,1,1,3,3rd,male,27,0,0,8.6625,9,Southampton
-823,1,0,1,1st and 2nd,male,38,0,0,0,0,Southampton
-824,1,1,3,3rd,female,27,0,1,12.475,12,Southampton
-825,1,0,3,3rd,male,2,4,1,39.6875,40,Southampton
-826,1,0,3,3rd,male,0,0,0,6.95,7,Queenstown
-827,1,0,3,3rd,male,0,0,0,56.4958,56,Southampton
-828,1,1,2,1st and 2nd,male,1,0,2,37.0042,37,Cherbourg
-829,1,1,3,3rd,male,0,0,0,7.75,8,Queenstown
-830,1,1,1,1st and 2nd,female,62,0,0,80,80,Queenstown
-831,1,1,3,3rd,female,15,1,0,14.4542,14,Cherbourg
-832,1,1,2,1st and 2nd,male,0.83,1,1,18.75,19,Southampton
-833,1,0,3,3rd,male,0,0,0,7.2292,7,Cherbourg
-834,1,0,3,3rd,male,23,0,0,7.8542,8,Southampton
-835,1,0,3,3rd,male,18,0,0,8.3,8,Southampton
-836,1,1,1,1st and 2nd,female,39,1,1,83.1583,83,Cherbourg
-837,1,0,3,3rd,male,21,0,0,8.6625,9,Southampton
-838,1,0,3,3rd,male,0,0,0,8.05,8,Southampton
-839,1,1,3,3rd,male,32,0,0,56.4958,56,Southampton
-840,1,1,1,1st and 2nd,male,0,0,0,29.7,30,Cherbourg
-841,1,0,3,3rd,male,20,0,0,7.925,8,Southampton
-842,1,0,2,1st and 2nd,male,16,0,0,10.5,11,Southampton
-843,1,1,1,1st and 2nd,female,30,0,0,31,31,Cherbourg
-844,1,0,3,3rd,male,34.5,0,0,6.4375,6,Cherbourg
-845,1,0,3,3rd,male,17,0,0,8.6625,9,Southampton
-846,1,0,3,3rd,male,42,0,0,7.55,8,Southampton
-847,1,0,3,3rd,male,0,8,2,69.55,70,Southampton
-848,1,0,3,3rd,male,35,0,0,7.8958,8,Cherbourg
-849,1,0,2,1st and 2nd,male,28,0,1,33,33,Southampton
-850,1,1,1,1st and 2nd,female,0,1,0,89.1042,89,Cherbourg
-851,1,0,3,3rd,male,4,4,2,31.275,31,Southampton
-852,1,0,3,3rd,male,74,0,0,7.775,8,Southampton
-853,1,0,3,3rd,female,9,1,1,15.2458,15,Cherbourg
-854,1,1,1,1st and 2nd,female,16,0,1,39.4,39,Southampton
-855,1,0,2,1st and 2nd,female,44,1,0,26,26,Southampton
-856,1,1,3,3rd,female,18,0,1,9.35,9,Southampton
-857,1,1,1,1st and 2nd,female,45,1,1,164.8667,165,Southampton
-858,1,1,1,1st and 2nd,male,51,0,0,26.55,27,Southampton
-859,1,1,3,3rd,female,24,0,3,19.2583,19,Cherbourg
-860,1,0,3,3rd,male,0,0,0,7.2292,7,Cherbourg
-861,1,0,3,3rd,male,41,2,0,14.1083,14,Southampton
-862,1,0,2,1st and 2nd,male,21,1,0,11.5,12,Southampton
-863,1,1,1,1st and 2nd,female,48,0,0,25.9292,26,Southampton
-864,1,0,3,3rd,female,0,8,2,69.55,70,Southampton
-865,1,0,2,1st and 2nd,male,24,0,0,13,13,Southampton
-866,1,1,2,1st and 2nd,female,42,0,0,13,13,Southampton
-867,1,1,2,1st and 2nd,female,27,1,0,13.8583,14,Cherbourg
-868,1,0,1,1st and 2nd,male,31,0,0,50.4958,50,Southampton
-869,1,0,3,3rd,male,0,0,0,9.5,10,Southampton
-870,1,1,3,3rd,male,4,1,1,11.1333,11,Southampton
-871,1,0,3,3rd,male,26,0,0,7.8958,8,Southampton
-872,1,1,1,1st and 2nd,female,47,1,1,52.5542,53,Southampton
-873,1,0,1,1st and 2nd,male,33,0,0,5,5,Southampton
-874,1,0,3,3rd,male,47,0,0,9,9,Southampton
-875,1,1,2,1st and 2nd,female,28,1,0,24,24,Cherbourg
-876,1,1,3,3rd,female,15,0,0,7.225,7,Cherbourg
-877,1,0,3,3rd,male,20,0,0,9.8458,10,Southampton
-878,1,0,3,3rd,male,19,0,0,7.8958,8,Southampton
-879,1,0,3,3rd,male,0,0,0,7.8958,8,Southampton
-880,1,1,1,1st and 2nd,female,56,0,1,83.1583,83,Cherbourg
-881,1,1,2,1st and 2nd,female,25,0,1,26,26,Southampton
-882,1,0,3,3rd,male,33,0,0,7.8958,8,Southampton
-883,1,0,3,3rd,female,22,0,0,10.5167,11,Southampton
-884,1,0,2,1st and 2nd,male,28,0,0,10.5,11,Southampton
-885,1,0,3,3rd,male,25,0,0,7.05,7,Southampton
-886,1,0,3,3rd,female,39,0,5,29.125,29,Queenstown
-887,1,0,2,1st and 2nd,male,27,0,0,13,13,Southampton
-888,1,1,1,1st and 2nd,female,19,0,0,30,30,Southampton
-889,1,0,3,3rd,female,0,1,2,23.45,23,Southampton
-890,1,1,1,1st and 2nd,male,26,0,0,30,30,Cherbourg
-891,1,0,3,3rd,male,32,0,0,7.75,8,Queenstown
+Index,rowcount,survived,Class,Location
+1,1,1,1st and 2nd,Port
+2,1,0,1st and 2nd,
+3,1,0,1st and 2nd,
+4,1,1,1st and 2nd,Port
+5,1,1,1st and 2nd,#VALUE!
+6,1,1,1st and 2nd,Port
+7,1,1,1st and 2nd,StarBoard
+8,1,1,1st and 2nd,Port
+9,1,1,1st and 2nd,Port
+10,1,1,1st and 2nd,Port
+11,1,1,1st and 2nd,StarBoard
+12,1,1,1st and 2nd,Port
+13,1,1,1st and 2nd,Port
+14,1,1,1st and 2nd,StarBoard
+15,1,1,1st and 2nd,Port
+16,1,1,1st and 2nd,Port
+17,1,1,1st and 2nd,Port
+18,1,1,1st and 2nd,Port
+19,1,1,1st and 2nd,Port
+20,1,1,1st and 2nd,Port
+21,1,1,1st and 2nd,#VALUE!
+22,1,1,1st and 2nd,Port
+23,1,1,1st and 2nd,StarBoard
+24,1,1,1st and 2nd,Port
+25,1,1,1st and 2nd,StarBoard
+26,1,1,1st and 2nd,Port
+27,1,1,1st and 2nd,Port
+28,1,1,1st and 2nd,StarBoard
+29,1,1,1st and 2nd,Port
+30,1,1,1st and 2nd,Port
+31,1,1,1st and 2nd,StarBoard
+32,1,1,1st and 2nd,Port
+33,1,1,1st and 2nd,Port
+34,1,1,1st and 2nd,Port
+35,1,1,1st and 2nd,Port
+36,1,1,1st and 2nd,StarBoard
+37,1,1,1st and 2nd,Port
+38,1,1,1st and 2nd,Port
+39,1,1,1st and 2nd,Port
+40,1,1,1st and 2nd,StarBoard
+41,1,1,1st and 2nd,StarBoard
+42,1,1,1st and 2nd,Port
+43,1,1,1st and 2nd,Port
+44,1,1,1st and 2nd,StarBoard
+45,1,1,1st and 2nd,StarBoard
+46,1,1,1st and 2nd,StarBoard
+47,1,1,1st and 2nd,Port
+48,1,1,1st and 2nd,Port
+49,1,1,1st and 2nd,StarBoard
+50,1,1,1st and 2nd,StarBoard
+51,1,1,1st and 2nd,Port
+52,1,1,1st and 2nd,Port
+53,1,0,1st and 2nd,
+54,1,1,1st and 2nd,StarBoard
+55,1,1,1st and 2nd,Port
+56,1,1,1st and 2nd,Port
+57,1,1,1st and 2nd,Port
+58,1,1,1st and 2nd,Port
+59,1,1,1st and 2nd,Port
+60,1,1,1st and 2nd,StarBoard
+61,1,1,1st and 2nd,StarBoard
+62,1,1,1st and 2nd,StarBoard
+63,1,1,1st and 2nd,StarBoard
+64,1,1,1st and 2nd,#VALUE!
+65,1,1,1st and 2nd,Port
+66,1,1,1st and 2nd,StarBoard
+67,1,1,1st and 2nd,StarBoard
+68,1,1,1st and 2nd,StarBoard
+69,1,1,1st and 2nd,StarBoard
+70,1,1,1st and 2nd,StarBoard
+71,1,1,1st and 2nd,StarBoard
+72,1,1,1st and 2nd,StarBoard
+73,1,1,1st and 2nd,StarBoard
+74,1,1,1st and 2nd,#VALUE!
+75,1,1,1st and 2nd,StarBoard
+76,1,1,1st and 2nd,StarBoard
+77,1,1,1st and 2nd,Port
+78,1,1,1st and 2nd,Port
+79,1,1,1st and 2nd,Port
+80,1,1,1st and 2nd,Port
+81,1,1,1st and 2nd,#VALUE!
+82,1,1,1st and 2nd,Port
+83,1,0,1st and 2nd,
+84,1,1,1st and 2nd,Port
+85,1,1,1st and 2nd,StarBoard
+86,1,1,1st and 2nd,Port
+87,1,1,1st and 2nd,Port
+88,1,1,1st and 2nd,Port
+89,1,1,1st and 2nd,Port
+90,1,1,1st and 2nd,StarBoard
+91,1,1,1st and 2nd,StarBoard
+92,1,1,1st and 2nd,Port
+93,1,1,1st and 2nd,
+94,1,1,1st and 2nd,Port
+95,1,1,1st and 2nd,Port
+96,1,1,1st and 2nd,Port
+97,1,1,1st and 2nd,Port
+98,1,1,1st and 2nd,Port
+99,1,1,1st and 2nd,Port
+100,1,1,1st and 2nd,Port
+101,1,1,1st and 2nd,Port
+102,1,1,1st and 2nd,Port
+103,1,1,1st and 2nd,StarBoard
+104,1,1,1st and 2nd,Port
+105,1,1,1st and 2nd,StarBoard
+106,1,1,1st and 2nd,Port
+107,1,1,1st and 2nd,Port
+108,1,1,1st and 2nd,StarBoard
+109,1,1,1st and 2nd,StarBoard
+110,1,1,1st and 2nd,Port
+111,1,1,1st and 2nd,StarBoard
+112,1,1,1st and 2nd,Port
+113,1,1,1st and 2nd,Port
+114,1,1,1st and 2nd,Port
+115,1,1,1st and 2nd,Port
+116,1,1,1st and 2nd,Port
+117,1,1,1st and 2nd,StarBoard
+118,1,1,1st and 2nd,StarBoard
+119,1,1,1st and 2nd,Port
+120,1,1,1st and 2nd,StarBoard
+121,1,1,1st and 2nd,StarBoard
+122,1,1,1st and 2nd,Port
+123,1,1,1st and 2nd,StarBoard
+124,1,1,1st and 2nd,StarBoard
+125,1,1,1st and 2nd,Port
+126,1,1,1st and 2nd,StarBoard
+127,1,1,1st and 2nd,Port
+128,1,1,1st and 2nd,Port
+129,1,0,1st and 2nd,
+130,1,1,1st and 2nd,Port
+131,1,1,1st and 2nd,Port
+132,1,1,1st and 2nd,Port
+133,1,1,1st and 2nd,#VALUE!
+134,1,1,1st and 2nd,Port
+135,1,1,1st and 2nd,#VALUE!
+136,1,1,1st and 2nd,StarBoard
+137,1,1,1st and 2nd,StarBoard
+138,1,1,1st and 2nd,Port
+139,1,1,1st and 2nd,Port
+140,1,1,1st and 2nd,Port
+141,1,1,1st and 2nd,Port
+142,1,1,1st and 2nd,#VALUE!
+143,1,1,1st and 2nd,StarBoard
+144,1,1,1st and 2nd,Port
+145,1,1,1st and 2nd,Port
+146,1,1,1st and 2nd,StarBoard
+147,1,1,1st and 2nd,Port
+148,1,1,1st and 2nd,StarBoard
+149,1,1,1st and 2nd,StarBoard
+150,1,1,1st and 2nd,StarBoard
+151,1,1,1st and 2nd,StarBoard
+152,1,1,1st and 2nd,Port
+153,1,1,1st and 2nd,StarBoard
+154,1,1,1st and 2nd,Port
+155,1,1,1st and 2nd,Port
+156,1,1,1st and 2nd,Port
+157,1,1,1st and 2nd,StarBoard
+158,1,1,1st and 2nd,
+159,1,1,1st and 2nd,StarBoard
+160,1,1,1st and 2nd,Port
+161,1,0,1st and 2nd,
+162,1,0,1st and 2nd,
+163,1,1,1st and 2nd,Port
+164,1,1,1st and 2nd,Port
+165,1,1,1st and 2nd,Port
+166,1,1,1st and 2nd,Port
+167,1,1,1st and 2nd,Port
+168,1,1,1st and 2nd,Port
+169,1,0,1st and 2nd,
+170,1,0,1st and 2nd,
+171,1,1,1st and 2nd,Port
+172,1,1,1st and 2nd,StarBoard
+173,1,1,1st and 2nd,Port
+174,1,1,1st and 2nd,
+175,1,1,1st and 2nd,
+176,1,1,1st and 2nd,Port
+177,1,1,1st and 2nd,Port
+178,1,1,1st and 2nd,Port
+179,1,1,1st and 2nd,Port
+180,1,0,1st and 2nd,
+181,1,1,1st and 2nd,Port
+182,1,1,1st and 2nd,Port
+183,1,1,1st and 2nd,StarBoard
+184,1,1,1st and 2nd,Port
+185,1,1,1st and 2nd,Port
+186,1,1,1st and 2nd,StarBoard
+187,1,1,1st and 2nd,StarBoard
+188,1,1,1st and 2nd,StarBoard
+189,1,1,1st and 2nd,StarBoard
+190,1,0,1st and 2nd,
+191,1,1,1st and 2nd,Port
+192,1,1,1st and 2nd,Port
+193,1,1,1st and 2nd,Port
+194,1,0,1st and 2nd,
+195,1,1,1st and 2nd,
+196,1,1,1st and 2nd,Port
+197,1,1,1st and 2nd,StarBoard
+198,1,1,1st and 2nd,Port
+199,1,0,1st and 2nd,
+200,1,1,1st and 2nd,Port
+201,1,1,1st and 2nd,StarBoard
+202,1,0,1st and 2nd,
+203,1,1,1st and 2nd,Port
+204,1,1,1st and 2nd,Port
+205,1,1,1st and 2nd,Port
+206,1,1,1st and 2nd,Port
+207,1,1,1st and 2nd,StarBoard
+208,1,1,1st and 2nd,Port
+209,1,1,1st and 2nd,
+210,1,0,1st and 2nd,
+211,1,1,1st and 2nd,Port
+212,1,1,1st and 2nd,Port
+213,1,1,1st and 2nd,Port
+214,1,1,1st and 2nd,
+215,1,1,1st and 2nd,StarBoard
+216,1,1,1st and 2nd,Port
+217,1,1,1st and 2nd,Port
+218,1,1,1st and 2nd,StarBoard
+219,1,1,1st and 2nd,StarBoard
+220,1,1,1st and 2nd,StarBoard
+221,1,1,1st and 2nd,StarBoard
+222,1,1,1st and 2nd,StarBoard
+223,1,1,1st and 2nd,
+224,1,1,1st and 2nd,StarBoard
+225,1,1,1st and 2nd,Port
+226,1,1,1st and 2nd,StarBoard
+227,1,1,1st and 2nd,Port
+228,1,1,1st and 2nd,Port
+229,1,1,1st and 2nd,Port
+230,1,1,1st and 2nd,StarBoard
+231,1,1,1st and 2nd,Port
+232,1,1,1st and 2nd,StarBoard
+233,1,1,1st and 2nd,StarBoard
+234,1,1,1st and 2nd,StarBoard
+235,1,1,1st and 2nd,
+236,1,1,1st and 2nd,Port
+237,1,0,1st and 2nd,
+238,1,1,1st and 2nd,Port
+239,1,1,1st and 2nd,Port
+240,1,1,1st and 2nd,StarBoard
+241,1,1,1st and 2nd,StarBoard
+242,1,1,1st and 2nd,Port
+243,1,1,1st and 2nd,Port
+244,1,1,1st and 2nd,Port
+245,1,1,1st and 2nd,Port
+246,1,1,1st and 2nd,Port
+247,1,1,1st and 2nd,Port
+248,1,1,1st and 2nd,Port
+249,1,1,1st and 2nd,StarBoard
+250,1,0,1st and 2nd,
+251,1,1,Steerage,#VALUE!
+252,1,1,Steerage,Port
+253,1,1,Steerage,#VALUE!
+254,1,0,Steerage,
+255,1,1,Steerage,StarBoard
+256,1,1,Steerage,Port
+257,1,0,Steerage,
+258,1,0,Steerage,
+259,1,1,Steerage,#VALUE!
+260,1,0,Steerage,
+261,1,0,Steerage,
+262,1,0,Steerage,
+263,1,0,Steerage,
+264,1,0,Steerage,
+265,1,1,Steerage,StarBoard
+266,1,1,Steerage,StarBoard
+267,1,1,Steerage,#VALUE!
+268,1,0,Steerage,
+269,1,1,Steerage,#VALUE!
+270,1,1,Steerage,
+271,1,1,Steerage,#VALUE!
+272,1,1,Steerage,#VALUE!
+273,1,1,Steerage,#VALUE!
+274,1,1,Steerage,#VALUE!
+275,1,1,Steerage,#VALUE!
+276,1,0,Steerage,
+277,1,0,Steerage,
+278,1,0,Steerage,
+279,1,0,Steerage,
+280,1,0,Steerage,
+281,1,0,Steerage,
+282,1,0,Steerage,
+283,1,1,Steerage,StarBoard
+284,1,0,Steerage,
+285,1,0,Steerage,
+286,1,0,Steerage,
+287,1,0,Steerage,
+288,1,0,Steerage,
+289,1,0,Steerage,
+290,1,0,Steerage,
+291,1,1,Steerage,Port
+292,1,0,Steerage,
+293,1,1,Steerage,StarBoard
+294,1,0,Steerage,
+295,1,1,Steerage,Port
+296,1,1,Steerage,Port
+297,1,0,Steerage,
+298,1,1,Steerage,StarBoard
+299,1,0,Steerage,
+300,1,1,Steerage,Port
+301,1,1,Steerage,StarBoard
+302,1,1,Steerage,Port
+303,1,1,Steerage,Port
+304,1,1,Steerage,#VALUE!
+305,1,1,Steerage,StarBoard
+306,1,0,Steerage,
+307,1,1,Steerage,
+308,1,1,Steerage,Port
+309,1,1,Steerage,StarBoard
+310,1,0,Steerage,
+311,1,0,Steerage,
+312,1,0,Steerage,
+313,1,0,Steerage,
+314,1,1,Steerage,Port
+315,1,1,Steerage,StarBoard
+316,1,1,Steerage,#VALUE!
+317,1,0,Steerage,
+318,1,0,Steerage,
+319,1,0,Steerage,
+320,1,0,Steerage,
+321,1,0,Steerage,
+322,1,1,Steerage,StarBoard
+323,1,1,Steerage,StarBoard
+324,1,0,Steerage,
+325,1,1,Steerage,Port
+326,1,0,Steerage,
+327,1,1,Steerage,
+328,1,0,Steerage,
+329,1,1,Steerage,#VALUE!
+330,1,0,Steerage,
+331,1,0,Steerage,
+332,1,1,Steerage,StarBoard
+333,1,1,Steerage,StarBoard
+334,1,1,Steerage,
+335,1,1,Steerage,#VALUE!
+336,1,0,Steerage,
+337,1,0,Steerage,
+338,1,1,Steerage,#VALUE!
+339,1,1,Steerage,StarBoard
+340,1,1,Steerage,StarBoard
+341,1,0,Steerage,
+342,1,0,Steerage,
+343,1,0,Steerage,
+344,1,0,Steerage,
+345,1,1,Steerage,StarBoard
+346,1,1,Steerage,Port
+347,1,1,Steerage,#VALUE!
+348,1,0,Steerage,
+349,1,0,Steerage,
+350,1,1,Steerage,Port
+351,1,1,Steerage,Port
+352,1,0,Steerage,
+353,1,0,Steerage,
+354,1,0,Steerage,
+355,1,1,Steerage,StarBoard
+356,1,0,Steerage,
+357,1,0,Steerage,
+358,1,0,Steerage,
+359,1,0,Steerage,
+360,1,0,Steerage,
+361,1,0,Steerage,
+362,1,0,Steerage,
+363,1,0,Steerage,#VALUE!
+364,1,0,Steerage,
+365,1,1,Steerage,Port
+366,1,1,Steerage,StarBoard
+367,1,0,Steerage,
+368,1,0,Steerage,
+369,1,1,Steerage,Port
+370,1,1,Steerage,#VALUE!
+371,1,1,Steerage,#VALUE!
+372,1,1,Steerage,Port
+373,1,1,Steerage,Port
+374,1,1,Steerage,StarBoard
+375,1,1,Steerage,StarBoard
+376,1,1,Steerage,
+377,1,0,Steerage,
+378,1,0,Steerage,
+379,1,0,Steerage,
+380,1,0,Steerage,
+381,1,0,Steerage,
+382,1,1,Steerage,Port
+383,1,1,Steerage,Port
+384,1,1,Steerage,Port
+385,1,1,Steerage,#VALUE!
+386,1,1,Steerage,
+387,1,1,Steerage,Port
+388,1,1,Steerage,StarBoard
+389,1,1,Steerage,Port
+390,1,1,Steerage,Port
+391,1,1,Steerage,Port
+392,1,1,Steerage,#VALUE!
+393,1,1,Steerage,#VALUE!
+394,1,1,Steerage,#VALUE!
+395,1,0,Steerage,
+396,1,1,Steerage,#VALUE!
+397,1,0,Steerage,
+398,1,1,Steerage,#VALUE!
+399,1,1,Steerage,StarBoard
+400,1,1,Steerage,StarBoard
+401,1,1,Steerage,
+402,1,0,Steerage,
+403,1,1,Steerage,#VALUE!
+404,1,1,Steerage,
+405,1,1,Steerage,#VALUE!
+406,1,1,Steerage,StarBoard
+407,1,0,Steerage,
+408,1,0,Steerage,
+409,1,0,Steerage,
+410,1,1,Steerage,
+411,1,0,Steerage,
+412,1,0,Steerage,
+413,1,0,Steerage,
+414,1,0,Steerage,
+415,1,0,Steerage,
+416,1,0,Steerage,
+417,1,0,Steerage,
+418,1,1,Steerage,#VALUE!
+419,1,1,Steerage,#VALUE!
+420,1,0,Steerage,
+421,1,0,Steerage,
+422,1,0,Steerage,
+423,1,0,Steerage,
+424,1,0,Steerage,
+425,1,0,Steerage,
+426,1,1,Steerage,StarBoard
+427,1,0,Steerage,
+428,1,0,Steerage,
+429,1,0,Steerage,
+430,1,0,Steerage,
+431,1,1,Steerage,#VALUE!
+432,1,0,Steerage,
+433,1,0,Steerage,
+434,1,0,Steerage,
+435,1,0,Steerage,
+436,1,0,Steerage,
+437,1,1,Steerage,#VALUE!
+438,1,1,Steerage,StarBoard
+439,1,1,Steerage,StarBoard
+440,1,1,Steerage,StarBoard
+441,1,1,Steerage,
+442,1,1,Steerage,Port
+443,1,0,Steerage,
+444,1,0,Steerage,
+445,1,0,Steerage,
+446,1,1,Steerage,StarBoard
+447,1,1,Steerage,#VALUE!
+448,1,0,Steerage,
+449,1,0,Steerage,
+450,1,0,Steerage,
+451,1,1,Steerage,Port
+452,1,1,Steerage,Port
+453,1,1,Steerage,#VALUE!
+454,1,1,Steerage,#VALUE!
+455,1,1,Steerage,StarBoard
+456,1,1,Steerage,StarBoard
+457,1,0,Steerage,
+458,1,0,Steerage,
+459,1,0,Steerage,
+460,1,0,Steerage,
+461,1,0,Steerage,
+462,1,1,Steerage,#VALUE!
+463,1,1,Steerage,
+464,1,1,Steerage,
+465,1,0,Steerage,
+466,1,0,Steerage,
