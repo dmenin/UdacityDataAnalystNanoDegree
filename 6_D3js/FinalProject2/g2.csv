@@ -1,0 +1,467 @@
+Index,rowcount,survived,Class
+1,1,1,1st and 2nd
+2,1,0,1st and 2nd
+3,1,0,1st and 2nd
+4,1,1,1st and 2nd
+5,1,1,1st and 2nd
+6,1,1,1st and 2nd
+7,1,1,1st and 2nd
+8,1,1,1st and 2nd
+9,1,1,1st and 2nd
+10,1,1,1st and 2nd
+11,1,1,1st and 2nd
+12,1,1,1st and 2nd
+13,1,1,1st and 2nd
+14,1,1,1st and 2nd
+15,1,1,1st and 2nd
+16,1,1,1st and 2nd
+17,1,1,1st and 2nd
+18,1,1,1st and 2nd
+19,1,1,1st and 2nd
+20,1,1,1st and 2nd
+21,1,1,1st and 2nd
+22,1,1,1st and 2nd
+23,1,1,1st and 2nd
+24,1,1,1st and 2nd
+25,1,1,1st and 2nd
+26,1,1,1st and 2nd
+27,1,1,1st and 2nd
+28,1,1,1st and 2nd
+29,1,1,1st and 2nd
+30,1,1,1st and 2nd
+31,1,1,1st and 2nd
+32,1,1,1st and 2nd
+33,1,1,1st and 2nd
+34,1,1,1st and 2nd
+35,1,1,1st and 2nd
+36,1,1,1st and 2nd
+37,1,1,1st and 2nd
+38,1,1,1st and 2nd
+39,1,1,1st and 2nd
+40,1,1,1st and 2nd
+41,1,1,1st and 2nd
+42,1,1,1st and 2nd
+43,1,1,1st and 2nd
+44,1,1,1st and 2nd
+45,1,1,1st and 2nd
+46,1,1,1st and 2nd
+47,1,1,1st and 2nd
+48,1,1,1st and 2nd
+49,1,1,1st and 2nd
+50,1,1,1st and 2nd
+51,1,1,1st and 2nd
+52,1,1,1st and 2nd
+53,1,0,1st and 2nd
+54,1,1,1st and 2nd
+55,1,1,1st and 2nd
+56,1,1,1st and 2nd
+57,1,1,1st and 2nd
+58,1,1,1st and 2nd
+59,1,1,1st and 2nd
+60,1,1,1st and 2nd
+61,1,1,1st and 2nd
+62,1,1,1st and 2nd
+63,1,1,1st and 2nd
+64,1,1,1st and 2nd
+65,1,1,1st and 2nd
+66,1,1,1st and 2nd
+67,1,1,1st and 2nd
+68,1,1,1st and 2nd
+69,1,1,1st and 2nd
+70,1,1,1st and 2nd
+71,1,1,1st and 2nd
+72,1,1,1st and 2nd
+73,1,1,1st and 2nd
+74,1,1,1st and 2nd
+75,1,1,1st and 2nd
+76,1,1,1st and 2nd
+77,1,1,1st and 2nd
+78,1,1,1st and 2nd
+79,1,1,1st and 2nd
+80,1,1,1st and 2nd
+81,1,1,1st and 2nd
+82,1,1,1st and 2nd
+83,1,0,1st and 2nd
+84,1,1,1st and 2nd
+85,1,1,1st and 2nd
+86,1,1,1st and 2nd
+87,1,1,1st and 2nd
+88,1,1,1st and 2nd
+89,1,1,1st and 2nd
+90,1,1,1st and 2nd
+91,1,1,1st and 2nd
+92,1,1,1st and 2nd
+93,1,1,1st and 2nd
+94,1,1,1st and 2nd
+95,1,1,1st and 2nd
+96,1,1,1st and 2nd
+97,1,1,1st and 2nd
+98,1,1,1st and 2nd
+99,1,1,1st and 2nd
+100,1,1,1st and 2nd
+101,1,1,1st and 2nd
+102,1,1,1st and 2nd
+103,1,1,1st and 2nd
+104,1,1,1st and 2nd
+105,1,1,1st and 2nd
+106,1,1,1st and 2nd
+107,1,1,1st and 2nd
+108,1,1,1st and 2nd
+109,1,1,1st and 2nd
+110,1,1,1st and 2nd
+111,1,1,1st and 2nd
+112,1,1,1st and 2nd
+113,1,1,1st and 2nd
+114,1,1,1st and 2nd
+115,1,1,1st and 2nd
+116,1,1,1st and 2nd
+117,1,1,1st and 2nd
+118,1,1,1st and 2nd
+119,1,1,1st and 2nd
+120,1,1,1st and 2nd
+121,1,1,1st and 2nd
+122,1,1,1st and 2nd
+123,1,1,1st and 2nd
+124,1,1,1st and 2nd
+125,1,1,1st and 2nd
+126,1,1,1st and 2nd
+127,1,1,1st and 2nd
+128,1,1,1st and 2nd
+129,1,0,1st and 2nd
+130,1,1,1st and 2nd
+131,1,1,1st and 2nd
+132,1,1,1st and 2nd
+133,1,1,1st and 2nd
+134,1,1,1st and 2nd
+135,1,1,1st and 2nd
+136,1,1,1st and 2nd
+137,1,1,1st and 2nd
+138,1,1,1st and 2nd
+139,1,1,1st and 2nd
+140,1,1,1st and 2nd
+141,1,1,1st and 2nd
+142,1,1,1st and 2nd
+143,1,1,1st and 2nd
+144,1,1,1st and 2nd
+145,1,1,1st and 2nd
+146,1,1,1st and 2nd
+147,1,1,1st and 2nd
+148,1,1,1st and 2nd
+149,1,1,1st and 2nd
+150,1,1,1st and 2nd
+151,1,1,1st and 2nd
+152,1,1,1st and 2nd
+153,1,1,1st and 2nd
+154,1,1,1st and 2nd
+155,1,1,1st and 2nd
+156,1,1,1st and 2nd
+157,1,1,1st and 2nd
+158,1,1,1st and 2nd
+159,1,1,1st and 2nd
+160,1,1,1st and 2nd
+161,1,0,1st and 2nd
+162,1,0,1st and 2nd
+163,1,1,1st and 2nd
+164,1,1,1st and 2nd
+165,1,1,1st and 2nd
+166,1,1,1st and 2nd
+167,1,1,1st and 2nd
+168,1,1,1st and 2nd
+169,1,0,1st and 2nd
+170,1,0,1st and 2nd
+171,1,1,1st and 2nd
+172,1,1,1st and 2nd
+173,1,1,1st and 2nd
+174,1,1,1st and 2nd
+175,1,1,1st and 2nd
+176,1,1,1st and 2nd
+177,1,1,1st and 2nd
+178,1,1,1st and 2nd
+179,1,1,1st and 2nd
+180,1,0,1st and 2nd
+181,1,1,1st and 2nd
+182,1,1,1st and 2nd
+183,1,1,1st and 2nd
+184,1,1,1st and 2nd
+185,1,1,1st and 2nd
+186,1,1,1st and 2nd
+187,1,1,1st and 2nd
+188,1,1,1st and 2nd
+189,1,1,1st and 2nd
+190,1,0,1st and 2nd
+191,1,1,1st and 2nd
+192,1,1,1st and 2nd
+193,1,1,1st and 2nd
+194,1,0,1st and 2nd
+195,1,1,1st and 2nd
+196,1,1,1st and 2nd
+197,1,1,1st and 2nd
+198,1,1,1st and 2nd
+199,1,0,1st and 2nd
+200,1,1,1st and 2nd
+201,1,1,1st and 2nd
+202,1,0,1st and 2nd
+203,1,1,1st and 2nd
+204,1,1,1st and 2nd
+205,1,1,1st and 2nd
+206,1,1,1st and 2nd
+207,1,1,1st and 2nd
+208,1,1,1st and 2nd
+209,1,1,1st and 2nd
+210,1,0,1st and 2nd
+211,1,1,1st and 2nd
+212,1,1,1st and 2nd
+213,1,1,1st and 2nd
+214,1,1,1st and 2nd
+215,1,1,1st and 2nd
+216,1,1,1st and 2nd
+217,1,1,1st and 2nd
+218,1,1,1st and 2nd
+219,1,1,1st and 2nd
+220,1,1,1st and 2nd
+221,1,1,1st and 2nd
+222,1,1,1st and 2nd
+223,1,1,1st and 2nd
+224,1,1,1st and 2nd
+225,1,1,1st and 2nd
+226,1,1,1st and 2nd
+227,1,1,1st and 2nd
+228,1,1,1st and 2nd
+229,1,1,1st and 2nd
+230,1,1,1st and 2nd
+231,1,1,1st and 2nd
+232,1,1,1st and 2nd
+233,1,1,1st and 2nd
+234,1,1,1st and 2nd
+235,1,1,1st and 2nd
+236,1,1,1st and 2nd
+237,1,0,1st and 2nd
+238,1,1,1st and 2nd
+239,1,1,1st and 2nd
+240,1,1,1st and 2nd
+241,1,1,1st and 2nd
+242,1,1,1st and 2nd
+243,1,1,1st and 2nd
+244,1,1,1st and 2nd
+245,1,1,1st and 2nd
+246,1,1,1st and 2nd
+247,1,1,1st and 2nd
+248,1,1,1st and 2nd
+249,1,1,1st and 2nd
+250,1,0,1st and 2nd
+251,1,1,Steerage
+252,1,1,Steerage
+253,1,1,Steerage
+254,1,0,Steerage
+255,1,1,Steerage
+256,1,1,Steerage
+257,1,0,Steerage
+258,1,0,Steerage
+259,1,1,Steerage
+260,1,0,Steerage
+261,1,0,Steerage
+262,1,0,Steerage
+263,1,0,Steerage
+264,1,0,Steerage
+265,1,1,Steerage
+266,1,1,Steerage
+267,1,1,Steerage
+268,1,0,Steerage
+269,1,1,Steerage
+270,1,1,Steerage
+271,1,1,Steerage
+272,1,1,Steerage
+273,1,1,Steerage
+274,1,1,Steerage
+275,1,1,Steerage
+276,1,0,Steerage
+277,1,0,Steerage
+278,1,0,Steerage
+279,1,0,Steerage
+280,1,0,Steerage
+281,1,0,Steerage
+282,1,0,Steerage
+283,1,1,Steerage
+284,1,0,Steerage
+285,1,0,Steerage
+286,1,0,Steerage
+287,1,0,Steerage
+288,1,0,Steerage
+289,1,0,Steerage
+290,1,0,Steerage
+291,1,1,Steerage
+292,1,0,Steerage
+293,1,1,Steerage
+294,1,0,Steerage
+295,1,1,Steerage
+296,1,1,Steerage
+297,1,0,Steerage
+298,1,1,Steerage
+299,1,0,Steerage
+300,1,1,Steerage
+301,1,1,Steerage
+302,1,1,Steerage
+303,1,1,Steerage
+304,1,1,Steerage
+305,1,1,Steerage
+306,1,0,Steerage
+307,1,1,Steerage
+308,1,1,Steerage
+309,1,1,Steerage
+310,1,0,Steerage
+311,1,0,Steerage
+312,1,0,Steerage
+313,1,0,Steerage
+314,1,1,Steerage
+315,1,1,Steerage
+316,1,1,Steerage
+317,1,0,Steerage
+318,1,0,Steerage
+319,1,0,Steerage
+320,1,0,Steerage
+321,1,0,Steerage
+322,1,1,Steerage
+323,1,1,Steerage
+324,1,0,Steerage
+325,1,1,Steerage
+326,1,0,Steerage
+327,1,1,Steerage
+328,1,0,Steerage
+329,1,1,Steerage
+330,1,0,Steerage
+331,1,0,Steerage
+332,1,1,Steerage
+333,1,1,Steerage
+334,1,1,Steerage
+335,1,1,Steerage
+336,1,0,Steerage
+337,1,0,Steerage
+338,1,1,Steerage
+339,1,1,Steerage
+340,1,1,Steerage
+341,1,0,Steerage
+342,1,0,Steerage
+343,1,0,Steerage
+344,1,0,Steerage
+345,1,1,Steerage
+346,1,1,Steerage
+347,1,1,Steerage
+348,1,0,Steerage
+349,1,0,Steerage
+350,1,1,Steerage
+351,1,1,Steerage
+352,1,0,Steerage
+353,1,0,Steerage
+354,1,0,Steerage
+355,1,1,Steerage
+356,1,0,Steerage
+357,1,0,Steerage
+358,1,0,Steerage
+359,1,0,Steerage
+360,1,0,Steerage
+361,1,0,Steerage
+362,1,0,Steerage
+363,1,0,Steerage
+364,1,0,Steerage
+365,1,1,Steerage
+366,1,1,Steerage
+367,1,0,Steerage
+368,1,0,Steerage
+369,1,1,Steerage
+370,1,1,Steerage
+371,1,1,Steerage
+372,1,1,Steerage
+373,1,1,Steerage
+374,1,1,Steerage
+375,1,1,Steerage
+376,1,1,Steerage
+377,1,0,Steerage
+378,1,0,Steerage
+379,1,0,Steerage
+380,1,0,Steerage
+381,1,0,Steerage
+382,1,1,Steerage
+383,1,1,Steerage
+384,1,1,Steerage
+385,1,1,Steerage
+386,1,1,Steerage
+387,1,1,Steerage
+388,1,1,Steerage
+389,1,1,Steerage
+390,1,1,Steerage
+391,1,1,Steerage
+392,1,1,Steerage
+393,1,1,Steerage
+394,1,1,Steerage
+395,1,0,Steerage
+396,1,1,Steerage
+397,1,0,Steerage
+398,1,1,Steerage
+399,1,1,Steerage
+400,1,1,Steerage
+401,1,1,Steerage
+402,1,0,Steerage
+403,1,1,Steerage
+404,1,1,Steerage
+405,1,1,Steerage
+406,1,1,Steerage
+407,1,0,Steerage
+408,1,0,Steerage
+409,1,0,Steerage
+410,1,1,Steerage
+411,1,0,Steerage
+412,1,0,Steerage
+413,1,0,Steerage
+414,1,0,Steerage
+415,1,0,Steerage
+416,1,0,Steerage
+417,1,0,Steerage
+418,1,1,Steerage
+419,1,1,Steerage
+420,1,0,Steerage
+421,1,0,Steerage
+422,1,0,Steerage
+423,1,0,Steerage
+424,1,0,Steerage
+425,1,0,Steerage
+426,1,1,Steerage
+427,1,0,Steerage
+428,1,0,Steerage
+429,1,0,Steerage
+430,1,0,Steerage
+431,1,1,Steerage
+432,1,0,Steerage
+433,1,0,Steerage
+434,1,0,Steerage
+435,1,0,Steerage
+436,1,0,Steerage
+437,1,1,Steerage
+438,1,1,Steerage
+439,1,1,Steerage
+440,1,1,Steerage
+441,1,1,Steerage
+442,1,1,Steerage
+443,1,0,Steerage
+444,1,0,Steerage
+445,1,0,Steerage
+446,1,1,Steerage
+447,1,1,Steerage
+448,1,0,Steerage
+449,1,0,Steerage
+450,1,0,Steerage
+451,1,1,Steerage
+452,1,1,Steerage
+453,1,1,Steerage
+454,1,1,Steerage
+455,1,1,Steerage
+456,1,1,Steerage
+457,1,0,Steerage
+458,1,0,Steerage
+459,1,0,Steerage
+460,1,0,Steerage
+461,1,0,Steerage
+462,1,1,Steerage
+463,1,1,Steerage
+464,1,1,Steerage
+465,1,0,Steerage
+466,1,0,Steerage

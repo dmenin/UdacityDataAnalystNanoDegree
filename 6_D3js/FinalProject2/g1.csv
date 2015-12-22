@@ -1,0 +1,7 @@
+Gender,Class,Category,Condition,Number of Passengers
+Male,1st,Men from First Class,Survived,61
+Male,1st,Men from First Class,Didn't Survive,118
+Male,2nd & 3rd,Men from other Classes,Didn't Survive,564
+Male,2nd & 3rd,Men from other Classes,Survived,100
+Female,All,Women,Didn't Survive,127
+Female,All,Women,Survived,339

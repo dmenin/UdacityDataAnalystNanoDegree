@@ -1,207 +1,329 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+	<style type="text/css">			
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-width:1px;overflow:hidden;word-break:normal;}
+		.tg .tg-yw4l{vertical-align:top}
 
-.arc text {
-  font: 10px sans-serif;
-  text-anchor: middle;
-}
+		.title {font-size:34px;}
+		.subtitle {font-size:16px;font-style:italic;}
+		.minititle {font-weight: bold;text-decoration: underline;}
+		.small-it {font-size:9px;font-style:italic;}
+		.just_italic {font-style:italic;}
 
-.arc path {
-  stroke: #fff;
-}
-
-</style>
+		.nothing{
+			border-collapse:collapse;
+		} 
+		.nothing td{
+			border:none;
+			outline:none;
+		}
+		.par {padding-left:5em}		
+	</style>
+</head>
 <body>
-<script src="//d3js.org/d3.v3.min.js"></script>
-<label> XXXXX </label>
 
-<div id="chartContainer1">
-  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-  <script type="text/javascript">
-    var svg1 = dimple.newSvg("#chartContainer1", 1000, 400);
-    d3.csv("data_end.csv", function (data) {
 
-      var myChart = new dimple.chart(svg1, data);
-      myChart.setBounds(65, 50, 900, 310)
-      myChart.addCategoryAxis("x", "Order Launched");
-	  //var x = myChart.addTimeAxis("x", "LaunchTime","H%M%S","H%M%S");
-	  //x.timePeriod = d3.time.minute;
-	  //x.timeInterval = 1;	  
-      myChart.addMeasureAxis("y", "PercentofMen");
-      myChart.addMeasureAxis("p", "PercentofMen");
-      var s = myChart.addSeries("Location", dimple.plot.bar);
-      s.afterDraw = function (shape, data) {
-        // Get the shape as a d3 selection
-        var s = d3.select(shape),
-          rect = {
-            x: parseFloat(s.attr("x")),
-            y: parseFloat(s.attr("y")),
-            width: parseFloat(s.attr("width")),
-            height: parseFloat(s.attr("height"))
-          };
-		
-	
+<div style="width:1000px; margin:0 auto;">
+	<table class="tg">
+		<tr>
+			<th class="tg-031e" colspan="2">
+				<label class="title">Women were more likely to survive the Titanic Tragedy</label>
+				<br>
+				<table class="nothing">
+					<tr>
+						<td width="15%"></td>
+						<td width="70%">
+							<label class="subtitle">Although the crew in one side of the Titanic where enforcing a "Women and Children first" policy, evidence of numbers and testimonies show that on the opposite side a "First Class first” rule was being enforced.</label>
+						</td>
+						<td width="15%"></td>
+					</tr>
+				</table>						
+			</th>
+		</tr>
+	</table>
+</div>
 
-          
-          svg1.append("text")
-            .attr("x", rect.x + rect.width / 2)
-            .attr("y", rect.y + rect.height / 2 + 3.5)
-            .style("text-anchor", "middle")
-            .style("font-size", "10px")
-            .style("font-family", "sans-serif")            
-            .style("opacity", 0.6)            
-            .text(data.yValue *100 +"%");
+<div style="width:1000px; margin:0 auto;">
+	<table class="tg">
+	  <tr class="nothing">
+		<td class="tg-031e" colspan="2">
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; The Titanic left Southampton for New York with the legal minimum of 20 lifeboats which were the luxury of the First Class. 
+													    The White Star Line staff was deferential to the First Class in all things, so it was natural that the launching of the lifeboats began on the First Class decks. 
+														There were no lifeboats on the Third Class, so it is clear that, regardless of gender, the passenger's class was a great influence on whether or not a passenger was going to survive.</p>
+														
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Honour and shame ruled society in 1912. Gentlemen were expected to be honourable and feared being shamed. Men aboard the Titanic, especially those among the upper class, had to weigh their own survival with doing what society would deem the right thing. To survive but live in shame was a risk some men would not take. Different men, despite which class they belonged to, made different decisions.</p>
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Men in First Class had no better than a one in three chance of surviving, so compared to women, even women from steerage, they fared poorly. Compared to men from other classes, they did remarkably well. At the time when most of the lifeboats from the First Class decks were launching, it was not certain among the passengers that the Titanic was doomed, and many of the men from First Class who could have gone aboard a lifeboat elected to remain behind.</p>	
+		</td>
+	  </tr>
  
-      };	  
+	  <tr>
+		<td class="tg-031e">
+			<div align="center" class="chart" id="chartContainer">
+			  <script src="/lib/d3.v3.4.8.js"></script>
+			  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+			  <script type="text/javascript">
+				var svg = dimple.newSvg("#chartContainer", 690, 400);
+				d3.csv("g1.csv", function (data) {
+				  var myChart = new dimple.chart(svg, data);				  
+				  myChart.setBounds(60, 45, 510, 315)
+				  var x = myChart.addCategoryAxis("x", ["Category"]);
+				  x.title = "";  //Clean title on X axis
+				  x.addOrderRule("Category"); //Order by category Name
+				  
+				  myChart.addMeasureAxis("y", "Number of Passengers");
+				  myChart.addSeries("Condition", dimple.plot.bar);
+				  myChart.addLegend(250, 60, 380, 20, "right");
+				  
+				  //set default colours 
+				  myChart.assignColor("Survived", "rgb(139,172,195)");
+				  myChart.assignColor("Didn't Survive", "rgb(251,153,142)");					  
+				  myChart.draw(1000);   
+				});
+				svg.append("text")
+				   .attr("x", 300)
+				   .attr("y", 30)
+				   .style("text-anchor", "middle")
+				   .style("font-family", "sans-serif")
+				   .style("font-weight", "bold")
+				   .text("Number of survivors among men from 1st and other classes and Women")
+			  </script>
+			</div>
+		</td>
+	  </tr>
+		  
+
+	  <tr class="nothing">
+		<td class="tg-031e" colspan="2">
+			<p class="just_italic" align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Even though some men had no trouble boarding lifeboats, there was a report that the wealthiest man on the Titanic, John Jacob Astor, 
+			attempted to board the lifeboat with his wife, but was rebuffed by Second Officer Lightoller, who told him, "Women and children, only, sir." 
+			Other accounts are differ, however, including one that he was seated in a lifeboat, but gave up his seat at the last minute.</P>
+			
+			<p class="just_italic" align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Panic and confusion may have been an even greater consideration for the loss of life by many men. 
+			As Lawrence Beesley, a Second Class passenger, reported in his 1912 book, "The Loss of the SS Titanic", a false rumour that men were allowed to board lifeboats on the port side 
+			caused many men to cross over to the side of the ship where they had a much smaller chance of being allowed on board a lifeboat.</p>
+		</td>
+	  </tr> 	  
+	  <br>
+	  <tr class="nothing">
+		<td class="tg-031e" colspan="2">
+			<br>
+			<br>
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; When analysing the Women Survival rate, from the 466 women on board, almost all of them in First and Second Class survived, 
+			while most of the women in steerage died. Women overall had a 72% survival rate but while woman in first and second class had a 93% survival rate,
+			women in steerage only had a 49% survival rate. 
+		</td>
+	  </tr> 
 	  
-      //rings.innerRadius = 20;
-      //rings.outerRadius = 30;
-      myChart.addLegend(170, 10, 410, 20, "right");
-      myChart.draw();
-    });
-  </script>
-</div>
+	  <tr>
+		<td class="tg-031e">
+			<div align="center" class="chart" id="chartContainer4">
+			  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+			  <script type="text/javascript">				
+				var svg4 = dimple.newSvg("#chartContainer4", 690, 400);
+				d3.csv("g2.csv", function (data) {
+				  var myChart = new dimple.chart(svg4, data);
+				  myChart.setBounds(65, 45, 505, 315)
+				  var x = myChart.addCategoryAxis("x", "Class");				  
+				  var y = myChart.addPctAxis("y", "rowcount");
+				  y.title = "";  //Clean title on Y axis
+				  
+				  var s = myChart.addSeries("survived", dimple.plot.bar);
+				  
+				  //afterDraw method adds the numeric labels to the graph
+				  s.afterDraw = function (shape, data) {
+					var s = d3.select(shape),
+					  rect = {
+						x: parseFloat(s.attr("x")),
+						y: parseFloat(s.attr("y")),
+						width: parseFloat(s.attr("width")),
+						height: parseFloat(s.attr("height"))
+					  };
+					if (rect.height >= 8) { // Only label bars where the text can fit					  
+					  svg4.append("text")
+						.attr("x", rect.x + rect.width / 2)
+						.attr("y", rect.y + rect.height / 2 + 3.5)
+						.style("text-anchor", "middle")
+						.style("font-size", "10px")
+						.style("font-family", "sans-serif")						
+						.style("opacity", 0.6)						
+						.text((data.yValue) );
+					}
+				  };
+				  
+				  
+				  myChart.assignColor("1", "rgb(139,172,195)");
+				  myChart.assignColor("0", "rgb(251,153,142)");				  
+				  myLegend = myChart.addLegend(640, 100, 60, 300, "Right"); 
+				  
+				  //Substitute the numeric values for the correct labels
+				  myLegend._getEntries = function () {
+					var orderedValues = ["Survived", "Didn't Survive"];
+					var entries = [];
+					orderedValues.forEach(function (v) {
+					entries.push(
+						{
+							key: v,
+							fill: myChart.getColor(v).fill,
+							stroke: myChart.getColor(v).stroke,
+							opacity: myChart.getColor(v).opacity,
+							series: s,
+							aggField: [v]
+						}
+					);
+					}, this);
+			  
+				return entries;
+				};	
+	
+				  
+				  myChart.draw(1000);
+				});
+				//Title
+				svg4.append("text")
+				   .attr("x", 300)
+				   .attr("y", 30)
+				   .style("text-anchor", "middle")
+				   .style("font-family", "sans-serif")
+				   .style("font-weight", "bold")
+				   .text("Number of Women who survived among classes")
+			  </script>
+			</div>
 
-<div id="chartContainer2">
-  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-  <script type="text/javascript">
-    var svg2 = dimple.newSvg("#chartContainer2", 590, 400);
-    d3.tsv("example_data.tsv", function (data) {
+		 
+		</td>
+	  </tr>
 
-      var myChart = new dimple.chart(svg2, data);
-      myChart.setBounds(65, 50, 505, 310)
-      myChart.addCategoryAxis("x", ["Price Tier", "Channel"]);
-      myChart.addMeasureAxis("y", "Unit Sales");
-      myChart.addMeasureAxis("p", "Unit Sales");
-      var rings = myChart.addSeries("Pack Size", dimple.plot.pie);
-      rings.innerRadius = 20;
-      rings.outerRadius = 30;
-      myChart.addLegend(170, 10, 410, 20, "right");
-      myChart.draw();
-    });
-  </script>
-</div>
-
-
-
-<br>
-<br>
-<br>
-
-
-<!--
-<div id="chartContainerEnd">
-  <script src="/lib/d3.v3.4.8.js"></script>
-  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-  <script type="text/javascript">
-    var svgEnd = dimple.newSvg("#chartContainerEnd", 590, 400);
-    d3.csv("data_end.csv", function (data) {
-      var myChart = new dimple.chart(svgEnd, data);
-      myChart.setBounds(60, 45, 510, 315)
-      myChart.addCategoryAxis("x", ["Category"]);
-      myChart.addMeasureAxis("y", "Number of Passengers");
-      myChart.addSeries("Condition", dimple.plot.bar);
-      myChart.addLegend(200, 10, 380, 20, "right");
-      myChart.draw(1000);
-    });
-  </script>
-</div>
--->
-<br>
-<br>
-<br>
-
-
-
-
-
-
-<div id="chartContainer">
-  <script src="/lib/d3.v3.4.8.js"></script>
-  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-  <script type="text/javascript">
-    var svg = dimple.newSvg("#chartContainer", 590, 400);
-    d3.csv("data_3.csv", function (data) {
-      var myChart = new dimple.chart(svg, data);
-      myChart.setBounds(60, 45, 510, 315)
-      myChart.addCategoryAxis("x", ["Category"]);
-      myChart.addMeasureAxis("y", "Number of Passengers");
-      myChart.addSeries("Condition", dimple.plot.bar);
-      myChart.addLegend(200, 10, 380, 20, "right");
-      myChart.draw(1000);
-    });
-  </script>
-</div>
-
-
-<br>
-<br>
-<br>
-
-<div id="chartContainer4">
-  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-  <script type="text/javascript">
-    // This is the simple vertical grouped stacked 100% bar example
-    var svg4 = dimple.newSvg("#chartContainer4", 590, 400);
-    d3.csv("titanic.csv", function (data) {
-      var myChart = new dimple.chart(svg4, data);
-      myChart.setBounds(65, 45, 505, 315)
-      var x = myChart.addCategoryAxis("x", "Class");
 	  
-      var y = myChart.addPctAxis("y", "rowcount");
-      var s = myChart.addSeries("survived", dimple.plot.bar);
-      // Using the afterDraw callback means this code still works with animated
-      // draws (e.g. myChart.draw(1000)) or storyboards (though an onTick callback should
-      // also be used to clear the text from the previous frame)
-      s.afterDraw = function (shape, data) {
-        // Get the shape as a d3 selection
-        var s = d3.select(shape),
-          rect = {
-            x: parseFloat(s.attr("x")),
-            y: parseFloat(s.attr("y")),
-            width: parseFloat(s.attr("width")),
-            height: parseFloat(s.attr("height"))
-          };
-        // Only label bars where the text can fit
-        if (rect.height >= 8) {
-          // Add a text label for the value
-          svg4.append("text")
-            // Position in the centre of the shape (vertical position is
-            // manually set due to cross-browser problems with baseline)
-            .attr("x", rect.x + rect.width / 2)
-            .attr("y", rect.y + rect.height / 2 + 3.5)
-            // Centre align
-            .style("text-anchor", "middle")
-            .style("font-size", "10px")
-            .style("font-family", "sans-serif")
-            // Make it a little transparent to tone down the black
-            .style("opacity", 0.6)
-            // Format the number
-            .text((data.yValue) );
-        }
-      };
-      myChart.addLegend(200, 10, 380, 20, "right");
-      myChart.draw(1000);
-    });
-  </script>
-</div>
-<br>
-<br>
-<br>
+	  <tr class="nothing">
+		<td class="tg-031e" colspan="2">
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; It is clear at this point that Women were more likely to survive the Titanic Tragedy, but there is one more interesting aspect to take into consideration. </p>
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;	From 12:45 to 02:05, 18 life boats were successfully launched (two of them capsized) from both sides of the titanic, Port and Starboard 
+														(Port and starboard are nautical terms for left and right, respectively. Port is the left-hand side of or direction from a vessel, facing forward.  Starboard is the right-hand side, facing forward.)</p>
+
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Historical records show that all of the lifeboats launched from the starboard First Class Deck had more men than women aboard, BUT 
+														the crew loading passengers on the port side were quite extreme in enforcing a "Women and Children only" policy. 
+														They not only refused to allow men to board, but in at least one case, physically removed men who had seated themselves.</p>													
+		</td>
+	  </tr> 
 
 
+	  <tr>
+		<td class="tg-031e">
+			<div align="center" class="chart" id="chartContainer1">
+			  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+			  <script type="text/javascript">
+				var svg1 = dimple.newSvg("#chartContainer1", 1000, 400);
+				d3.csv("g3.csv", function (data) {
 
+				  var myChart = new dimple.chart(svg1, data);
+				  myChart.setBounds(65, 50, 900, 310)
+				  x = myChart.addCategoryAxis("x", "Order Launched");
+				  x.title = "Estimated Order the life boats where lauched"
+				  x.addOrderRule("Order Launched"); //Order by category Name
+				  //var x = myChart.addTimeAxis("x", "LaunchTime","H%M%S","H%M%S");
+				  //x.timePeriod = d3.time.minute;
+				  //x.timeInterval = 1;	  
+				  y = myChart.addMeasureAxis("y", "PercentofMen");
+				  y.title = "Percentage of men on each boat"
+				  myChart.addMeasureAxis("p", "PercentofMen");
+				  var s = myChart.addSeries("Location", dimple.plot.bar);
+				  s.afterDraw = function (shape, data) {
+					// Get the shape as a d3 selection
+					var s = d3.select(shape),
+					  rect = {
+						x: parseFloat(s.attr("x")),
+						y: parseFloat(s.attr("y")),
+						width: parseFloat(s.attr("width")),
+						height: parseFloat(s.attr("height"))
+					  };
+					  svg1.append("text")
+						.attr("x", rect.x + rect.width / 2)
+						.attr("y", rect.y + rect.height / 2 + 3.5)
+						.style("text-anchor", "middle")
+						.style("font-size", "10px")
+						.style("font-family", "sans-serif")            
+						.style("opacity", 0.6)            
+						.text(data.yValue *100 +"%");
+			 
+				  };	  
+				  myChart.addLegend(490, 60, 450, 20, "right");
+				  myChart.draw();
+				});
+				
+				svg1.append("text")
+				   .attr("x", 500)
+				   .attr("y", 30)
+				   .style("text-anchor", "middle")
+				   .style("font-family", "sans-serif")
+				   .style("font-weight", "bold")
+				   .text("Estimated Percentage of Men on each life boat lauched from either side of the titanic")
+			  </script>
+			</div>			
 
+		</td>
+	  </tr>	 
 
+	  <tr class="nothing">
+		<td class="tg-031e" colspan="2">
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; <b> Evidence of numbers and testimony have proven that only on one side of the Titanic the rule "Women and children first," applied. 
+			What becomes even clearer when looking at the numbers is that on the opposite side, the more important concept of the day was "First Class first. "</b>
+		</td>
+	  </tr> 
 
+	  <tr>
+		<td class="tg-031e">
+			<div align="center" class="chart" id="chartContainerTotal">
+			  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+			  <script type="text/javascript">
+				var svgTotal = dimple.newSvg("#chartContainerTotal", 590, 400);
+				d3.csv("g4.csv", function (data) {
 
-
-
-
-
-
-
+				  var myChart = new dimple.chart(svgTotal, data);
+				  myChart.setBounds(65, 50, 505, 310)
+				  myChart.addCategoryAxis("x", "Location");
+				  y = myChart.addMeasureAxis("y", "Embarked");
+				  y.overrideMin = 150;
+				  y.overrideMax = 300;
+				  y.tile = "Number of Passengers"
+				  myChart.addMeasureAxis("p", "Embarked");
+				  var rings = myChart.addSeries("Gender", dimple.plot.pie);
+				  rings.innerRadius = 20;
+				  rings.outerRadius = 40;
+				  myChart.addLegend(550, 100, 60, 300, "Right"); 
+				  myChart.draw();
+				});
+				svgTotal.append("text")
+				   .attr("x", 350)
+				   .attr("y", 20)
+				   .style("text-anchor", "middle")
+				   .style("font-family", "sans-serif")
+				   .style("font-weight", "bold")
+				   .text("Percentage of people that boarded from either side of the titanic")
+				   
+			  </script>
+			</div>
+		</td>
+	  </tr>	  
+	  
+	  <tr class="nothing">
+		<td class="tg-031e" colspan="2">
+			<p class="just_italic" align="justify">&nbsp;&nbsp;&nbsp;&nbsp; When looking at the two graphs above please mind that they were built using textual information from the 
+						<a href ="http://www.encyclopedia-titanica.org/titanic-survivors-list/">Encyclopedia Titanica </a> website so some of the values are estimated. For example, a few times it refers to the boat 
+						as "not quite half-filled" - whose meaning is open to interpretation. Also each boat had at least one male sailor, including on the "port" side, which in most of the cases is represented as 0.05% of male capacity</P>
+			
+			
+		</td>
+	  </tr>
+	</table>	
+</div>	
 
 
 </body>
+
+</html>

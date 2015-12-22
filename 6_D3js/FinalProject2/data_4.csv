@@ -1,7 +1,0 @@
-Gender,Class,Category,Condition,Number of Passengers
-Male,1st,Men in First Class,Died,118
-Male,1st,Men in First Class,Didn't Die,61
-Male,2nd & 3rd,Men from other Classes,Died,564
-Male,2nd & 3rd,Men from other Classes,Didn't Die,100
-Female,All,Women,Died,127
-Female,All,Women,Didn't Die,339
