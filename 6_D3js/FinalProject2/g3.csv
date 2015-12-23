@@ -1,19 +1,19 @@
 Order Launched,LaunchTime,Location,Class,EstimatedNumberOfPassengers,PercentofMen
- 1st,12:45,Starboard,only FIRST CLASS,27,0.8
- 2nd,12:55,Starboard,only FIRST CLASS,35,0.6
- 3rd,12:56,Port,only FIRST CLASS,25,0.05
- 4th,01:00,Starboard,only FIRST CLASS,31,0.6
- 5th,01:10,Starboard,only FIRST CLASS,12,0.8
- 6th,01:11,Port,only FIRST CLASS,27,0.05
- 7th,01:20,Port,Primarily FIRST,55,0.05
- 8th,01:25,Port,Third and Second,42,0.05
- 9th,01:26,Port,Primarily SECOND,51,0.05
-10th,01:30,Starboard,Primaril SECOND,40,0.2
-11th,01:31,Port,Primarily SECOND,32,0.05
-12th,01:35,Starboard,Primarily SECOND,56,0.1
-13th,01:40,Starboard,all,54,0.25
-14th,01:41,Starboard,all,57,0.4
-15th,01:45,Port,all,20,0.05
-16th,01:50,Port,Primarily FIRST,34,0.05
-17th,01:51,Starboard,all,39,0.25
-18th,02:05,Port,all,17,0.23
+ 1st,12:45,Starboard,only FIRST CLASS,27,80
+ 2nd,12:55,Starboard,only FIRST CLASS,35,60
+ 3rd,12:56,Port,only FIRST CLASS,25,5
+ 4th,01:00,Starboard,only FIRST CLASS,31,60
+ 5th,01:10,Starboard,only FIRST CLASS,12,80
+ 6th,01:11,Port,only FIRST CLASS,27,5
+ 7th,01:20,Port,Primarily FIRST,55,5
+ 8th,01:25,Port,Third and Second,42,5
+ 9th,01:26,Port,Primarily SECOND,51,5
+10th,01:30,Starboard,Primaril SECOND,40,20
+11th,01:31,Port,Primarily SECOND,32,5
+12th,01:35,Starboard,Primarily SECOND,56,10
+13th,01:40,Starboard,all,54,25
+14th,01:41,Starboard,all,57,40
+15th,01:45,Port,all,20,5
+16th,01:50,Port,Primarily FIRST,34,5
+17th,01:51,Starboard,all,39,25
+18th,02:05,Port,all,17,23

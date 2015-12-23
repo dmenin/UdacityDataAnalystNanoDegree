@@ -233,6 +233,7 @@
 				  y.title = "Percentage of men on each boat"
 				  myChart.addMeasureAxis("p", "PercentofMen");
 				  var s = myChart.addSeries("Location", dimple.plot.bar);
+				  
 				  s.afterDraw = function (shape, data) {
 					// Get the shape as a d3 selection
 					var s = d3.select(shape),
@@ -249,7 +250,7 @@
 						.style("font-size", "10px")
 						.style("font-family", "sans-serif")            
 						.style("opacity", 0.6)            
-						.text(data.yValue *100 +"%");
+						.text(data.yValue +"%");
 			 
 				  };	  
 				  myChart.addLegend(490, 60, 450, 20, "right");
