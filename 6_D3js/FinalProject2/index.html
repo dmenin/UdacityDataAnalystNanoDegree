@@ -58,7 +58,7 @@
 														There were no lifeboats on the Third Class, so it is clear that, regardless of gender, the passenger's class was a great influence on whether or not a passenger was going to survive.</p>
 														
 			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Honour and shame ruled society in 1912. Gentlemen were expected to be honourable and feared being shamed. Men aboard the Titanic, especially those among the upper class, had to weigh their own survival with doing what society would deem the right thing. To survive but live in shame was a risk some men would not take. Different men, despite which class they belonged to, made different decisions.</p>
-			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Men in First Class had no better than a one in three chance of surviving, so compared to women, even women from steerage, they fared poorly. Compared to men from other classes, they did remarkably well. At the time when most of the lifeboats from the First Class decks were launching, it was not certain among the passengers that the Titanic was doomed, and many of the men from First Class who could have gone aboard a lifeboat elected to remain behind.</p>	
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Men in First Class had no better than a one in three chance of surviving (34%), which is a very low survival rate, especially considering that women overall had a 72% survival rate. Even women for steerage had a higher chance of surviving than men (49%). Compared to men from other classes, they did remarkably well. At the time when most of the lifeboats from the First Class decks were launching, it was not certain among the passengers that the Titanic was doomed, and many of the men from First Class who could have gone aboard a lifeboat elected to remain behind.</p>	
 		</td>
 	  </tr>
  
@@ -78,7 +78,7 @@
 				  
 				  myChart.addMeasureAxis("y", "Number of Passengers");
 				  myChart.addSeries("Condition", dimple.plot.bar);
-				  myChart.addLegend(250, 60, 380, 20, "right");
+				  myChart.addLegend(570, 50, 100, 20, "right");
 				  
 				  //set default colours 
 				  myChart.assignColor("Survived", "rgb(139,172,195)");
@@ -159,7 +159,7 @@
 				  
 				  myChart.assignColor("1", "rgb(139,172,195)");
 				  myChart.assignColor("0", "rgb(251,153,142)");				  
-				  myLegend = myChart.addLegend(640, 100, 60, 300, "Right"); 
+				  myLegend = myChart.addLegend(610, 35, 60, 300, "Right"); 
 				  
 				  //Substitute the numeric values for the correct labels
 				  myLegend._getEntries = function () {
@@ -202,9 +202,10 @@
 	  
 	  <tr class="nothing">
 		<td class="tg-031e" colspan="2">
-			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; It is clear at this point that Women were more likely to survive the Titanic Tragedy, but there is one more interesting aspect to take into consideration. </p>
+			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; The first class was composed of 323 passengers; 179  of those were male (56%) and 144 female (44%) and 
+														It is clear at this point that Women were more likely to survive the Titanic Tragedy, but there is one more interesting aspect to take into consideration. </p>
 			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;	From 12:45 to 02:05, 18 life boats were successfully launched (two of them capsized) from both sides of the titanic, Port and Starboard 
-														(Port and starboard are nautical terms for left and right, respectively. Port is the left-hand side of or direction from a vessel, facing forward.  Starboard is the right-hand side, facing forward.)</p>
+														(Port and starboard are nautical terms for left and right, respectively. Port is the left-hand side of or direction from a vessel, facing forward.  Starboard is the right-hand side, facing forward).</p>
 
 			<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; Historical records show that all of the lifeboats launched from the starboard First Class Deck had more men than women aboard, BUT 
 														the crew loading passengers on the port side were quite extreme in enforcing a "Women and Children only" policy. 
@@ -282,7 +283,7 @@
 			<div align="center" class="chart" id="chartContainerTotal">
 			  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
 			  <script type="text/javascript">
-				var svgTotal = dimple.newSvg("#chartContainerTotal", 590, 400);
+				var svgTotal = dimple.newSvg("#chartContainerTotal", 690, 400);
 				d3.csv("g4.csv", function (data) {
 
 				  var myChart = new dimple.chart(svgTotal, data);
@@ -296,7 +297,7 @@
 				  var rings = myChart.addSeries("Gender", dimple.plot.pie);
 				  rings.innerRadius = 20;
 				  rings.outerRadius = 40;
-				  myChart.addLegend(550, 100, 60, 300, "Right"); 
+				  myChart.addLegend(590, 40, 60, 300, "Right"); 
 				  myChart.draw();
 				});
 				svgTotal.append("text")

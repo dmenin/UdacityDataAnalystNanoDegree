@@ -4,8 +4,6 @@
 Final version can be found [here!](http://bl.ocks.org/dmenin/raw/97924f4c86232f7e3a84/).
 
 
-
-
 ##Summary
 
 	On this project I wrote a story on the titanic data to demonstrate that, not only women were more likely to survive the Titanic Tragedy, but that there was a specific side of the boat where it the "women first" rule was  strictly being enforced so it was easier for them to get to a life boat
@@ -22,6 +20,32 @@ Final version can be found [here!](http://bl.ocks.org/dmenin/raw/97924f4c86232f7
 		4) The forth graph serves as an auxiliary to the previous, where I sum all the boats in one value. I chose a pie chart with series because I needed two show 2 values (men and women - the "pies") by two classes (port and starboard - the series) and it produces a good visualization. 
 
 
+##Feedback \ Change Log
+
+	1 – layout change on graph
+	
+		User on Udacity’s google group suggested that the Y axis legend on the percentage should match the report’s, so I changed it from being decimal point to whole numbers (change can be seen on the "feedback" folder).
+
+	2 -   legend alignment 
+
+		Co-worker suggested that the legends on all graph should be aligned. Only exception would be the bar chart because it is a wide chart and should use all space available (changes can be seen on the "feedback" folder).
+
+	3– from reviewers feedback
+
+		•	Reviewer asked to display what the survival rates actually were for first class men, all women and women from steerage. Otherwise, the reader has to calculate.
+ 
+			Changed sentence:  
+			"Men in First Class had no better than a one in three chance of surviving, so compared to women, even women from steerage, they fared poorly."
+
+			To:
+			“Men in First Class had no better than a one in three chance of surviving (34%), which is a very low survival rate, especially considering that women overall had a 73% survival rate. Even women for steerage had a higher chance of surviving than men (49%).”
+
+		•	Reviewer pointed out that there is no information regarding how many men there were in first class versus women in first class
+			
+			Added Sentence:
+			"The first class was composed of 323 passengers; 179  of those were male (56%) and 144 female (44%)"
+
+	
 
 ##Resources
 
