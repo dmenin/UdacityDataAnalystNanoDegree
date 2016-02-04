@@ -8,6 +8,7 @@ ReadMe
 		* P3: OpenStreetMaps Data Wrangling with MongoDB
 		* P4: Explore and Summarize Data with R
 		* P5: Intro to Machine Learning with Python
+		* P6: Data Visualization with D3.js
 		* P7: Design an A\B Test
   * 2_IntroDS: Introduction to Data Science
   * 3_Mongo: Data Wrangling with MongoDB and Python
