@@ -52,3 +52,4 @@ Final version can be found [here!](http://bl.ocks.org/dmenin/raw/97924f4c86232f7
     - http://www.dailymail.co.uk/news/article-2225664/Titanic-safety-officer-Maurice-Clarkes-warning-needed-50-lifeboats-ignored-astonishing-cover-revealed-100-years.html
 	- http://www.encyclopedia-titanica.org/titanic-survivors-list/
 	- http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets
+	- http://www.icyousee.org/titanic.html
