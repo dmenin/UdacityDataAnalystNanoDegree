@@ -12,7 +12,7 @@ Project | Main Technologies
 [P3: OpenStreetMaps Data Wrangling with MongoDB](https://github.com/dmenin/UdacityDataAnalystNanoDegree/tree/master/3_Mongo) | ![](..//Miscellaneous//mongo.png) ![](..//Miscellaneous//python.png)
 [P4: Explore and Summarize Data with R](https://github.com/dmenin/UdacityDataAnalystNanoDegree/tree/master/4_R) | ![](..//Miscellaneous//R.png)
 [P5: Intro to Machine Learning with Python](https://github.com/dmenin/UdacityDataAnalystNanoDegree/tree/master/5_MachineLearning/PythonProject) | ![](..//Miscellaneous//python.png) ![](..//Miscellaneous//ml.png)
-[P6: Data Visualization with D3.js](http://bl.ocks.org/dmenin/raw/97924f4c86232f7e3a84/) | ![](..//Miscellaneous//d3.png) 
+[P6: Data Visualization with D3.js](http://bl.ocks.org/dmenin/raw/97924f4c86232f7e3a84/) | ![](..//Miscellaneous//d3js.png) 
 [P7: Designing an AB Test](https://github.com/dmenin/UdacityDataAnalystNanoDegree/tree/master/7_ABTesting) | ![](..//Miscellaneous//ab.png) ![](..//Miscellaneous//stats.png)
 
 
