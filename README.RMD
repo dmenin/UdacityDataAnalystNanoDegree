@@ -1,7 +1,7 @@
 ReadMe
 ===================
 
-![](..//Miscellaneous//cover2b.png)
+![](Miscellaneous//cover2b.png)
 
 
 * Folders:
