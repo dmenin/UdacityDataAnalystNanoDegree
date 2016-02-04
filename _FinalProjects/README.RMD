@@ -16,14 +16,6 @@ Project | Main Technologies
 [P7: Designing an AB Test](https://github.com/dmenin/UdacityDataAnalystNanoDegree/tree/master/7_ABTesting) | ![](..//Miscellaneous//ab.png) ![](..//Miscellaneous//stats.png)
 
 
-
-
-
-
-![](..//Miscellaneous//cover2b.png)
-
-
-
 <style type="text/css">
 .table {
 

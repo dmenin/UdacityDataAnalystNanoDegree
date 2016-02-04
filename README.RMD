@@ -1,6 +1,9 @@
 ReadMe
 ===================
 
+![](..//Miscellaneous//cover2b.png)
+
+
 * Folders:
   * _FinalProjects
 	* Completed Final Project Reports
