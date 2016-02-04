@@ -10,6 +10,7 @@ ReadMe
 		* P5: Intro to Machine Learning with Python
 		* P6: Data Visualization with D3.js
 		* P7: Design an A\B Test
+  * 1_Stats: Test a Perceptual Phenomenon
   * 2_IntroDS: Introduction to Data Science
   * 3_Mongo: Data Wrangling with MongoDB and Python
   * 4_R: Explore and Summarize Data
